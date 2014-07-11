@@ -35,7 +35,7 @@ filetype plugin indent on    " required
 syntax on
 set laststatus=2
 set number
-set tabstop=4
+set tabstop=2
 set background=dark
 set backspace=indent,eol,start
 let g:solarized_termtrans=1
