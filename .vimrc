@@ -15,6 +15,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'mattn/emmet-vim'
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,15 +37,16 @@ set laststatus=2
 set number
 set tabstop=4
 set background=dark
+set backspace=indent,eol,start
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 colorscheme solarized
 
-if has ('win32')
-    set guifont=Powerline_Consolas:h9:cANSI
-else
-    set guifont=Powerline\ Consolas\ 10
-endif
+"if has ('win32')
+"    set guifont=Powerline_Consolas:h9:cANSI
+"else
+"    set guifont=Powerline\ Consolas\ 10
+"endif
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme             = 'powerlineish'
