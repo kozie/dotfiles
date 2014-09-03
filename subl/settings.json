@@ -1,0 +1,52 @@
+{
+	"always_show_minimap_viewport": true,
+	"auto_complete": false,
+	"bold_folder_labels": true,
+	"caret_extra_width": 1,
+	"caret_style": "phase",
+	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
+	"dart_sdk_path": "C:\\Program Files\\dart\\dart-sdk",
+	"draw_white_space": "selection",
+	"ensure_newline_at_eof_on_save": true,
+	"fold_buttons": false,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"_build",
+		"dist",
+		"site"
+	],
+	"font_face": "Consolas",
+	"font_options":
+	[
+		"directwrite"
+	],
+	"font_size": 9,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"line_padding_bottom": -1,
+	"line_padding_top": -1,
+	"minimap_scroll_to_clicked_text": true,
+	"rulers":
+	[
+		80,
+		120
+	],
+	"scroll_speed": 5.0,
+	"show_encoding": true,
+	"show_line_endings": true,
+	"soda_classic_tabs": true,
+	"tab_size": 2,
+	"tabs_small": true,
+	"trim_trailing_white_space_on_save": false,
+	"word_wrap": false,
+	"theme": "predawn-DEV.sublime-theme",
+	"sidebar_small": true
+}
