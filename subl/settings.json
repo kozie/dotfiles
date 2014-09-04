@@ -7,6 +7,7 @@
 	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
 	"dart_sdk_path": "C:\\Program Files\\dart\\dart-sdk",
 	"draw_white_space": "selection",
+	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": true,
 	"fold_buttons": false,
 	"folder_exclude_patterns":
@@ -34,6 +35,7 @@
 	"line_padding_bottom": -1,
 	"line_padding_top": -1,
 	"minimap_scroll_to_clicked_text": true,
+	"overlay_scroll_bars": "enabled",
 	"rulers":
 	[
 		80,
@@ -42,11 +44,11 @@
 	"scroll_speed": 5.0,
 	"show_encoding": true,
 	"show_line_endings": true,
+	"sidebar_small": true,
 	"soda_classic_tabs": true,
 	"tab_size": 2,
 	"tabs_small": true,
-	"trim_trailing_white_space_on_save": false,
-	"word_wrap": false,
 	"theme": "predawn-DEV.sublime-theme",
-	"sidebar_small": true
+	"trim_trailing_white_space_on_save": false,
+	"word_wrap": false
 }
