@@ -6,6 +6,7 @@
 	"caret_style": "phase",
 	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
 	"dart_sdk_path": "C:\\Program Files\\dart\\dart-sdk",
+	"dart_dartium_path": "C:\\Program Files\\dart\\chromium",
 	"draw_white_space": "selection",
 	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": true,
@@ -46,9 +47,7 @@
 	"show_line_endings": true,
 	"sidebar_small": true,
 	"soda_classic_tabs": true,
-	"tab_size": 2,
-	"tabs_small": true,
-	"theme": "predawn-DEV.sublime-theme",
+	"theme": "Soda Dark 3.sublime-theme",
 	"trim_trailing_white_space_on_save": false,
 	"word_wrap": false
 }
