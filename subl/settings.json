@@ -2,11 +2,9 @@
 	"always_show_minimap_viewport": true,
 	"auto_complete": false,
 	"bold_folder_labels": true,
-	"caret_extra_width": 1,
+	"caret_extra_width": 2,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
-	"dart_sdk_path": "C:\\Program Files\\dart\\dart-sdk",
-	"dart_dartium_path": "C:\\Program Files\\dart\\chromium",
+	"color_scheme": "Packages/Seti_UI/Scheme/Seti_monokai.tmTheme",
 	"draw_white_space": "selection",
 	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": true,
@@ -21,7 +19,7 @@
 		"dist",
 		"site"
 	],
-	"font_face": "Consolas",
+	"font_face": "Input",
 	"font_options":
 	[
 		"directwrite"
@@ -46,8 +44,8 @@
 	"show_encoding": true,
 	"show_line_endings": true,
 	"sidebar_small": true,
-	"soda_classic_tabs": true,
-	"theme": "Soda Dark 3.sublime-theme",
+	"theme": "Seti.sublime-theme",
 	"trim_trailing_white_space_on_save": false,
-	"word_wrap": false
+	"word_wrap": false,
+	"Seti_tabs_small": true,
 }
