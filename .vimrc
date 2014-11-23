@@ -10,12 +10,11 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'chriskempson/base16-vim'
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'bling/vim-airline'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'mattn/emmet-vim'
-Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -24,33 +23,23 @@ filetype plugin indent on    " required
 "filetype plugin on
 "
 " Brief help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
+colorscheme base16-default
 syntax on
 set laststatus=2
-set number
 set tabstop=2
 set background=dark
 set backspace=indent,eol,start
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-colorscheme solarized
+set term=xterm-256
+set number
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
+" set guifont=Droid_Sans_Mono_for_Powerline:h10
 
-"if has ('win32')
-"    set guifont=Powerline_Consolas:h9:cANSI
-"else
-"    set guifont=Powerline\ Consolas\ 10
-"endif
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme             = 'powerlineish'
-
-if has ('win32unix') && !has('gui_running')
-    let g:airline_powerline_fonts = 0
-endif
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'powerlineish'
