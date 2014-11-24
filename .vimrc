@@ -38,7 +38,7 @@ set background=dark
 set backspace=indent,eol,start
 set term=xterm-256
 set number
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 " set guifont=Droid_Sans_Mono_for_Powerline:h10
 
 let g:airline_powerline_fonts = 1
