@@ -9,12 +9,16 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+Plugin 'L9'
 
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'chriskempson/base16-vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'bling/vim-airline'
+Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'FuzzyFinder'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
