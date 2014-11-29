@@ -17,8 +17,13 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-multiple-cursors'
-" Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'FuzzyFinder'
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-markdown'
+Plugin 'Raimondi/delimitMate'
+Plugin 'mattn/emmet-vim'
+Plugin 'mustache/vim-mustache-handlebars'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -38,6 +43,7 @@ colorscheme base16-default
 syntax on
 set laststatus=2
 set tabstop=2
+set shiftwidth=2
 set background=dark
 set backspace=indent,eol,start
 set term=xterm-256
