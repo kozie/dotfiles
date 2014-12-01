@@ -53,3 +53,6 @@ set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'powerlineish'
+
+" Custom key mappings
+map <C-\> :NERDTreeToggle<CR>
