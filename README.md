@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-Dotfiles i use in Unix environments
+Dotfiles i use in *nix environments
