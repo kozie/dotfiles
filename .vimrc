@@ -13,7 +13,8 @@ Plugin 'L9'
 
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'chriskempson/base16-vim'
+" Plugin 'chriskempson/base16-vim'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-multiple-cursors'
@@ -39,7 +40,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-colorscheme base16-default
+colorscheme solarized
 syntax on
 set laststatus=2
 set tabstop=2
@@ -52,7 +53,7 @@ set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 " set guifont=Droid_Sans_Mono_for_Powerline:h10
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'solarized'
 
 " Custom key mappings
 map <C-\> :NERDTreeToggle<CR>
