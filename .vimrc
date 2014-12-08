@@ -44,12 +44,16 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 colorscheme jellybeans " solarized
 syntax on
+
+set encoding=utf-8
 set laststatus=2
 set tabstop=2
 set shiftwidth=2
 set background=dark
 set backspace=indent,eol,start
 set term=xterm-256
+set t_Co=256
+
 set number
 set hidden
 set linebreak
@@ -58,6 +62,13 @@ set autoindent
 set smartindent
 set expandtab
 set smarttab
+set cursorline
+
+set nohlsearch
+set incsearch
+set ignorecase
+set smartcase
+
 set textwidth=0
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 " set guifont=Droid_Sans_Mono_for_Powerline:h10
@@ -67,3 +78,13 @@ let g:airline_theme = 'powerlineish' " 'solarized'
 
 " Custom key mappings
 map <C-\> :NERDTreeToggle<CR>
+
+" Disable arrow keys (hardcore)
+map  <up>    <nop>
+imap <up>    <nop>
+map  <down>  <nop>
+imap <down>  <nop>
+map  <left>  <nop>
+imap <left>  <nop>
+map  <right> <nop>
+imap <right> <nop>
