@@ -14,11 +14,13 @@ Plugin 'L9'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 " Plugin 'chriskempson/base16-vim'
-Plugin 'altercation/vim-colors-solarized'
+" Plugin 'altercation/vim-colors-solarized'
+Plugin 'nanotech/jellybeans.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'Valloric/YouCompleteMe'
+Plugin 'ervandew/supertab'
 Plugin 'FuzzyFinder'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-markdown'
@@ -40,7 +42,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-colorscheme solarized
+colorscheme jellybeans " solarized
 syntax on
 set laststatus=2
 set tabstop=2
@@ -49,11 +51,19 @@ set background=dark
 set backspace=indent,eol,start
 set term=xterm-256
 set number
+set hidden
+set linebreak
+set ruler
+set autoindent
+set smartindent
+set expandtab
+set smarttab
+set textwidth=0
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 " set guifont=Droid_Sans_Mono_for_Powerline:h10
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'powerlineish' " 'solarized'
 
 " Custom key mappings
 map <C-\> :NERDTreeToggle<CR>
