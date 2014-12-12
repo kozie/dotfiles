@@ -52,8 +52,6 @@ set tabstop=2
 set shiftwidth=2
 set background=dark
 set backspace=indent,eol,start
-set term=xterm-256
-set t_Co=256
 
 set number
 set hidden
@@ -71,11 +69,19 @@ set ignorecase
 set smartcase
 
 set textwidth=0
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
-" set guifont=Droid_Sans_Mono_for_Powerline:h10
+" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+set guifont=Meslo_LG_S_DZ_Regular_for_Powerline:h11
+set guioptions-=R
+set guioptions-=L
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'powerlineish' " 'solarized'
+
+" Set terminal
+if !has("gui_running")
+  set t_Co=256
+  set term=screen-256color
+endif
 
 " Custom key mappings
 map <C-\> :NERDTreeToggle<CR>
