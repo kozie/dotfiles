@@ -28,7 +28,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-markdown'
 Plugin 'Raimondi/delimitMate'
 Plugin 'mattn/emmet-vim'
-Plugin 'mustache/vim-mustache-handlebars'
+" Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'jdonaldson/vaxe'
 " Plugin 'leafo/moonscript-vim'
 
