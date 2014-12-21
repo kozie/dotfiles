@@ -18,6 +18,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'Valloric/YouCompleteMe'
@@ -28,6 +29,9 @@ Plugin 'tpope/vim-markdown'
 Plugin 'Raimondi/delimitMate'
 Plugin 'mattn/emmet-vim'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'jdonaldson/vaxe'
+Plugin 'leafo/moonscript-vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
