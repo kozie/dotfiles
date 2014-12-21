@@ -32,7 +32,6 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'jdonaldson/vaxe'
 Plugin 'leafo/moonscript-vim'
 
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
