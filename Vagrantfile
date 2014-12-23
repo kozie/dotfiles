@@ -49,7 +49,7 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get update
-    sudo apt-get install build-essentials git git-core curl wget tmux vim vim-common zsh irssi which
+    sudo apt-get install build-essentials cmake python-dev git git-core tmux vim vim-common zsh irssi
 
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     
