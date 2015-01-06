@@ -22,6 +22,7 @@ Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'ervandew/supertab'
+Plugin 'majutsushi/tagbar'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-markdown'
 Plugin 'Raimondi/delimitMate'
@@ -92,6 +93,7 @@ endif
 map <C-\> :NERDTreeToggle<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nmap <leader>r :TagbarToggle<CR>
 
 " Disable arrow keys (hardcore)
 map  <up>    <nop>
