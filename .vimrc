@@ -47,6 +47,8 @@ filetype plugin indent on    " required
 colorscheme jellybeans
 syntax on
 
+let mapleader=","
+
 set encoding=utf-8
 set laststatus=2
 set tabstop=2
@@ -88,6 +90,8 @@ endif
 
 " Custom key mappings
 map <C-\> :NERDTreeToggle<CR>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Disable arrow keys (hardcore)
 map  <up>    <nop>
