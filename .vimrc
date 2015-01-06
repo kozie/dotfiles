@@ -74,6 +74,8 @@ set incsearch
 set ignorecase
 set smartcase
 
+set tags=./tags,tags;
+
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'powerlineish'
 
@@ -81,8 +83,7 @@ let g:airline_theme = 'powerlineish'
 if has("gui_running")
   " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
   " set guifont=Meslo_LG_S_DZ_Regular_for_Powerline:h11
-  set guioptions-=R
-  set guioptions-=L
+  set guioptions-=rL
 endif
 
 " Custom key mappings
