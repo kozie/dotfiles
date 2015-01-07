@@ -197,8 +197,9 @@
 # 
 # alias cd=cd_func
 
-#eval `dircolors ~/.dir_colors`
-#alias ls="ls --color"
+eval `dircolors -b $HOME/.dir_colors`
+alias ls="ls --color"
 alias tmux="tmux -2"
+
 # export TERM=xterm-256color
 export MC_SKIN=$HOME/.mc/solarized.ini
