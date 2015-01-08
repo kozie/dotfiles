@@ -21,12 +21,12 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-multiple-cursors'
-"Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'ervandew/supertab'
 Plugin 'majutsushi/tagbar'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-markdown'
-Plugin 'Raimondi/delimitMate'
+" Plugin 'Raimondi/delimitMate'
 Plugin 'mattn/emmet-vim'
 " Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'jdonaldson/vaxe'
@@ -50,6 +50,10 @@ colorscheme jellybeans
 syntax on
 
 let mapleader=","
+
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabClosePreviewOnPopupclose = 1
+let g:ctrlp_working_path_mode = 'w'
 
 set encoding=utf-8
 set laststatus=2
@@ -78,6 +82,10 @@ set incsearch
 set ignorecase
 set smartcase
 
+set history=200
+set undolevels=200
+set ttyfast 
+
 set tags=./tags,tags;
 
 let g:airline_powerline_fonts = 1
@@ -91,10 +99,11 @@ if has("gui_running")
 endif
 
 " Custom key mappings
-map <C-\> :NERDTreeToggle<CR>
+map <C-\> :NERDTreeToggle<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-nmap <leader>r :TagbarToggle<CR>
+nmap <leader>r :TagbarToggle<cr>
+nmap <leader>. :CtrlPTag<cr>
 
 " Disable arrow keys (hardcore)
 map  <up>    <nop>
