@@ -63,6 +63,7 @@ set background=dark
 set bg=dark
 set backspace=indent,eol,start
 set textwidth=0
+set pastetoggle=<F12>
 
 set t_Co=256
 " set term=xterm-256color
@@ -104,6 +105,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nmap <leader>r :TagbarToggle<cr>
 nmap <leader>. :CtrlPTag<cr>
+no <F5> :make<cr>
 
 " Disable arrow keys (hardcore)
 map  <up>    <nop>
