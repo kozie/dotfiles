@@ -21,6 +21,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'nathanaelkane/vim-indent-guides'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'ervandew/supertab'
 Plugin 'majutsushi/tagbar'
@@ -51,6 +52,8 @@ syntax on
 
 let mapleader=","
 
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 2  
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupclose = 1
 let g:ctrlp_working_path_mode = 'w'
