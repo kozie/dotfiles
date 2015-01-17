@@ -64,5 +64,7 @@ Vagrant.configure(2) do |config|
 
     curl -o ~/.vimrc https://raw.githubusercontent.com/kozie/dotfiles/master/.vimrc
     curl -o ~/.tmux.conf https://raw.githubusercontent.com/kozie/dotfiles/master/.tmux.conf
+    
+    vim -c PluginInstall -c qa
   SHELL
 end
