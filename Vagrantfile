@@ -50,7 +50,10 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL, privileged: false
     sudo apt-get update -y
-    sudo apt-get install -y build-essential cmake python-dev git git-core tmux vim vim-common zsh irssi
+    sudo apt-get install -y build-essential python-dev git tmux vim zsh irssi
+    
+    curl -sL https://deb.nodesource.com/setup | sudo bash -
+    sudo apt-get install -y nodejs
 
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     
@@ -60,5 +63,6 @@ Vagrant.configure(2) do |config|
     zsh
 
     curl -o ~/.vimrc https://raw.githubusercontent.com/kozie/dotfiles/master/.vimrc
+    curl -o ~/.tmux.conf https://raw.githubusercontent.com/kozie/dotfiles/master/.tmux.conf
   SHELL
 end
