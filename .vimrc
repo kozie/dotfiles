@@ -19,7 +19,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'bling/vim-airline'
+" Plugin 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'nathanaelkane/vim-indent-guides'
 " Plugin 'Valloric/YouCompleteMe'
@@ -51,6 +52,16 @@ colorscheme jellybeans
 syntax on
 
 let mapleader=","
+
+let g:lightline = {
+  \ 'colorscheme': 'jellybeans',
+  \ 'component': {
+  \   'readonly': '%{&readonly?"⭤":""}',
+  \ },
+  \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+  \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+  \ }
+
 
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 2  
