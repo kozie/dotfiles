@@ -120,6 +120,9 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nmap <leader>r :TagbarToggle<cr>
 nmap <leader>. :CtrlPTag<cr>
 no <F5> :make<cr>
+inoremap jj <Esc>
+inoremap jk <Esc>
+
 
 " Disable arrow keys (hardcore)
 map  <up>    <nop>
