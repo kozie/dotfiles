@@ -56,12 +56,11 @@ let mapleader=","
 let g:lightline = {
   \ 'colorscheme': 'jellybeans',
   \ 'component': {
-  \   'readonly': '%{&readonly?"⭤":""}',
+  \   'readonly': '%{&readonly?"\ue0a2":""}',
   \ },
   \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
   \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
   \ }
-
 
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 2  
@@ -122,7 +121,6 @@ nmap <leader>. :CtrlPTag<cr>
 no <F5> :make<cr>
 inoremap jj <Esc>
 inoremap jk <Esc>
-
 
 " Disable arrow keys (hardcore)
 map  <up>    <nop>
