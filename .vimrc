@@ -71,6 +71,7 @@ let g:indent_guides_guide_size = 2
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupclose = 1
 let g:ctrlp_working_path_mode = 'w'
+let g:ack_default_options = "-H --nocolor --nogroup --column"
 
 set encoding=utf-8
 set laststatus=2
