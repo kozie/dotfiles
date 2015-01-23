@@ -13,6 +13,7 @@ Plugin 'L9'
 
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'mileszs/ack.vim'
 " Plugin 'altercation/vim-colors-solarized'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'pangloss/vim-javascript'
@@ -57,6 +58,9 @@ let g:lightline = {
   \ 'colorscheme': 'jellybeans',
   \ 'component': {
   \   'readonly': '%{&readonly?"\ue0a2":""}',
+  \ },
+  \ 'component_function': {
+  \   'mode': 'MyMode'
   \ },
   \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
   \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
@@ -131,3 +135,16 @@ map  <left>  <nop>
 imap <left>  <nop>
 map  <right> <nop>
 imap <right> <nop>
+
+function! MyMode()
+  let fname = expand('%:t')
+  return fname == '__Tagbar__' ? 'Tagbar' :
+        \ fname == 'ControlP' ? 'CtrlP' :
+        \ fname == '__Gundo__' ? 'Gundo' :
+        \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
+        \ fname =~ 'NERD_tree' ? 'NERDTree' :
+        \ &ft == 'unite' ? 'Unite' :
+        \ &ft == 'vimfiler' ? 'VimFiler' :
+        \ &ft == 'vimshell' ? 'VimShell' :
+        \ winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
