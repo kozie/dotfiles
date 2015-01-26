@@ -72,6 +72,7 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:ctrlp_working_path_mode = 'w'
 let g:ack_default_options = " -H --nocolor --nogroup --column"
+let g:PHP_outdentphpescape = 0
 
 set encoding=utf-8
 set laststatus=2
