@@ -48,7 +48,6 @@ Vagrant.configure(2) do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  # vim -c PluginInstall -c qa
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     sudo apt-get update -y
     sudo apt-get install -y build-essential python-dev git tmux vim zsh irssi ack-grep
@@ -65,5 +64,7 @@ Vagrant.configure(2) do |config|
 
     curl -o ~/.vimrc https://raw.githubusercontent.com/kozie/dotfiles/master/.vimrc
     curl -o ~/.tmux.conf https://raw.githubusercontent.com/kozie/dotfiles/master/.tmux.conf
+    
+    vim -e +PluginInstall +qa
   SHELL
 end
