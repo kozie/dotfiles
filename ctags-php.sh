@@ -1,8 +1,8 @@
 #!/bin/bash
 ctags -f ./tags \
-   -h \".php\" -R \
-   --exclude=\"\.svn\" \
-   --exclude=\"*\.js\" \
+   -h ".php" -R \
+   --exclude=".svn" \
+   --exclude="*.js" \
    --totals=yes \
    --tag-relative=yes \
    --PHP-kinds=+cf \
