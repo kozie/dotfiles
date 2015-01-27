@@ -120,6 +120,7 @@ endif
 
 " Custom key mappings
 map <C-\> :NERDTreeToggle<cr>
+map <leader>\ :NERDTree<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nmap <leader>r :TagbarToggle<cr>
