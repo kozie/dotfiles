@@ -2,15 +2,18 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+if has("win32")
+	set rtp+=~/vimfiles/bundle/Vundle.vim
+	let path='~/vimfiles/bundle'
+	call vundle#begin(path)
+else
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
+endif
 
-" let Vundle manage Vundle, required
+# Plugins! :D
 Plugin 'gmarik/Vundle.vim'
 Plugin 'L9'
-
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mileszs/ack.vim'
@@ -35,20 +38,17 @@ Plugin 'mattn/emmet-vim'
 " Plugin 'jdonaldson/vaxe'
 " Plugin 'leafo/moonscript-vim'
 
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
-"
+
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+
 colorscheme jellybeans
 syntax on
 
@@ -57,13 +57,13 @@ let mapleader=","
 let g:lightline = {
   \ 'colorscheme': 'jellybeans',
   \ 'component': {
-  \   'readonly': '%{&readonly?"\ue0a2":""}',
+  \   'readonly': '%{&readonly?"":""}',
   \ },
   \ 'component_function': {
   \   'mode': 'MyMode'
   \ },
-  \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-  \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+  \ 'separator': { 'left': "", 'right': "" },
+  \ 'subseparator': { 'left': "", 'right': "" }
   \ }
 
 let g:indent_guides_start_level = 2
@@ -113,9 +113,14 @@ let g:airline_theme = 'powerlineish'
 
 " Set gui stuff
 if has("gui_running")
-  " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
-  " set guifont=Meslo_LG_S_DZ_Regular_for_Powerline:h11
-  set guioptions-=rL
+  if has("win32")
+    set guifont=DejaVu_Sans_Mono_for_Powerline:h9
+  else
+    " set guifont=Meslo_LG_S_DZ_Regular_for_Powerline:h11
+  endif
+
+  set guioptions+=mTLlRrb
+  set guioptions-=mTLlRrb
 endif
 
 " Custom key mappings
