@@ -91,7 +91,6 @@ set textwidth=0
 set pastetoggle=<F12>
 
 set t_Co=256
-" set term=xterm-256color
 
 set number
 set hidden
@@ -114,8 +113,8 @@ set ttyfast
 
 set tags=./tags,tags;
 
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'powerlineish'
+" let g:airline_powerline_fonts = 1
+" let g:airline_theme = 'powerlineish'
 
 " Set gui stuff
 if has("gui_running")
@@ -124,13 +123,19 @@ if has("gui_running")
   else
     " set guifont=Meslo_LG_S_DZ_Regular_for_Powerline:h11
   endif
+  
+  " set term=xterm-256color
 
+  " Remove all tool-, menu- and scrollbars -_-'
   set guioptions+=mTLlRrb
   set guioptions-=mTLlRrb
   
+  " Disable that damn mouse!
+  set mouse=c
+  
   " sets the language of the menu (gvim) and messages / ui (vim)
   set langmenu=en_US.UTF-8
-  language en
+  let $LANG = 'en'
 endif
 
 " Custom key mappings
@@ -155,7 +160,7 @@ imap <left>  <nop>
 map  <right> <nop>
 imap <right> <nop>
 
-" MyMode function for lightline
+" Function for lightline
 function! MyMode()
   let fname = expand('%:t')
   return fname == '__Tagbar__' ? 'Tagbar' :
