@@ -127,6 +127,10 @@ if has("gui_running")
 
   set guioptions+=mTLlRrb
   set guioptions-=mTLlRrb
+  
+  " sets the language of the menu (gvim) and messages / ui (vim)
+  set langmenu=en_US.UTF-8
+  language en
 endif
 
 " Custom key mappings
