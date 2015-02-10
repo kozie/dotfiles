@@ -85,7 +85,6 @@ set laststatus=2
 set tabstop=2
 set shiftwidth=2
 set background=dark
-set bg=dark
 set backspace=indent,eol,start
 set textwidth=0
 set pastetoggle=<F12>
