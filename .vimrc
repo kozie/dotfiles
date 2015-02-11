@@ -81,6 +81,7 @@ let g:ack_default_options = " -H --nocolor --nogroup --column"
 let g:PHP_outdentphpescape = 0
 
 set encoding=utf-8
+set tenc=utf-8
 set laststatus=2
 set tabstop=2
 set shiftwidth=2
