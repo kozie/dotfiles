@@ -98,7 +98,7 @@ set linebreak
 set ruler
 set autoindent
 set smartindent
-set expandtab
+set noexpandtab
 set smarttab
 set cursorline
 
