@@ -111,7 +111,7 @@ set history=200
 set undolevels=200
 set ttyfast 
 
-set tags=./tags,tags;
+set tags+=./tags;
 
 " let g:airline_powerline_fonts = 1
 " let g:airline_theme = 'powerlineish'
@@ -139,16 +139,16 @@ if has("gui_running")
 endif
 
 " Custom key mappings
-map <C-\> :NERDTreeToggle<cr>
-map <leader>\ :NERDTree<cr>
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-nmap <leader>r :TagbarToggle<cr>
-nmap <leader>. :CtrlPTag<cr>
-inoremap <leader><Tab> <c-n>
+no <leader>n :NERDTreeFocus<cr>
+no <leader>\ :NERDTreeToggle<cr>
+nn <leader>ev :vsplit $MYVIMRC<cr>
+nn <leader>sv :source $MYVIMRC<cr>
+nm <leader>r :TagbarToggle<cr>
+nm <leader>. :CtrlPTag<cr>
+ino <leader><Tab> <c-n>
 no <F5> :make<cr>
-inoremap jj <Esc>
-inoremap jk <Esc>
+ino jj <Esc>
+ino jk <Esc>
 
 " Disable arrow keys (hardcore)
 map  <up>    <nop>
