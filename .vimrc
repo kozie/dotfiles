@@ -137,6 +137,12 @@ if has("gui_running")
   " sets the language of the menu (gvim) and messages / ui (vim)
   set langmenu=en_US.UTF-8
   let $LANG = 'en'
+else " If no GUI
+  " Fix block cursor thingy under screen/cygwin
+  let &t_ti.="\e[1 q"
+  let &t_SI.="\e[5 q"
+  let &t_EI.="\e[1 q"
+  let &t_te.="\e[0 q"
 endif
 
 " Custom key mappings
