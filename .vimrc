@@ -145,6 +145,8 @@ nn <leader>ev :vsplit $MYVIMRC<cr>
 nn <leader>sv :source $MYVIMRC<cr>
 nm <leader>r :TagbarToggle<cr>
 nm <leader>. :CtrlPTag<cr>
+nm <leader>o o<Esc>
+nm <leader>O O<Esc> 
 ino <leader><Tab> <c-n>
 no <F5> :make<cr>
 ino jj <Esc>
