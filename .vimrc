@@ -150,12 +150,16 @@ nn <leader>ev :vsplit $MYVIMRC<cr>
 nn <leader>sv :source $MYVIMRC<cr>
 nm <leader>r :TagbarToggle<cr>
 nm <leader>. :CtrlPTag<cr>
-nm <leader>o o<Esc>
-nm <leader>O O<Esc> 
+nn <CR> o<esc>
+nn <leader><CR> O<esc>
 ino <leader><Tab> <c-n>
 no <F5> :make<cr>
 ino jj <Esc>
 ino jk <Esc>
+
+" Fix Enter key (CR) in cli, quickfix and selection
+autocmd CmdwinEnter * nnoremap <CR> <CR>
+autocmd BufReadPost quickfix nnoremap <CR> <CR>
 
 " Disable arrow keys (hardcore)
 map  <up>    <nop>
