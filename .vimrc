@@ -15,26 +15,28 @@ endif
 Plugin 'gmarik/Vundle.vim'
 Plugin 'L9'
 
+" Custom plugins
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mileszs/ack.vim'
-" Plugin 'altercation/vim-colors-solarized'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'leafgarland/typescript-vim'
-" Plugin 'bling/vim-airline'
 Plugin 'itchyny/lightline.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'nathanaelkane/vim-indent-guides'
-" Plugin 'Valloric/YouCompleteMe'
 Plugin 'ervandew/supertab'
-Plugin 'majutsushi/tagbar'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-markdown'
-" Plugin 'Raimondi/delimitMate'
 Plugin 'mattn/emmet-vim'
+
+" Disabled plugins but interesting ones
+" Plugin 'altercation/vim-colors-solarized'
+" Plugin 'Raimondi/delimitMate'
+" Plugin 'kchmck/vim-coffee-script'
+" Plugin 'leafgarland/typescript-vim'
+" Plugin 'bling/vim-airline'
+" Plugin 'majutsushi/tagbar'
 " Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'jdonaldson/vaxe'
 " Plugin 'leafo/moonscript-vim'
@@ -44,32 +46,20 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
-"
+
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
+" :h Vundle
+
 " Put your non-Plugin stuff after this line
 colorscheme jellybeans
 syntax on
 
 let mapleader=","
-
-let g:lightline = {
-  \ 'colorscheme': 'jellybeans',
-  \ 'component': {
-  \   'readonly': '%{&readonly?"":""}',
-  \ },
-  \ 'component_function': {
-  \   'mode': 'MyMode'
-  \ },
-  \ 'separator': { 'left': "", 'right': "" },
-  \ 'subseparator': { 'left': "", 'right': "" }
-  \ }
-
+" Plugin configurations
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 2  
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
@@ -78,6 +68,8 @@ let g:ctrlp_working_path_mode = 'w'
 let g:ack_default_options = " -H --nocolor --nogroup --column"
 let g:ack_autoclose = 1
 let g:PHP_outdentphpescape = 0
+" let g:airline_powerline_fonts = 1
+" let g:airline_theme = 'powerlineish'
 
 set encoding=utf-8
 set tenc=utf-8
@@ -110,10 +102,8 @@ set history=200
 set undolevels=200
 set ttyfast 
 
+" ctags files
 set tags+=./tags;
-
-" let g:airline_powerline_fonts = 1
-" let g:airline_theme = 'powerlineish'
 
 " Set gui stuff
 if has("gui_running")
@@ -150,7 +140,7 @@ nn <tab> :b<space>
 nn <space> <c-w>
 nn <leader>ev :vsplit $MYVIMRC<cr>
 nn <leader>sv :source $MYVIMRC<cr>
-nm <leader>r :TagbarToggle<cr>
+"nm <leader>r :TagbarToggle<cr>
 nm <leader>. :CtrlPTag<cr>
 nn <CR> o<esc>
 nn <leader><CR> O<esc>
@@ -159,7 +149,7 @@ no <F5> :make<cr>
 ino jj <Esc>
 ino jk <Esc>
 
-" Fix Enter key (CR) in cli, quickfix and selection
+" Fix Enter key (CR) map in cli, quickfix and selection
 autocmd CmdwinEnter * nnoremap <CR> <CR>
 autocmd BufReadPost quickfix nnoremap <CR> <CR>
 
@@ -172,6 +162,11 @@ map  <left>  <nop>
 imap <left>  <nop>
 map  <right> <nop>
 imap <right> <nop>
+
+" Set nmake for windows environment
+if has("win32")
+  set makeprg=mingw32-make
+endif
 
 " Function for lightline
 function! MyMode()
@@ -187,7 +182,14 @@ function! MyMode()
         \ winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
-" Set nmake for windows environment
-if has("win32")
-  set makeprg=mingw32-make
-endif
+let g:lightline = {
+  \ 'colorscheme': 'jellybeans',
+  \ 'component': {
+  \   'readonly': '%{&readonly?"":""}',
+  \ },
+  \ 'component_function': {
+  \   'mode': 'MyMode'
+  \ },
+  \ 'separator': { 'left': "", 'right': "" },
+  \ 'subseparator': { 'left': "", 'right': "" }
+  \ }
