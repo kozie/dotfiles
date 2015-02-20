@@ -146,6 +146,7 @@ endif
 " Custom key mappings
 no <leader>n :NERDTreeFocus<cr>
 no <leader>\ :NERDTreeToggle<cr>
+nn <space> :b<space>
 nn <leader>ev :vsplit $MYVIMRC<cr>
 nn <leader>sv :source $MYVIMRC<cr>
 nm <leader>r :TagbarToggle<cr>
