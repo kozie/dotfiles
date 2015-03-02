@@ -1,6 +1,18 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# My simple setup of an ubuntu trusty 64bit dev environment with the following
+# extra packages installed:
+#
+# build-essential python python-dev python-setuptools git tmux vim zsh irssi
+# ack-grep sqlite nodejs 
+#
+# Also installs vim with my .vimrc, plugins and such, a .tmux.conf with one line
+# to fix screen buffer bugs. Also installs ZSH with OhMyZsh.
+#
+# Connect with:
+# ssh vagrant@192.168.33.10
+
 Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
@@ -45,12 +57,11 @@ Vagrant.configure(2) do |config|
   #   vb.memory = "1024"
   # end
 
-  # Enable provisioning with a shell script. Additional provisioners such as
-  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
-  # documentation for more information about their specific syntax and use.
+  # Provisioning! This is where the magic happens ^_^
+  # TODO: Add Django (https://www.howtoforge.com/tutorial/django-install-ubuntu-14.04)
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     sudo apt-get update -y
-    sudo apt-get install -y build-essential python-dev git tmux vim zsh irssi ack-grep
+    sudo apt-get install -y build-essential python python-dev python-setuptools git tmux vim zsh irssi ack-grep sqlite
     
     curl -sL https://deb.nodesource.com/setup | sudo bash -
     sudo apt-get install -y nodejs
