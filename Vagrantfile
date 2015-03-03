@@ -67,14 +67,14 @@ Vagrant.configure(2) do |config|
     sudo apt-get install -y nodejs
 
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    
-    curl -sL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sudo sh
-    sudo chsh -s $(which zsh) vagrant
-    sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
 
     curl -o ~/.vimrc https://raw.githubusercontent.com/kozie/dotfiles/master/.vimrc
     curl -o ~/.tmux.conf https://raw.githubusercontent.com/kozie/dotfiles/master/.tmux.conf
     
     vim -e +PluginInstall +qa
+    
+    curl -sL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+    sudo chsh -s $(which zsh) vagrant
+    sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
   SHELL
 end
