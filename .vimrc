@@ -29,6 +29,7 @@ Plugin 'ervandew/supertab'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-markdown'
 Plugin 'mattn/emmet-vim'
+Plugin 'tpope/vim-surround'
 
 " Disabled plugins but interesting ones
 " Plugin 'altercation/vim-colors-solarized'
