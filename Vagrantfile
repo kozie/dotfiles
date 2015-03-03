@@ -80,8 +80,8 @@ Vagrant.configure(2) do |config|
     echo "======================================="
     echo "Installing dotfiles"
     echo "======================================="
-    curl -o ~/.vimrc https://raw.githubusercontent.com/kozie/dotfiles/master/.vimrc
-    curl -o ~/.tmux.conf https://raw.githubusercontent.com/kozie/dotfiles/master/.tmux.conf
+    curl -so ~/.vimrc https://raw.githubusercontent.com/kozie/dotfiles/master/.vimrc
+    curl -so ~/.tmux.conf https://raw.githubusercontent.com/kozie/dotfiles/master/.tmux.conf
     vim +PluginInstall +qall
     
     echo "======================================="
