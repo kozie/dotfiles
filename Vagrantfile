@@ -58,27 +58,37 @@ Vagrant.configure(2) do |config|
   # end
 
   # Provisioning! This is where the magic happens ^_^
-  # Removed after Zsh install: chsh -s $(which zsh) vagrant
   # Removed manual start of: zsg
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
+    echo "======================================="
     echo "Updating system and installing packages"
+    echo "======================================="
     sudo apt-get update -y
     sudo apt-get install -y build-essential python python-dev python-setuptools git tmux vim zsh irssi ack-grep sqlite
     
+    echo "======================================="
     echo "Installing NodeJS"
+    echo "======================================="
     curl -sL https://deb.nodesource.com/setup | sudo bash -
     sudo apt-get install -y nodejs
 
+    echo "======================================="
     echo "Installing Vundle"
+    echo "======================================="
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+    echo "======================================="
     echo "Installing dotfiles"
+    echo "======================================="
     curl -o ~/.vimrc https://raw.githubusercontent.com/kozie/dotfiles/master/.vimrc
     curl -o ~/.tmux.conf https://raw.githubusercontent.com/kozie/dotfiles/master/.tmux.conf
     vim +PluginInstall +qall
     
+    echo "======================================="
     echo "Installing ZSH with Oh My Zsh"
+    echo "======================================="
     curl -sL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
     sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
+    chsh -s $(which zsh) vagrant
   SHELL
 end
