@@ -30,6 +30,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-markdown'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
 
 " Disabled plugins but interesting ones
 " Plugin 'altercation/vim-colors-solarized'
@@ -40,7 +41,6 @@ Plugin 'tpope/vim-surround'
 " Plugin 'majutsushi/tagbar'
 " Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'jdonaldson/vaxe'
-" Plugin 'leafo/moonscript-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
