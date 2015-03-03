@@ -58,7 +58,6 @@ Vagrant.configure(2) do |config|
   # end
 
   # Provisioning! This is where the magic happens ^_^
-  # Removed manual start of: zsg
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     echo "======================================="
     echo "Updating system and installing packages"
