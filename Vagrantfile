@@ -58,8 +58,7 @@ Vagrant.configure(2) do |config|
   # end
 
   # Provisioning! This is where the magic happens ^_^
-  # Removed after curl -sL https://raw.gi...
-  # sudo chsh -s $(which zsh) vagrant
+  # Removed manual start of: zsg
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     sudo apt-get update -y
     sudo apt-get install -y build-essential python python-dev python-setuptools git tmux vim zsh irssi ack-grep sqlite
@@ -70,8 +69,8 @@ Vagrant.configure(2) do |config|
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     
     curl -sL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sudo sh
+    sudo chsh -s $(which zsh) vagrant
     sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
-    zsh
 
     curl -o ~/.vimrc https://raw.githubusercontent.com/kozie/dotfiles/master/.vimrc
     curl -o ~/.tmux.conf https://raw.githubusercontent.com/kozie/dotfiles/master/.tmux.conf
