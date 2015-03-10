@@ -1,0 +1,13 @@
+[
+	{ "keys": ["f1"], "command": "goto_documentation" },
+	{ "keys": ["f2"], "command": "side_bar_rename" },
+	{ "keys": ["f8"], "command": "toggle_show_open_files" },
+	{ "keys": ["f9"], "command": "toggle_minimap" },
+	{ "keys": ["f10"], "command": "toggle_menu" },
+	{ "keys": ["f12"], "command": "goto_definition" },
+	{ "keys": ["ctrl+up"], "command": "move", "args": {"by": "stops", "forward": false, "empty_line": true} },
+	{ "keys": ["ctrl+down"], "command": "move", "args": {"by": "stops", "forward": true, "empty_line": true} },
+	{ "keys": ["ctrl+shift+d"], "command": "dev_docs_search_selection" },
+	{ "keys": ["ctrl+\\"], "command": "toggle_side_bar" },
+	{ "keys": ["ctrl+alt+n"], "command": "advanced_new_file_new"}
+]
