@@ -1,6 +1,6 @@
 # dotfiles
 
-Dotfiles i use in *nix environments
+These are my dotfiles. Use them if you like :)
 
 ### Sublime Packages
 - AdvancedNewFile
