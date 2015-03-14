@@ -8,7 +8,7 @@
 	"color_scheme": "Packages/Seti_UI/Scheme/Seti_monokai.tmTheme",
 	"draw_white_space": "selection",
 	"enable_tab_scrolling": false,
-	"ensure_newline_at_eof_on_save": true,
+	"ensure_newline_at_eof_on_save": false,
 	"fold_buttons": false,
 	"folder_exclude_patterns":
 	[
