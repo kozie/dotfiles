@@ -10,3 +10,4 @@ These are my dotfiles. Use them if you like :)
 - GotoDocumentation / DevDocs
 - SetiUI
 - SidebarEnhancements
+- Vintageous
