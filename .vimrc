@@ -20,6 +20,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mileszs/ack.vim'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'itchyny/lightline.vim'
@@ -33,7 +34,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 
 " Disabled plugins but interesting ones
-" Plugin 'altercation/vim-colors-solarized'
 " Plugin 'Raimondi/delimitMate'
 " Plugin 'kchmck/vim-coffee-script'
 " Plugin 'leafgarland/typescript-vim'
@@ -56,8 +56,15 @@ filetype plugin indent on    " required
 " :h Vundle
 
 " Put your non-Plugin stuff after this line
-colorscheme jellybeans
 syntax on
+
+if has("gui_running")
+  colorscheme solarized
+  set background=light
+else
+  colorscheme jellybeans
+  set background=dark
+endif
 
 let mapleader=","
 
@@ -78,7 +85,7 @@ set tenc=utf-8
 set laststatus=2
 set tabstop=2
 set shiftwidth=2
-set background=dark
+" set background=dark
 set backspace=indent,eol,start
 set textwidth=0
 set pastetoggle=<F12>
@@ -185,8 +192,14 @@ function! MyMode()
         \ winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
+if has("gui_running")
+  let llColorscheme = 'solarized_light'
+else
+  let llColorscheme = 'jellybeans'
+endif
+
 let g:lightline = {
-  \ 'colorscheme': 'jellybeans',
+  \ 'colorscheme': llColorscheme,
   \ 'component': {
   \   'readonly': '%{&readonly?"":""}',
   \ },
