@@ -59,11 +59,11 @@ filetype plugin indent on    " required
 syntax on
 
 if has("gui_running")
-  colorscheme solarized
-  set background=light
-else
   colorscheme jellybeans
   set background=dark
+else
+  colorscheme jellybeans
+  set background=light
 endif
 
 let mapleader=","
@@ -89,6 +89,7 @@ set shiftwidth=2
 set backspace=indent,eol,start
 set textwidth=0
 set pastetoggle=<F12>
+set autowrite
 
 set t_Co=256
 
@@ -193,7 +194,8 @@ function! MyMode()
 endfunction
 
 if has("gui_running")
-  let llColorscheme = 'solarized_light'
+  " let llColorscheme = 'solarized_light'
+  let llColorscheme = 'jellybeans'
 else
   let llColorscheme = 'jellybeans'
 endif
