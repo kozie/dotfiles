@@ -32,6 +32,8 @@ Plugin 'tpope/vim-markdown'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'tpope/vim-dispatch'
 
 " Disabled plugins but interesting ones
 " Plugin 'Raimondi/delimitMate'
@@ -57,12 +59,11 @@ filetype plugin indent on    " required
 
 " Put your non-Plugin stuff after this line
 syntax on
+colorscheme jellybeans
 
 if has("gui_running")
-  colorscheme jellybeans
   set background=dark
 else
-  colorscheme jellybeans
   set background=light
 endif
 
@@ -77,6 +78,7 @@ let g:ctrlp_working_path_mode = 'w'
 let g:ack_default_options = " -H --nocolor --nogroup --column"
 let g:ack_autoclose = 1
 let g:PHP_outdentphpescape = 0
+let g:neocomplcache_enable_at_startup = 1
 " let g:airline_powerline_fonts = 1
 " let g:airline_theme = 'powerlineish'
 
@@ -156,7 +158,7 @@ nm <leader>. :CtrlPTag<cr>
 nn <CR> o<esc>
 nn <leader><CR> O<esc>
 ino <leader><Tab> <c-n>
-no <F5> :make<cr>
+no <F5> :Make<cr>
 ino jj <Esc>
 ino jk <Esc>
 
