@@ -20,7 +20,7 @@
 		"dist",
 		"site"
 	],
-	"font_face": "DejaVu Sans Mono for Powerline",
+	"font_face": "Consolas",
 	"font_options":
 	[
 		"directwrite"
@@ -33,7 +33,7 @@
 		"Vintage"
 	],
 	"inverse_caret_state": true,
-	"line_padding_bottom": -1,
+	"line_padding_bottom": 0,
 	"line_padding_top": -1,
 	"minimap_scroll_to_clicked_text": true,
 	"overlay_scroll_bars": "enabled",
@@ -50,5 +50,6 @@
 	"trim_trailing_white_space_on_save": false,
 	"vintage_ctrl_keys": true,
 	"vintage_start_in_command_mode": true,
-	"word_wrap": false
+	"vintageous_use_ctrl_keys": true,
+	"word_wrap": true
 }
