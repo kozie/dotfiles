@@ -50,6 +50,7 @@
 	"trim_trailing_white_space_on_save": false,
 	"vintage_ctrl_keys": true,
 	"vintage_start_in_command_mode": true,
+	"vintageous_reset_mode_when_switching_tabs": false,
 	"vintageous_use_ctrl_keys": true,
 	"word_wrap": true
 }
