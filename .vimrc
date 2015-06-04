@@ -161,6 +161,8 @@ ino <leader><Tab> <c-n>
 no <F5> :Make<cr>
 ino jj <Esc>
 ino jk <Esc>
+no j gj
+no k gk
 
 " Fix Enter key (CR) map in cli, quickfix and selection
 autocmd CmdwinEnter * nnoremap <CR> <CR>
