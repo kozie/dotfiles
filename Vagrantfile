@@ -64,7 +64,6 @@ Vagrant.configure(2) do |config|
   	v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
   end
 
-
   # Provisioning! This is where the magic happens ^_^
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     echo "======================================="
