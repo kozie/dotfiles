@@ -56,6 +56,14 @@ Vagrant.configure(2) do |config|
   #   # Customize the amount of memory on the VM:
   #   vb.memory = "1024"
   # end
+  
+  # Boost internet connection 
+  # See http://serverfault.com/questions/495914/vagrant-slow-internet-connection-in-guest#answer-595010
+  config.vm.provider "virtualbox" do |v|
+  	v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+  	v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+  end
+
 
   # Provisioning! This is where the magic happens ^_^
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
