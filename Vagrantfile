@@ -61,7 +61,7 @@ Vagrant.configure(2) do |config|
   # See http://serverfault.com/questions/495914/vagrant-slow-internet-connection-in-guest#answer-595010
   config.vm.provider "virtualbox" do |v|
   	v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-  	v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+  	#v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
   end
 
   # Provisioning! This is where the magic happens ^_^
@@ -70,7 +70,7 @@ Vagrant.configure(2) do |config|
     echo "Updating system and installing packages"
     echo "======================================="
     sudo apt-get update -y
-    sudo apt-get install -y build-essential python python-dev python-setuptools git tmux vim zsh irssi ack-grep sqlite
+    sudo apt-get install -y build-essential python python-dev python-setuptools git tmux vim zsh irssi ack-grep sqlite default-jre cmake
     
     echo "======================================="
     echo "Installing NodeJS"
@@ -95,6 +95,6 @@ Vagrant.configure(2) do |config|
     echo "======================================="
     curl -sL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
     sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
-    chsh -s $(which zsh) vagrant
+    sudo chsh -s $(which zsh) vagrant
   SHELL
 end
