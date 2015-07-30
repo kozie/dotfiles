@@ -34,6 +34,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'tpope/vim-dispatch'
+Plugin 'scrooloose/nerdcommenter'
 
 " Disabled plugins but interesting ones
 " Plugin 'Raimondi/delimitMate'
