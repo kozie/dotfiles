@@ -113,7 +113,11 @@ set smartcase
 
 set history=200
 set undolevels=200
-set ttyfast 
+set ttyfast
+
+" Whitespace chars
+set listchars=tab:▸\ 
+set list!
 
 " ctags files
 set tags+=./tags;
