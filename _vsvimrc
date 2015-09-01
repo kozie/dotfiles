@@ -1,0 +1,7 @@
+set ignorecase
+set smartcase
+
+ino jj <Esc>
+ino jk <Esc>
+no j gj
+no k gk
