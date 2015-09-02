@@ -133,7 +133,9 @@ if has("gui_running")
   endif
   
   " set term=xterm-256color
-
+  " Set window size
+  set lines=59 columns=149
+  
   " Remove all tool-, menu- and scrollbars -_-'
   set guioptions+=mTLlRrb
   set guioptions-=mTLlRrb
