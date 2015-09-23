@@ -126,8 +126,7 @@ set tags+=./tags;
 if has("gui_running")
   " Set correct fonts. See https://github.com/powerline/fonts
   if has("win32")
-    "set guifont=Input:h9
-    set guifont=Powerline_Consolas:h9
+    set guifont=Dejavu_Sans_Mono_for_Powerline:h9
   else " Probably MacVim ;)
     set guifont=Meslo_LG_S_DZ_Regular_for_Powerline:h11
   endif
