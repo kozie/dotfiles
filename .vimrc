@@ -122,6 +122,9 @@ set list!
 " ctags files
 set tags+=./tags;
 
+set wildmenu
+"set wildmode=list:longest,full
+
 " Set gui stuff
 if has("gui_running")
   " Set correct fonts. See https://github.com/powerline/fonts
