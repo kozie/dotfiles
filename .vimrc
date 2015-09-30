@@ -23,7 +23,6 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
-Plugin 'itchyny/lightline.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ervandew/supertab'
@@ -35,12 +34,13 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'bling/vim-airline'
 
 " Disabled plugins but interesting ones
 " Plugin 'Raimondi/delimitMate'
 " Plugin 'kchmck/vim-coffee-script'
 " Plugin 'leafgarland/typescript-vim'
-" Plugin 'bling/vim-airline'
+" Plugin 'itchyny/lightline.vim'
 " Plugin 'majutsushi/tagbar'
 " Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'jdonaldson/vaxe'
@@ -80,8 +80,8 @@ let g:ack_default_options = " -H --nocolor --nogroup --column"
 let g:ack_autoclose = 1
 let g:PHP_outdentphpescape = 0
 let g:neocomplcache_enable_at_startup = 1
-" let g:airline_powerline_fonts = 1
-" let g:airline_theme = 'powerlineish'
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'jellybeans'
 
 set encoding=utf-8
 set tenc=utf-8
@@ -90,7 +90,7 @@ set tabstop=2
 set shiftwidth=2
 " set background=dark
 set backspace=indent,eol,start
-set textwidth=0
+set textwidth=80
 set pastetoggle=<F12>
 set autowrite
 
