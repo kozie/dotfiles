@@ -149,6 +149,9 @@ if has("gui_running")
   set langmenu=en_US.UTF-8
   let $LANG = 'en'
 else " If no GUI
+  " Enable mouse (for scrolling)
+  set mouse=a
+  
   " Fix block cursor thingy under screen/cygwin
   let &t_ti.="\e[1 q"
   let &t_SI.="\e[5 q"
