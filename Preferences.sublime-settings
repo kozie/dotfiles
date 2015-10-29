@@ -1,15 +1,14 @@
 {
-	"Seti_tabs_small": true,
 	"always_show_minimap_viewport": true,
-	"auto_complete": false,
+	"auto_complete": true,
 	"bold_folder_labels": true,
 	"caret_extra_width": 2,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
+	"color_scheme": "Packages/Base16 Color Schemes/base16-tomorrow.dark.tmTheme",
 	"draw_white_space": "selection",
 	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": false,
-	"fold_buttons": false,
+	"fold_buttons": true,
 	"folder_exclude_patterns":
 	[
 		".svn",
@@ -20,7 +19,7 @@
 		"dist",
 		"site"
 	],
-	"font_face": "Consolas",
+	"font_face": "DejaVu Sans Mono",
 	"font_options":
 	[
 		"directwrite"
@@ -34,22 +33,15 @@
 	],
 	"inverse_caret_state": true,
 	"line_padding_bottom": 0,
-	"line_padding_top": -1,
+	"line_padding_top": 0,
 	"minimap_scroll_to_clicked_text": true,
 	"overlay_scroll_bars": "enabled",
-	"rulers":
-	[
-		80,
-		120
-	],
+	"rulers": [80],
 	"scroll_speed": 5.0,
 	"show_encoding": true,
 	"show_line_endings": true,
-	"sidebar_small": true,
 	"theme": "Seti.sublime-theme",
 	"trim_trailing_white_space_on_save": false,
-	"vintage_ctrl_keys": true,
-	"vintage_start_in_command_mode": true,
 	"vintageous_reset_mode_when_switching_tabs": false,
 	"vintageous_use_ctrl_keys": true,
 	"word_wrap": true
