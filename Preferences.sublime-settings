@@ -4,7 +4,7 @@
 	"bold_folder_labels": true,
 	"caret_extra_width": 2,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Base16 Color Schemes/base16-tomorrow.dark.tmTheme",
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-OceanicNext.tmTheme",
 	"draw_white_space": "selection",
 	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": false,
@@ -19,7 +19,7 @@
 		"dist",
 		"site"
 	],
-	"font_face": "DejaVu Sans Mono",
+	"font_face": "Fira Code",
 	"font_options":
 	[
 		"directwrite"
@@ -31,16 +31,23 @@
 	[
 		"Vintage"
 	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
 	"inverse_caret_state": true,
 	"line_padding_bottom": 0,
 	"line_padding_top": 0,
+	"material_theme_small_statusbar": true,
+	"material_theme_small_tab": true,
 	"minimap_scroll_to_clicked_text": true,
 	"overlay_scroll_bars": "enabled",
 	"rulers": [80],
 	"scroll_speed": 5.0,
 	"show_encoding": true,
 	"show_line_endings": true,
-	"theme": "Seti.sublime-theme",
+	"theme": "Material-Theme.sublime-theme",
 	"trim_trailing_white_space_on_save": false,
 	"vintageous_reset_mode_when_switching_tabs": false,
 	"vintageous_use_ctrl_keys": true,
