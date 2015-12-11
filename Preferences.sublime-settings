@@ -44,7 +44,7 @@
 	"minimap_scroll_to_clicked_text": true,
 	"overlay_scroll_bars": "enabled",
 	"rulers": [80],
-	"scroll_speed": 5.0,
+	"scroll_speed": 0.5,
 	"show_encoding": true,
 	"show_line_endings": true,
 	"tab_size": 2,
