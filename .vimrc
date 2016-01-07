@@ -34,6 +34,8 @@ Plugin 'Shougo/neocomplcache.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'hail2u/vim-css3-syntax'
 
 " Disabled plugins but interesting ones
 " Plugin 'nanotech/jellybeans.vim'
@@ -73,7 +75,7 @@ let mapleader=","
 
 " Plugin configurations
 let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 2  
+let g:indent_guides_guide_size = 1  
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:ctrlp_working_path_mode = 'w'
@@ -117,8 +119,8 @@ set undolevels=200
 set ttyfast
 
 " Whitespace chars
-set listchars=tab:▸\ 
-set list!
+"set listchars=tab:▸\ 
+"set list!
 
 " ctags files
 set tags+=./tags;
