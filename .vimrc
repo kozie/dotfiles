@@ -19,7 +19,7 @@ Plugin 'L9'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mileszs/ack.vim'
-Plugin 'morhetz/gruvbox'
+Plugin 'nanotech/jellybeans.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'terryma/vim-multiple-cursors'
@@ -38,7 +38,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'hail2u/vim-css3-syntax'
 
 " Disabled plugins but interesting ones
-" Plugin 'nanotech/jellybeans.vim'
+" Plugin 'morhetz/gruvbox'
 " Plugin 'altercation/vim-colors-solarized'
 " Plugin 'Raimondi/delimitMate'
 " Plugin 'kchmck/vim-coffee-script'
@@ -63,12 +63,12 @@ filetype plugin indent on    " required
 
 " Put your non-Plugin stuff after this line
 syntax on
-colorscheme gruvbox
+colorscheme jellybeans
 
 if has("gui_running")
   set background=dark
 else
-  set background=dark "light
+  set background=light
 endif
 
 let mapleader=","
@@ -84,7 +84,7 @@ let g:ack_autoclose = 1
 let g:PHP_outdentphpescape = 0
 let g:neocomplcache_enable_at_startup = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'jellybeans'
 
 set encoding=utf-8
 set tenc=utf-8
