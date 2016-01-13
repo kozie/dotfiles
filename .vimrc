@@ -25,8 +25,6 @@ Plugin 'elzr/vim-json'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ervandew/supertab'
-Plugin 'groenewege/vim-less'
-Plugin 'tpope/vim-markdown'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
@@ -36,6 +34,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'hail2u/vim-css3-syntax'
+Plugin 'nvie/vim-flake8'
 
 " Disabled plugins but interesting ones
 " Plugin 'morhetz/gruvbox'
@@ -47,6 +46,8 @@ Plugin 'hail2u/vim-css3-syntax'
 " Plugin 'majutsushi/tagbar'
 " Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'jdonaldson/vaxe'
+" Plugin 'groenewege/vim-less'
+" Plugin 'tpope/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -91,7 +92,6 @@ set tenc=utf-8
 set laststatus=2
 set tabstop=2
 set shiftwidth=2
-" set background=dark
 set backspace=indent,eol,start
 set textwidth=80
 set pastetoggle=<F12>
@@ -126,7 +126,7 @@ set ttyfast
 set tags+=./tags;
 
 set wildmenu
-"set wildmode=list:longest,full
+set wildmode=list:longest,full
 
 " Set gui stuff
 if has("gui_running")
