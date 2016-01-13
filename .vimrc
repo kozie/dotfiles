@@ -77,6 +77,7 @@ endif
 let mapleader=","
 
 " Plugin configurations
+let python_highlight_all = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1  
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
@@ -233,3 +234,12 @@ let g:lightline = {
   \ 'separator': { 'left': "", 'right': "" },
   \ 'subseparator': { 'left': "", 'right': "" }
   \ }
+
+" Python syntactic sugar
+au BufNewFile,BufRead *.py
+  \ set tabstop=4
+  \ set softtabstop=4
+  \ set shiftwidth=4
+  \ set textwidth=79
+  \ set expandtab
+  \ set autoindent
