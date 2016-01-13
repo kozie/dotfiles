@@ -3,6 +3,8 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 if has("win32")
+	set directory=.,$TEMP " Set path where VIM can write ;)
+
 	set rtp+=~/vimfiles/bundle/Vundle.vim
 	let path='~/vimfiles/bundle'
 	call vundle#begin(path)
