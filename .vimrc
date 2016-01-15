@@ -131,6 +131,9 @@ set tags+=./tags;
 set wildmenu
 set wildmode=list:longest,full
 
+set foldmethod=indent
+set foldlevel=99
+
 " Set gui stuff
 if has("gui_running")
   " Set correct fonts. See https://github.com/powerline/fonts
