@@ -3,14 +3,15 @@
 These are my dotfiles. Use them if you like :)
 
 ### Sublime Packages
+- 1337 color schemes
 - AdvancedNewFile
+- All Autocomplete
 - Babel
-- Base16
 - BracketHighlighter
 - DevDocs
 - DocBlockr
 - Emmet
 - HexViewer
-- SetiUI
+- Seti UI (Seti UX)
 - SidebarEnhancements
 - Vintageous
