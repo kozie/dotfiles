@@ -4,11 +4,11 @@
 	"bold_folder_labels": true,
 	"caret_extra_width": 2,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-OceanicNext.tmTheme",
+	"color_scheme": "Packages/1337 Color Scheme/1337.tmTheme",
 	"draw_white_space": "selection",
 	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": false,
-	"fold_buttons": true,
+	"fold_buttons": false,
 	"folder_exclude_patterns":
 	[
 		".svn",
@@ -19,7 +19,7 @@
 		"dist",
 		"site"
 	],
-	"font_face": "Fira Code",
+	"font_face": "DejaVu Sans Mono",
 	"font_options":
 	[
 		"directwrite"
@@ -43,12 +43,15 @@
 	"material_theme_small_tab": true,
 	"minimap_scroll_to_clicked_text": true,
 	"overlay_scroll_bars": "enabled",
-	"rulers": [80],
+	"rulers":
+	[
+		80
+	],
 	"scroll_speed": 0.5,
 	"show_encoding": true,
 	"show_line_endings": true,
 	"tab_size": 2,
-	"theme": "Material-Theme.sublime-theme",
+	"theme": "Seti.sublime-theme",
 	"trim_trailing_white_space_on_save": false,
 	"vintageous_reset_mode_when_switching_tabs": false,
 	"vintageous_use_ctrl_keys": true,
