@@ -15,3 +15,4 @@ These are my dotfiles. Use them if you like :)
 - Seti UI (Seti UX)
 - SidebarEnhancements
 - Vintageous
+- Wrap Plus
