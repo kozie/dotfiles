@@ -37,6 +37,7 @@ Plugin 'bling/vim-airline'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'nvie/vim-flake8'
+Plugin 'Align'
 
 " Disabled plugins but interesting ones
 " Plugin 'morhetz/gruvbox'
