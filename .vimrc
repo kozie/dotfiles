@@ -33,7 +33,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'nvie/vim-flake8'
@@ -72,7 +73,7 @@ colorscheme jellybeans
 if has("gui_running")
   set background=dark
 else
-  set background=light
+  set background=dark "light
 endif
 
 let mapleader=","
