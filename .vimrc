@@ -85,6 +85,7 @@ let g:indent_guides_guide_size = 1
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:ctrlp_working_path_mode = 'w'
+let g:ctrlp_custom_ignore = '\v[\/]node_modules$'
 let g:ack_default_options = " -H --nocolor --nogroup --column"
 let g:ack_autoclose = 1
 let g:PHP_outdentphpescape = 0
@@ -132,6 +133,7 @@ set tags+=./tags;
 
 set wildmenu
 set wildmode=list:longest,full
+set wildignore+=*/node_modules/*
 
 set foldmethod=indent
 set foldlevel=99
