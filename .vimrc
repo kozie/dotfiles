@@ -22,6 +22,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mileszs/ack.vim'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'terryma/vim-multiple-cursors'
@@ -30,7 +31,7 @@ Plugin 'ervandew/supertab'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/neocomplcache.vim'
+Plugin 'Shougo/neocomplete.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-airline/vim-airline'
@@ -42,7 +43,6 @@ Plugin 'Align'
 
 " Disabled plugins but interesting ones
 " Plugin 'morhetz/gruvbox'
-" Plugin 'altercation/vim-colors-solarized'
 " Plugin 'Raimondi/delimitMate'
 " Plugin 'kchmck/vim-coffee-script'
 " Plugin 'leafgarland/typescript-vim'
@@ -68,7 +68,7 @@ filetype plugin indent on    " required
 
 " Put your non-Plugin stuff after this line
 syntax on
-colorscheme jellybeans
+colorscheme jellybeans " solarized
 
 if has("gui_running")
   set background=dark
@@ -89,9 +89,21 @@ let g:ctrlp_custom_ignore = '\v[\/]node_modules$'
 let g:ack_default_options = " -H --nocolor --nogroup --column"
 let g:ack_autoclose = 1
 let g:PHP_outdentphpescape = 0
-let g:neocomplcache_enable_at_startup = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'jellybeans'
+let g:airline_theme = 'jellybeans' " 'solarized'
+
+" Autocomplete settings
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 set encoding=utf-8
 set tenc=utf-8
@@ -208,39 +220,6 @@ imap <right> <nop>
 if has("win32")
   set makeprg=mingw32-make
 endif
-
-" Function for lightline
-function! MyMode()
-  let fname = expand('%:t')
-  return fname == '__Tagbar__' ? 'Tagbar' :
-        \ fname == 'ControlP' ? 'CtrlP' :
-        \ fname == '__Gundo__' ? 'Gundo' :
-        \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
-        \ fname =~ 'NERD_tree' ? 'NERDTree' :
-        \ &ft == 'unite' ? 'Unite' :
-        \ &ft == 'vimfiler' ? 'VimFiler' :
-        \ &ft == 'vimshell' ? 'VimShell' :
-        \ winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
-
-if has("gui_running")
-  " let llColorscheme = 'solarized_light'
-  let llColorscheme = 'jellybeans'
-else
-  let llColorscheme = 'jellybeans'
-endif
-
-let g:lightline = {
-  \ 'colorscheme': llColorscheme,
-  \ 'component': {
-  \   'readonly': '%{&readonly?"":""}',
-  \ },
-  \ 'component_function': {
-  \   'mode': 'MyMode'
-  \ },
-  \ 'separator': { 'left': "", 'right': "" },
-  \ 'subseparator': { 'left': "", 'right': "" }
-  \ }
 
 " Python syntactic sugar
 au BufNewFile,BufRead *.py
