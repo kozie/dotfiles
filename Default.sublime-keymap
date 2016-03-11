@@ -1,4 +1,4 @@
-
+[
 	{ "keys": ["f1"], "command": "dev_docs_search_selection" },
 	{ "keys": ["f2"], "command": "side_bar_rename" },
 	{ "keys": ["f8"], "command": "toggle_show_open_files" },
