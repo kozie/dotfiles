@@ -156,7 +156,8 @@ if has("gui_running")
   if has("win32")
     set guifont=Dejavu_Sans_Mono_for_Powerline:h9
   else " Probably MacVim ;)
-    set guifont=Meslo_LG_S_DZ_Regular_for_Powerline:h11
+    "set guifont=Meslo_LG_S_DZ_Regular_for_Powerline:h11
+    set guifont=Hack:h11
   endif
   
   " set term=xterm-256color
