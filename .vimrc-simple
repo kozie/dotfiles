@@ -1,0 +1,149 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+if has("win32")
+	set directory=.,$TEMP " Set path where VIM can write ;)
+
+	set rtp+=~/vimfiles/bundle/Vundle.vim
+	let path='~/vimfiles/bundle'
+	call vundle#begin(path)
+else
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
+endif
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'L9'
+
+" Custom plugins
+Plugin 'scrooloose/nerdtree'
+Plugin 'morhetz/gruvbox'
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'hail2u/vim-css3-syntax'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+
+" Put your non-Plugin stuff after this line
+syntax on
+colorscheme gruvbox
+set background=dark
+
+let mapleader=","
+
+" Plugin configurations
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:PHP_outdentphpescape = 0
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'badwolf' " 'jellybeans', 'solarized'
+
+set encoding=utf-8
+set tenc=utf-8
+set laststatus=2
+set tabstop=2
+set shiftwidth=2
+set backspace=indent,eol,start
+set textwidth=80
+set pastetoggle=<F12>
+set autowrite
+
+set t_Co=256
+
+set number
+set hidden
+set linebreak
+set ruler
+set autoindent
+set smartindent
+set noexpandtab
+set smarttab
+set cursorline
+
+set nohlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set history=200
+set undolevels=200
+set ttyfast
+
+set wildmenu
+set wildmode=list:longest,full
+set wildignore+=*/node_modules/*
+
+set foldmethod=indent
+set foldlevel=99
+
+" Enable mouse (for scrolling)
+set mouse=a
+  
+" Fix block cursor thingy under screen/cygwin
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
+
+" Custom key mappings
+no <leader>n :NERDTreeFocus<cr>
+no <leader>\ :NERDTreeToggle<cr>
+nn <leader>r :call NumberToggle()<cr>
+nn <tab> :b<space>
+nn <space> <c-w>
+nn <leader>ev :vsplit $MYVIMRC<cr>
+nn <leader>sv :source $MYVIMRC<cr>
+nn <CR> o<esc>
+nn <leader><CR> O<esc>
+ino <leader><Tab> <c-n>
+ino jj <Esc>
+ino jk <Esc>
+no j gj
+no k gk
+
+" Relative mode switching
+autocmd InsertEnter * :call DisableRelNo()
+autocmd InsertLeave * :call EnableRelNo()
+
+" Fix Enter key (CR) map in cli, quickfix and selection
+autocmd CmdwinEnter * nnoremap <CR> <CR>
+autocmd BufReadPost quickfix nnoremap <CR> <CR>
+
+" Python syntactic sugar
+au BufNewFile,BufRead *.py
+  \ set tabstop=4 |
+  \ set softtabstop=4 |
+  \ set shiftwidth=4 |
+  \ set expandtab
+
+" Function to toggle between line numbers and relativenumbers
+function! NumberToggle()
+	if(&relativenumber == 1)
+		call DisableRelNo()
+	else
+		call EnableRelNo()
+	endif
+endfunc
+
+function! EnableRelNo()
+	set number
+	set relativenumber
+endfunc
+
+function! DisableRelNo()
+	set number
+	set norelativenumber
+endfunc
