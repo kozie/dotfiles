@@ -205,6 +205,10 @@ ino jk <Esc>
 no j gj
 no k gk
 
+" Relative mode switching
+autocmd InsertEnter * :call DisableRelNo()
+autocmd InsertLeave * :call EnableRelNo()
+
 " Fix Enter key (CR) map in cli, quickfix and selection
 autocmd CmdwinEnter * nnoremap <CR> <CR>
 autocmd BufReadPost quickfix nnoremap <CR> <CR>
@@ -234,9 +238,18 @@ au BufNewFile,BufRead *.py
 " Function to toggle between line numbers and relativenumbers
 function! NumberToggle()
 	if(&relativenumber == 1)
-		set number " vim 7.3
-		set norelativenumber " vim 7.4+
+		call DisableRelNo()
 	else
-		set relativenumber
+		call EnableRelNo()
 	endif
+endfunc
+
+function! EnableRelNo()
+	set number
+	set relativenumber
+endfunc
+
+function! DisableRelNo()
+	set number
+	set norelativenumber
 endfunc
