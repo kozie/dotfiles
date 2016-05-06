@@ -22,7 +22,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mileszs/ack.vim'
 Plugin 'nanotech/jellybeans.vim'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'morhetz/gruvbox'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'terryma/vim-multiple-cursors'
@@ -42,7 +42,7 @@ Plugin 'nvie/vim-flake8'
 Plugin 'Align'
 
 " Disabled plugins but interesting ones
-" Plugin 'morhetz/gruvbox'
+" Plugin 'altercation/vim-colors-solarized'
 " Plugin 'Raimondi/delimitMate'
 " Plugin 'kchmck/vim-coffee-script'
 " Plugin 'leafgarland/typescript-vim'
@@ -68,7 +68,7 @@ filetype plugin indent on    " required
 
 " Put your non-Plugin stuff after this line
 syntax on
-colorscheme jellybeans " solarized
+colorscheme gruvbox " jellybeans, solarized
 
 if has("gui_running")
   set background=dark
@@ -90,7 +90,7 @@ let g:ack_default_options = " -H --nocolor --nogroup --column"
 let g:ack_autoclose = 1
 let g:PHP_outdentphpescape = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'jellybeans' " 'solarized'
+let g:airline_theme = 'badwolf' " 'jellybeans', 'solarized'
 
 " Autocomplete settings
 let g:acp_enableAtStartup = 0
@@ -154,10 +154,11 @@ set foldlevel=99
 if has("gui_running")
   " Set correct fonts. See https://github.com/powerline/fonts
   if has("win32")
-    set guifont=Dejavu_Sans_Mono_for_Powerline:h9
+    "set guifont=Dejavu_Sans_Mono_for_Powerline:h9
+    set guifont=Hack:h9
   else " Probably MacVim ;)
     "set guifont=Meslo_LG_S_DZ_Regular_for_Powerline:h11
-    set guifont=Hack:h11
+    set guifont=Hack:h12
   endif
   
   " set term=xterm-256color
@@ -188,6 +189,7 @@ endif
 " Custom key mappings
 no <leader>n :NERDTreeFocus<cr>
 no <leader>\ :NERDTreeToggle<cr>
+nn <leader>r :call NumberToggle()<cr>
 nn <tab> :b<space>
 nn <space> <c-w>
 nn <leader>ev :vsplit $MYVIMRC<cr>
@@ -228,3 +230,13 @@ au BufNewFile,BufRead *.py
   \ set softtabstop=4 |
   \ set shiftwidth=4 |
   \ set expandtab
+
+" Function to toggle between line numbers and relativenumbers
+function! NumberToggle()
+	if(&relativenumber == 1)
+		set number " vim 7.3
+		set norelativenumber " vim 7.4+
+	else
+		set relativenumber
+	endif
+endfunc
