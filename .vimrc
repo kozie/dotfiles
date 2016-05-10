@@ -118,6 +118,7 @@ set autowrite
 set t_Co=256
 
 set number
+set relativenumber
 set hidden
 set linebreak
 set ruler
