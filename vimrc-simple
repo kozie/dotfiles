@@ -22,7 +22,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
-Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
@@ -45,8 +45,7 @@ set background=dark
 let mapleader=","
 
 " Plugin configurations
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
+let g:indentLine_color_term = 239
 let g:PHP_outdentphpescape = 0
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'badwolf' " 'jellybeans', 'solarized'
