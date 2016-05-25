@@ -26,7 +26,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 Plugin 'ervandew/supertab'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
@@ -80,8 +80,7 @@ let mapleader=","
 
 " Plugin configurations
 let python_highlight_all = 1
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1  
+let g:indentLine_color_term = 239
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:ctrlp_working_path_mode = 'w'
