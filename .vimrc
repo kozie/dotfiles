@@ -21,8 +21,7 @@ Plugin 'L9'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mileszs/ack.vim'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'morhetz/gruvbox'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'terryma/vim-multiple-cursors'
@@ -42,6 +41,8 @@ Plugin 'nvie/vim-flake8'
 Plugin 'Align'
 
 " Disabled plugins but interesting ones
+" Plugin 'nanotech/jellybeans.vim'
+" Plugin 'morhetz/gruvbox'
 " Plugin 'altercation/vim-colors-solarized'
 " Plugin 'Raimondi/delimitMate'
 " Plugin 'kchmck/vim-coffee-script'
@@ -68,7 +69,7 @@ filetype plugin indent on    " required
 
 " Put your non-Plugin stuff after this line
 syntax on
-colorscheme gruvbox " jellybeans, solarized
+colorscheme Tomorrow-Night " gruvbox, jellybeans, solarized
 
 if has("gui_running")
   set background=dark
@@ -89,7 +90,7 @@ let g:ack_default_options = " -H --nocolor --nogroup --column"
 let g:ack_autoclose = 1
 let g:PHP_outdentphpescape = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'badwolf' " 'jellybeans', 'solarized'
+let g:airline_theme = 'tomorrow' " 'badwolf' (gruvbox), 'jellybeans', 'solarized'
 
 " Autocomplete settings
 let g:acp_enableAtStartup = 0
