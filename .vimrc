@@ -187,6 +187,12 @@ else " If no GUI
   let &t_te.="\e[0 q"
 endif
 
+" Italic stuff
+highlight Comment gui=italic
+highlight Comment cterm=italic
+highlight htmlArg gui=italic
+highlight htmlArg cterm=italic
+
 " Custom key mappings
 no <leader>n :NERDTreeFocus<cr>
 no <leader>\ :NERDTreeToggle<cr>
