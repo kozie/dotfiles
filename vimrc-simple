@@ -91,6 +91,12 @@ set foldlevel=99
 
 " Enable mouse (for scrolling)
 set mouse=a
+
+" Italic stuff
+highlight Comment gui=italic
+highlight Comment cterm=italic
+highlight htmlArg gui=italic
+highlight htmlArg cterm=italic
   
 " Fix block cursor thingy under screen/cygwin
 let &t_ti.="\e[1 q"
