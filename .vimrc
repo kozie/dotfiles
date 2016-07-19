@@ -19,8 +19,8 @@ Plugin 'L9'
 
 " Custom plugins
 Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
@@ -37,6 +37,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'hail2u/vim-css3-syntax'
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-markdown'
 Plugin 'nvie/vim-flake8'
 Plugin 'Align'
 
@@ -51,8 +53,6 @@ Plugin 'Align'
 " Plugin 'majutsushi/tagbar'
 " Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'jdonaldson/vaxe'
-" Plugin 'groenewege/vim-less'
-" Plugin 'tpope/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -86,8 +86,8 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:ctrlp_working_path_mode = 'w'
 let g:ctrlp_custom_ignore = '\v[\/]node_modules$'
-let g:ack_default_options = " -H --nocolor --nogroup --column"
-let g:ack_autoclose = 1
+let g:ackprg = 'ag --nogroup --nocolor --column'
+" let g:ack_autoclose = 1
 let g:PHP_outdentphpescape = 0
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'tomorrow' " 'badwolf' (gruvbox), 'jellybeans', 'solarized'
@@ -107,9 +107,9 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 set encoding=utf-8
 set tenc=utf-8
-set laststatus=2
-set tabstop=2
-set shiftwidth=2
+set laststatus=4
+set tabstop=4
+set shiftwidth=4
 set backspace=indent,eol,start
 set textwidth=80
 set pastetoggle=<F12>
@@ -155,11 +155,10 @@ set foldlevel=99
 if has("gui_running")
   " Set correct fonts. See https://github.com/powerline/fonts
   if has("win32")
-    "set guifont=Dejavu_Sans_Mono_for_Powerline:h9
-    set guifont=Hack:h9
+    set guifont=Fira\ Code:h9
   else " Probably MacVim ;)
-    "set guifont=Meslo_LG_S_DZ_Regular_for_Powerline:h11
-    set guifont=Hack:h12
+    set macligatures
+    set guifont=Fira\ Code:h12
   endif
   
   " set term=xterm-256color
@@ -189,9 +188,9 @@ endif
 
 " Italic stuff
 highlight Comment gui=italic
-highlight Comment cterm=italic
+" highlight Comment cterm=italic
 highlight htmlArg gui=italic
-highlight htmlArg cterm=italic
+" highlight htmlArg cterm=italic
 
 " Custom key mappings
 no <leader>n :NERDTreeFocus<cr>
