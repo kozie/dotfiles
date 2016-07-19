@@ -69,12 +69,12 @@ filetype plugin indent on    " required
 
 " Put your non-Plugin stuff after this line
 syntax on
-colorscheme Tomorrow-Night " gruvbox, jellybeans, solarized
+colorscheme jellybeans " gruvbox, Tomorrow-Night, solarized
 
 if has("gui_running")
   set background=dark
 else
-  set background=dark "light
+  set background=light
 endif
 
 let mapleader=","
@@ -90,7 +90,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " let g:ack_autoclose = 1
 let g:PHP_outdentphpescape = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'tomorrow' " 'badwolf' (gruvbox), 'jellybeans', 'solarized'
+let g:airline_theme = 'jellybeans' " 'badwolf' (gruvbox), 'tomorrow', 'solarized'
 
 " Autocomplete settings
 let g:acp_enableAtStartup = 0
