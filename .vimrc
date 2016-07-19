@@ -107,7 +107,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 set encoding=utf-8
 set tenc=utf-8
-set laststatus=4
+set laststatus=2
 set tabstop=4
 set shiftwidth=4
 set backspace=indent,eol,start
