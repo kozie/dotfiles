@@ -105,6 +105,7 @@ export TERM=xterm-256color
 alias vgs='vagrant global-status'
 alias vh='vagrant halt'
 alias vu='vagrant up'
+alias vssh='vagrant ssh'
 
 alias vizsh="vim ~/.zshrc && source ~/.zshrc"
 alias ls="ls --color=auto"
