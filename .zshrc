@@ -102,10 +102,16 @@ export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34:su=0:sg=0:tw=0:ow
 export LSCOLORS=1
 export TERM=xterm-256color
 
+alias vi='vim'
+alias v='vagrant'
 alias vgs='vagrant global-status'
 alias vh='vagrant halt'
 alias vu='vagrant up'
 alias vssh='vagrant ssh'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 alias vizsh="vim ~/.zshrc && source ~/.zshrc"
 alias ls="ls --color=auto"
