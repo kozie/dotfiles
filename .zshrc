@@ -88,7 +88,7 @@ source $ZSH/oh-my-zsh.sh
 #eval $(dinghy env)
 
 # Core utils (brew install coreutils)
-export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:/usr/local/sbin:$PATH:$HOME/.rvm/bin"
 export MANPATH="$(brew --prefix)/opt/coreutils/libexec/gnuman"
 
 # Z !
@@ -101,6 +101,7 @@ export CLICOLOR=1
 export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34:su=0:sg=0:tw=0:ow=0:"
 export LSCOLORS=1
 export TERM=xterm-256color
+export EDITOR="vim"
 
 alias vi='vim'
 alias v='vagrant'
@@ -109,9 +110,15 @@ alias vh='vagrant halt'
 alias vu='vagrant up'
 alias vssh='vagrant ssh'
 
+alias co='git checkout'
+alias push='git push'
+alias pull='git pull'
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 alias vizsh="vim ~/.zshrc && source ~/.zshrc"
 alias ls="ls --color=auto"
+alias love="open -n -a love"
