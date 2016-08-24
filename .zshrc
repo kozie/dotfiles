@@ -114,6 +114,7 @@ alias co='git checkout'
 alias push='git push'
 alias pull='git pull'
 alias merge='git merge'
+alias status='git status'
 
 alias ..='cd ..'
 alias ...='cd ../..'
