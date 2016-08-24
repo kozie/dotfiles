@@ -113,6 +113,7 @@ alias vssh='vagrant ssh'
 alias co='git checkout'
 alias push='git push'
 alias pull='git pull'
+alias merge='git merge'
 
 alias ..='cd ..'
 alias ...='cd ../..'
