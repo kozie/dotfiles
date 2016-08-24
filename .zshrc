@@ -111,6 +111,8 @@ alias vu='vagrant up'
 alias vssh='vagrant ssh'
 
 alias co='git checkout'
+alias cm='git commit'
+alias add='git add'
 alias push='git push'
 alias pull='git pull'
 alias merge='git merge'
