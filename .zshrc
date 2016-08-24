@@ -115,6 +115,7 @@ alias cm='git commit'
 alias add='git add'
 alias push='git push'
 alias pull='git pull'
+alias fetch='git fetch'
 alias merge='git merge'
 alias status='git status'
 
