@@ -94,6 +94,9 @@ export MANPATH="$(brew --prefix)/opt/coreutils/libexec/gnuman"
 # Z !
 source ~/code/z/z.sh
 
+# FZF !
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Shortcut for cd PATH && ls -al
 cdl () { cd "$@" && ls -al; }
 
@@ -118,6 +121,8 @@ alias pull='git pull'
 alias fetch='git fetch'
 alias merge='git merge'
 alias status='git status'
+alias poes='git push origin release'
+alias masterpoes='git push origin master'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -126,4 +131,6 @@ alias .....='cd ../../../..'
 
 alias vizsh="vim ~/.zshrc && source ~/.zshrc"
 alias ls="ls --color=auto"
+
+alias storm="open -a PhpStorm"
 alias love="open -n -a love"
