@@ -1,6 +1,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/koos/.oh-my-zsh
 
+# Auto completion
+#fpath=(/usr/local/share/zsh-completions $fpath)
+#autoload -Uz compinit && compinit
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -9,7 +13,7 @@ ZSH_THEME="krobbyrussell"
 #ZSH_THEME="kagnoster"
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+#CASE_SENSITIVE="false"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -28,7 +32,7 @@ ZSH_THEME="krobbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ #ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -53,10 +57,6 @@ ZSH_THEME="krobbyrussell"
 plugins=(git)
 
 # User configuration
-
-# export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -134,3 +134,6 @@ alias ls="ls --color=auto"
 
 alias storm="open -a PhpStorm"
 alias love="open -n -a love"
+
+# Not sure if this is needed
+# zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
