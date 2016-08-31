@@ -110,8 +110,8 @@ alias vi='vim'
 alias v='vim'
 
 alias vgs='vagrant global-status'
-alias up='vagrant halt'
-alias down='vagrant up'
+alias up='vagrant up'
+alias down='vagrant halt'
 alias vssh='vagrant ssh'
 
 alias g='git'
