@@ -140,3 +140,6 @@ alias love="open -n -a love"
 
 # Not sure if this is needed
 # zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# Custom MOTD - The hacky way
+fortune | cowsay
