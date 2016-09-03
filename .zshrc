@@ -1,10 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/koos/.oh-my-zsh
 
-# Auto completion
-#fpath=(/usr/local/share/zsh-completions $fpath)
-#autoload -Uz compinit && compinit
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -100,6 +96,10 @@ source ~/code/z/z.sh
 # Shortcut for cd PATH && ls -al
 cdl () { cd "$@" && ls -al; }
 
+# Compress image using convert (imagemagick)
+# optionally add -gaussian-blur 0.05
+imgcomp() { convert -strip -interlace Plane -quality 85% $1 $2; }
+
 export CLICOLOR=1
 export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34:su=0:sg=0:tw=0:ow=0:"
 export LSCOLORS=1
@@ -107,12 +107,14 @@ export TERM=xterm-256color
 export EDITOR="vim"
 
 alias vi='vim'
-alias v='vagrant'
+alias v='vim'
+
 alias vgs='vagrant global-status'
-alias vh='vagrant halt'
-alias vu='vagrant up'
+alias up='vagrant up'
+alias down='vagrant halt'
 alias vssh='vagrant ssh'
 
+alias g='git'
 alias co='git checkout'
 alias cm='git commit'
 alias add='git add'
@@ -120,9 +122,8 @@ alias push='git push'
 alias pull='git pull'
 alias fetch='git fetch'
 alias merge='git merge'
+alias qmerge='git merge --no-edit'
 alias status='git status'
-alias poes='git push origin release'
-alias masterpoes='git push origin master'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -137,3 +138,6 @@ alias love="open -n -a love"
 
 # Not sure if this is needed
 # zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# Custom MOTD - The hacky way
+fortune | cowsay
