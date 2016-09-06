@@ -1,145 +1,270 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/koos/.oh-my-zsh
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="krobbyrussell"
-#ZSH_THEME="kagnoster"
+" set the runtime path to include Vundle and initialize
+if has("win32")
+	set directory=.,$TEMP " Set path where VIM can write ;)
 
-# Uncomment the following line to use case-sensitive completion.
-#CASE_SENSITIVE="false"
+	set rtp+=~/vimfiles/bundle/Vundle.vim
+	let path='~/vimfiles/bundle'
+	call vundle#begin(path)
+else
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
+endif
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'L9'
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+" Custom plugins
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Yggdroot/indentLine'
+Plugin 'ervandew/supertab'
+Plugin 'mattn/emmet-vim'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-markdown'
+Plugin 'nvie/vim-flake8'
+Plugin 'Align'
+Plugin 'Shougo/vinarise.vim'
+Plugin 'Shougo/unite.vim'
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+if !has('nvim')
+	" Requires LUA
+	Plugin 'Shougo/neocomplete.vim'
+endif
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+" Disabled plugins but interesting ones
+" Plugin 'tpope/vim-dispatch'
+" Plugin 'nanotech/jellybeans.vim'
+" Plugin 'morhetz/gruvbox'
+" Plugin 'altercation/vim-colors-solarized'
+" Plugin 'Raimondi/delimitMate'
+" Plugin 'kchmck/vim-coffee-script'
+" Plugin 'leafgarland/typescript-vim'
+" Plugin 'itchyny/lightline.vim'
+" Plugin 'majutsushi/tagbar'
+" Plugin 'mustache/vim-mustache-handlebars'
+" Plugin 'jdonaldson/vaxe'
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
 
-# Uncomment the following line to enable command auto-correction.
- #ENABLE_CORRECTION="true"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" :h Vundle
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+" Put your non-Plugin stuff after this line
+syntax on
+colorscheme jellybeans " gruvbox, jellybeans, solarized
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+if has("gui_running")
+  set background=dark
+else
+  set background=light "light
+endif
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+let mapleader=","
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+" Plugin configurations
+let python_highlight_all = 1
+let g:indentLine_color_term = 239
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabClosePreviewOnPopupClose = 1
+let g:ctrlp_working_path_mode = 'w'
+let g:ctrlp_custom_ignore = '\v[\/]node_modules$'
+let g:ackprg = 'ag --nogroup --nocolor --column'
+" let g:ack_autoclose = 1
+let g:PHP_outdentphpescape = 0
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'jellybeans' " 'badwolf' (gruvbox), 'jellybeans', 'solarized'
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+" Autocomplete settings
+if !has('nvim')
+	let g:acp_enableAtStartup = 0
+	let g:neocomplete#enable_at_startup = 1
+	let g:neocomplete#enable_smart_case = 1
+	let g:neocomplete#sources#syntax#min_keyword_length = 3
+endif
 
-# User configuration
-source $ZSH/oh-my-zsh.sh
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+set encoding=utf-8
+set tenc=utf-8
+set fenc=utf-8
+set laststatus=2
+set tabstop=4
+set shiftwidth=4
+set backspace=indent,eol,start
+"set textwidth=80
+set pastetoggle=<F12>
+set autowrite
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+set t_Co=256
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+set number
+set relativenumber
+set hidden
+set linebreak
+set ruler
+set autoindent
+set smartindent
+set noexpandtab
+set smarttab
+set cursorline
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+set nohlsearch
+set incsearch
+set ignorecase
+set smartcase
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+set history=10000
+set undolevels=200
+set ttyfast
 
-# Required for Dingy and Docker
-#eval $(dinghy env)
+" Whitespace chars
+"set listchars=tab:▸\ 
+"set list!
 
-# Core utils (brew install coreutils)
-export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:/usr/local/sbin:$PATH:$HOME/.rvm/bin"
-export MANPATH="$(brew --prefix)/opt/coreutils/libexec/gnuman"
+" ctags files
+set tags+="./tags;,tags"
 
-# Z !
-source ~/code/z/z.sh
+set wildmenu
+set wildmode=list:longest,full
+set wildignore+=*/node_modules/*
 
-# FZF !
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+set foldmethod=indent
+set foldlevel=99
 
-# Shortcut for cd PATH && ls -al
-cdl () { cd "$@" && ls -al; }
+" Set gui stuff
+if has("gui_running")
+  " Set correct fonts. See https://github.com/powerline/fonts
+  if has("win32")
+    set guifont=Fira\ Code:h9
+  else " Probably MacVim ;)
+    set macligatures
+    set guifont=Fira\ Code:h12
+  endif
+  
+  " set term=xterm-256color
+  " Set window size
+  set lines=59 columns=149
+  
+  " Remove all tool-, menu- and scrollbars -_-'
+  set guioptions+=mTLlRrb
+  set guioptions-=mTLlRrb
+  
+  " Disable that damn mouse!
+  set mouse=c
+  
+  " sets the language of the menu (gvim) and messages / ui (vim)
+  set langmenu=en_US.UTF-8
+  let $LANG = 'en'
+else " If no GUI
+  " Enable mouse (for scrolling)
+  set mouse=a
+  
+  " Fix block cursor thingy under screen/cygwin
+  let &t_ti.="\e[1 q"
+  let &t_SI.="\e[5 q"
+  let &t_EI.="\e[1 q"
+  let &t_te.="\e[0 q"
+endif
 
-# Compress image using convert (imagemagick)
-# optionally add -gaussian-blur 0.05
-imgcomp() { convert -strip -interlace Plane -quality 85% $1 $2; }
+" Italic stuff
+highlight Comment gui=italic
+" highlight Comment cterm=italic
+highlight htmlArg gui=italic
+" highlight htmlArg cterm=italic
 
-export CLICOLOR=1
-export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34:su=0:sg=0:tw=0:ow=0:"
-export LSCOLORS=1
-export TERM=xterm-256color
-export EDITOR="vim"
+" Custom key mappings
+no <leader>n :NERDTreeFocus<cr>
+no <leader>\ :NERDTreeToggle<cr>
+nn <leader>r :call NumberToggle()<cr>
+nn <tab> :b<space>
+nn <space> <c-w>
+nn <leader>ev :vsplit $MYVIMRC<cr>
+nn <leader>sv :source $MYVIMRC<cr>
+"nm <leader>r :TagbarToggle<cr>
+nm <leader>. :CtrlPTag<cr>
+nn <CR> o<esc>
+nn <leader><CR> O<esc>
+ino <leader><Tab> <c-n>
+no <F5> :Make<cr>
+ino jj <Esc>
+ino jk <Esc>
+no j gj
+no k gk
 
-alias vi='vim'
-alias v='vim'
+" Relative mode switching
+autocmd InsertEnter * :call DisableRelNo()
+autocmd InsertLeave * :call EnableRelNo()
 
-alias vgs='vagrant global-status'
-alias up='vagrant up'
-alias down='vagrant halt'
-alias vssh='vagrant ssh'
+" Fix Enter key (CR) map in cli, quickfix and selection
+autocmd CmdwinEnter * nnoremap <CR> <CR>
+autocmd BufReadPost quickfix nnoremap <CR> <CR>
 
-alias g='git'
-alias co='git checkout'
-alias cm='git commit'
-alias add='git add'
-alias push='git push'
-alias pull='git pull'
-alias fetch='git fetch'
-alias merge='git merge'
-alias qmerge='git merge --no-edit'
-alias status='git status'
-alias poes='git push origin release'
-alias masterpoes='git push origin master'
+" Disable arrow keys (hardcore)
+map  <up>    <nop>
+imap <up>    <nop>
+map  <down>  <nop>
+imap <down>  <nop>
+map  <left>  <nop>
+imap <left>  <nop>
+map  <right> <nop>
+imap <right> <nop>
 
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
+" Set nmake for windows environment
+if has("win32")
+  set makeprg=mingw32-make
+endif
 
-alias vizsh="vim ~/.zshrc && source ~/.zshrc"
-alias ls="ls --color=auto"
+" Python syntactic sugar
+au BufNewFile,BufRead *.py
+  \ set tabstop=4 |
+  \ set softtabstop=4 |
+  \ set shiftwidth=4 |
+  \ set expandtab
 
-alias storm="open -a PhpStorm"
-alias love="open -n -a love"
+" Function to toggle between line numbers and relativenumbers
+function! NumberToggle()
+	if(&relativenumber == 1)
+		call DisableRelNo()
+	else
+		call EnableRelNo()
+	endif
+endfunc
 
-# Not sure if this is needed
-# zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+function! EnableRelNo()
+	set number
+	set relativenumber
+endfunc
 
-# Custom MOTD - The hacky way
-fortune | cowsay
+function! DisableRelNo()
+	set number
+	set norelativenumber
+endfunc
