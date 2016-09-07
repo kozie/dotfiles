@@ -94,7 +94,7 @@ source ~/code/z/z.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Shortcut for cd PATH && ls -al
-cdl () { cd "$@" && ls -al; }
+cdl () { cd "$@" && ls -al --color=auto; }
 
 # Compress image using convert (imagemagick)
 # optionally add -gaussian-blur 0.05
