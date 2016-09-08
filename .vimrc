@@ -22,6 +22,7 @@ Plug 'L9'
 
 " Custom plugins
 Plug 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf', 'do': './install --all' }
+Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
@@ -43,7 +44,6 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'groenewege/vim-less'
 Plug 'tpope/vim-markdown'
 Plug 'nvie/vim-flake8'
-"Plug 'Align'
 "Plug 'Shougo/vinarise.vim'
 
 if !has('nvim')
@@ -206,6 +206,8 @@ highlight htmlArg gui=italic
 " highlight htmlArg cterm=italic
 
 " Custom key mappings
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 no <leader>n :NERDTreeFocus<cr>
 no <leader>\ :NERDTreeToggle<cr>
 nn <leader>r :call NumberToggle()<cr>
