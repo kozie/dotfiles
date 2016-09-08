@@ -21,6 +21,7 @@ Plug 'L9'
 "Plug 'Shougo/unite.vim'
 
 " Custom plugins
+Plug 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf', 'do': './install --all' }
 Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
