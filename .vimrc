@@ -5,63 +5,66 @@ filetype off                  " required
 if has("win32")
 	set directory=.,$TEMP " Set path where VIM can write ;)
 
-	set rtp+=~/vimfiles/bundle/Vundle.vim
-	let path='~/vimfiles/bundle'
-	call vundle#begin(path)
-else
-	set rtp+=~/.vim/bundle/Vundle.vim
-	call vundle#begin()
+	"set rtp+=~/vimfiles/bundle/Vundle.vim
+	"let path='~/vimfiles/bundle'
+	"call vundle#begin(path)
+"else
+	"set rtp+=~/.vim/bundle/Vundle.vim
+	"call vundle#begin()
 endif
 
+call plug#begin()
+
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'L9'
+Plug 'gmarik/Vundle.vim'
+Plug 'L9'
 
 " Custom plugins
-Plugin 'kien/ctrlp.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'Yggdroot/indentLine'
-Plugin 'ervandew/supertab'
-Plugin 'mattn/emmet-vim'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'groenewege/vim-less'
-Plugin 'tpope/vim-markdown'
-Plugin 'nvie/vim-flake8'
-Plugin 'Align'
-Plugin 'Shougo/vinarise.vim'
-Plugin 'Shougo/unite.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'flazz/vim-colorschemes'
+Plug 'pangloss/vim-javascript'
+Plug 'elzr/vim-json'
+"Plug 'terryma/vim-multiple-cursors'
+"Plug 'Yggdroot/indentLine'
+Plug 'ervandew/supertab'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
+Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'groenewege/vim-less'
+Plug 'tpope/vim-markdown'
+Plug 'nvie/vim-flake8'
+"Plug 'Align'
+"Plug 'Shougo/vinarise.vim'
+"Plug 'Shougo/unite.vim'
 
 if !has('nvim')
 	" Requires LUA
-	Plugin 'Shougo/neocomplete.vim'
+	Plug 'Shougo/neocomplete.vim'
 endif
 
 " Disabled plugins but interesting ones
-" Plugin 'tpope/vim-dispatch'
-" Plugin 'nanotech/jellybeans.vim'
-" Plugin 'morhetz/gruvbox'
-" Plugin 'altercation/vim-colors-solarized'
-" Plugin 'Raimondi/delimitMate'
-" Plugin 'kchmck/vim-coffee-script'
-" Plugin 'leafgarland/typescript-vim'
-" Plugin 'itchyny/lightline.vim'
-" Plugin 'majutsushi/tagbar'
-" Plugin 'mustache/vim-mustache-handlebars'
-" Plugin 'jdonaldson/vaxe'
+" Plug 'tpope/vim-dispatch'
+" Plug 'nanotech/jellybeans.vim'
+" Plug 'morhetz/gruvbox'
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'Raimondi/delimitMate'
+" Plug 'kchmck/vim-coffee-script'
+" Plug 'leafgarland/typescript-vim'
+" Plug 'itchyny/lightline.vim'
+" Plug 'majutsushi/tagbar'
+" Plug 'mustache/vim-mustache-handlebars'
+" Plug 'jdonaldson/vaxe'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
