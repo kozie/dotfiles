@@ -15,9 +15,10 @@ endif
 
 call plug#begin()
 
-" let Vundle manage Vundle, required
-Plug 'gmarik/Vundle.vim'
+" Some base plugins
+"Plug 'gmarik/Vundle.vim'
 Plug 'L9'
+"Plug 'Shougo/unite.vim'
 
 " Custom plugins
 Plug 'kien/ctrlp.vim'
@@ -43,7 +44,6 @@ Plug 'tpope/vim-markdown'
 Plug 'nvie/vim-flake8'
 "Plug 'Align'
 "Plug 'Shougo/vinarise.vim'
-"Plug 'Shougo/unite.vim'
 
 if !has('nvim')
 	" Requires LUA
