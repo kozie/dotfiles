@@ -84,8 +84,8 @@ source $ZSH/oh-my-zsh.sh
 #eval $(dinghy env)
 
 # Core utils (brew install coreutils)
-export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:/usr/local/sbin:$PATH:$HOME/.rvm/bin"
-export MANPATH="$(brew --prefix)/opt/coreutils/libexec/gnuman"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:$PATH:$HOME/.rvm/bin"
+export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 
 # Z !
 source ~/code/z/z.sh
