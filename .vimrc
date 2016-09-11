@@ -24,10 +24,13 @@ Plug 'L9'
 Plug 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf', 'do': './install --all' }
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim'
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'flazz/vim-colorschemes'
 Plug 'pangloss/vim-javascript'
+Plug 'isRuslan/vim-es6'
 Plug 'elzr/vim-json'
 "Plug 'terryma/vim-multiple-cursors'
 "Plug 'Yggdroot/indentLine'
@@ -44,6 +47,8 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'groenewege/vim-less'
 Plug 'tpope/vim-markdown'
 Plug 'nvie/vim-flake8'
+Plug 'justinj/vim-pico8-syntax'
+Plug 'airblade/vim-gitgutter'
 "Plug 'Shougo/vinarise.vim'
 
 if !has('nvim')
@@ -79,12 +84,12 @@ filetype plugin indent on    " required
 
 " Put your non-Plugin stuff after this line
 syntax on
-colorscheme jellybeans " gruvbox, jellybeans, solarized
+colorscheme jellybeans " gruvbox, solarized
 
 if has("gui_running")
   set background=dark
 else
-  set background=light "light
+  set background=light 
 endif
 
 let mapleader=","
@@ -100,7 +105,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " let g:ack_autoclose = 1
 let g:PHP_outdentphpescape = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'jellybeans' " 'badwolf' (gruvbox), 'jellybeans', 'solarized'
+let g:airline_theme = 'jellybeans' " 'badwolf' (gruvbox), 'solarized'
 
 " Autocomplete settings
 if !has('nvim')
@@ -117,7 +122,10 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-set encoding=utf-8
+if !has('nvim')
+	set encoding=utf-8
+endif
+
 set tenc=utf-8
 set fenc=utf-8
 set laststatus=2
