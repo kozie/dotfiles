@@ -126,6 +126,10 @@ alias merge='git merge'
 alias qmerge='git merge --no-edit'
 alias status='git status'
 
+alias tm="tmux new -s"
+alias ta="tmux a"
+alias tas="tmux a -t"
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
