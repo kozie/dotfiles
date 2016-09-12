@@ -13,6 +13,9 @@ if has("win32")
 	"call vundle#begin()
 endif
 
+" fzf runtime path
+set rtp+=/usr/local/opt/fzf
+
 call plug#begin()
 
 " Some base plugins
@@ -21,9 +24,9 @@ Plug 'L9'
 "Plug 'Shougo/unite.vim'
 
 " Custom plugins
-Plug 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'kien/ctrlp.vim'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mileszs/ack.vim'
@@ -39,6 +42,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -136,8 +140,6 @@ set backspace=indent,eol,start
 set pastetoggle=<F12>
 set autowrite
 
-set t_Co=256
-
 set number
 set relativenumber
 set hidden
@@ -156,7 +158,8 @@ set smartcase
 
 set history=10000
 set undolevels=200
-set ttyfast
+"set ttyfast
+"set t_Co=256
 
 " Whitespace chars
 "set listchars=tab:▸\ 
