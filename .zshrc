@@ -1,11 +1,17 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/koos/.oh-my-zsh
 
+fpath=( "$HOME/.oh-my-zsh/functions" $fpath )
+
+# Load up pure
+autoload -U promptinit; promptinit
+prompt pure
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="krobbyrussell"
+ZSH_THEME="pure"
 #ZSH_THEME="kagnoster"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -103,7 +109,7 @@ imgcomp() { convert -strip -interlace Plane -quality 85% $1 $2; }
 export CLICOLOR=1
 export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34:su=0:sg=0:tw=0:ow=0:"
 export LSCOLORS=1
-export TERM=xterm-256color
+#export TERM=xterm-256color
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
 
@@ -143,6 +149,9 @@ alias love="open -n -a love"
 
 # Not sure if this is needed
 # zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# ZSH Syntax Highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Custom MOTD - The hacky way
 fortune | cowsay
