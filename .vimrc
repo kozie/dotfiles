@@ -32,6 +32,7 @@ Plug 'honza/vim-snippets'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'flazz/vim-colorschemes'
+Plug 'chriskempson/base16-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'isRuslan/vim-es6'
 Plug 'elzr/vim-json'
@@ -88,17 +89,18 @@ filetype plugin indent on    " required
 
 " Put your non-Plugin stuff after this line
 syntax on
-colorscheme jellybeans " gruvbox, solarized
+colorscheme base16-default-dark " gruvbox, solarized
 
 if has("gui_running")
   set background=dark
 else
-  set background=light 
+  set background=dark 
 endif
 
 let mapleader=","
 
 " Plugin configurations
+let base16colorspace=256
 let python_highlight_all = 1
 let g:indentLine_color_term = 239
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
@@ -109,7 +111,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " let g:ack_autoclose = 1
 let g:PHP_outdentphpescape = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'jellybeans' " 'badwolf' (gruvbox), 'solarized'
+let g:airline_theme = 'base16' " 'badwolf' (gruvbox), 'solarized'
 
 " Autocomplete settings
 if !has('nvim')
@@ -246,14 +248,14 @@ autocmd CmdwinEnter * nnoremap <CR> <CR>
 autocmd BufReadPost quickfix nnoremap <CR> <CR>
 
 " Disable arrow keys (hardcore)
-map  <up>    <nop>
-imap <up>    <nop>
-map  <down>  <nop>
-imap <down>  <nop>
-map  <left>  <nop>
-imap <left>  <nop>
-map  <right> <nop>
-imap <right> <nop>
+"map  <up>    <nop>
+"imap <up>    <nop>
+"map  <down>  <nop>
+"imap <down>  <nop>
+"map  <left>  <nop>
+"imap <left>  <nop>
+"map  <right> <nop>
+"imap <right> <nop>
 
 " Set nmake for windows environment
 if has("win32")
