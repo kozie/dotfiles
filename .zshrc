@@ -107,7 +107,7 @@ cdl () { cd "$@" && ls -al --color=auto; }
 imgcomp() { convert -strip -interlace Plane -quality 85% $1 $2; }
 
 export CLICOLOR=1
-export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34:su=0:sg=0:tw=0:ow=0:"
+#export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34:su=0:sg=0:tw=0:ow=0:"
 export LSCOLORS=1
 #export TERM=xterm-256color
 export VISUAL="nvim"
