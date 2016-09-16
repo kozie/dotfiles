@@ -27,6 +27,7 @@ Plug 'L9'
 "Plug 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'easymotion/vim-easymotion'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mileszs/ack.vim'
@@ -36,6 +37,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'isRuslan/vim-es6'
 Plug 'elzr/vim-json'
+Plug 'alvan/vim-closetag'
 "Plug 'terryma/vim-multiple-cursors'
 "Plug 'Yggdroot/indentLine'
 Plug 'ervandew/supertab'
@@ -100,6 +102,7 @@ endif
 let mapleader=","
 
 " Plugin configurations
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml"
 let base16colorspace=256
 let python_highlight_all = 1
 let g:indentLine_color_term = 239
@@ -236,8 +239,8 @@ ino <leader><Tab> <c-n>
 no <F5> :Make<cr>
 ino jj <Esc>
 ino jk <Esc>
-no j gj
-no k gk
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " Relative mode switching
 autocmd InsertEnter * :call DisableRelNo()
