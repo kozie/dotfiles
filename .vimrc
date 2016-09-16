@@ -25,6 +25,7 @@ Plug 'L9'
 
 " Custom plugins
 "Plug 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf', 'do': './install --all' }
+Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'easymotion/vim-easymotion'
@@ -138,8 +139,8 @@ endif
 set tenc=utf-8
 set fenc=utf-8
 set laststatus=2
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set backspace=indent,eol,start
 "set textwidth=80
 set pastetoggle=<F12>
