@@ -91,13 +91,16 @@ filetype plugin indent on    " required
 " :h Vundle
 
 " Put your non-Plugin stuff after this line
-syntax on
-colorscheme base16-default-dark " gruvbox, solarized
 
-if has("gui_running")
-  set background=dark
-else
-  set background=dark 
+if !exists("g:colors_name")
+	syntax on
+	colorscheme base16-default-dark " gruvbox, solarized
+
+	if has("gui_running")
+		set background=dark
+	else
+		set background=dark "light for jellybeans
+	endif
 endif
 
 let mapleader=","
