@@ -27,8 +27,8 @@ Plug 'L9'
 "Plug 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf', 'do': './install --all' }
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'easymotion/vim-easymotion'
+Plug 'junegunn/vim-easy-align' " ga<obj><target>
+Plug 'easymotion/vim-easymotion' " <leader><leader><motion>
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mileszs/ack.vim'
@@ -42,8 +42,8 @@ Plug 'alvan/vim-closetag'
 "Plug 'terryma/vim-multiple-cursors'
 "Plug 'Yggdroot/indentLine'
 Plug 'ervandew/supertab'
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-surround'
+Plug 'mattn/emmet-vim' " <c-y>,
+Plug 'tpope/vim-surround' " {c|d|y}s<obj><char>
 Plug 'tpope/vim-abolish'
 Plug 'scrooloose/syntastic'
 Plug 'neomake/neomake'
