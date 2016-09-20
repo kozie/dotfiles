@@ -142,10 +142,11 @@ endif
 set tenc=utf-8
 set fenc=utf-8
 set laststatus=2
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set backspace=indent,eol,start
 "set textwidth=80
+set colorcolumn=80,120
 set pastetoggle=<F12>
 set autowrite
 
@@ -155,8 +156,8 @@ set hidden
 set linebreak
 set ruler
 set autoindent
-set smartindent
-set noexpandtab
+"set smartindent
+set expandtab
 set smarttab
 set cursorline
 
