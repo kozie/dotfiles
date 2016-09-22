@@ -96,6 +96,13 @@ export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 # Z !
 source ~/code/z/z.sh
 
+export CLICOLOR=1
+#export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34:su=0:sg=0:tw=0:ow=0:"
+export LSCOLORS=1
+#export TERM=xterm-256color
+export VISUAL="nvim"
+export EDITOR="$VISUAL"
+
 # FZF !
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -110,14 +117,7 @@ imgcomp() { convert -strip -interlace Plane -quality 85% $1 $2; }
 cssh() { ssh root@web$1.cream.nl -t "cd /home/$2/domains; su $2; exec \$SHELL -l"; }
 
 # vim + ag + fzf = unlimited power! ⚡️
-vag() { nvim $(ag -Ql "$1" | fzf); }
-
-export CLICOLOR=1
-#export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34:su=0:sg=0:tw=0:ow=0:"
-export LSCOLORS=1
-#export TERM=xterm-256color
-export VISUAL="nvim"
-export EDITOR="$VISUAL"
+vag() { $EDITOR $(ag -Ql "$1" | fzf); }
 
 alias v='nvim'
 alias vi='nvim'
