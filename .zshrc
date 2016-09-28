@@ -137,6 +137,8 @@ alias fetch='git fetch'
 alias merge='git merge'
 alias qmerge='git merge --no-edit'
 alias status='git status'
+alias lol='git log --graph --decorate --pretty=oneline --abbrev-commit'
+alias lola='git log --graph --decorate --pretty=oneline --abbrev-commit --all'
 
 alias tm="tmux new -s"
 alias ta="tmux a"
@@ -146,6 +148,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 
 alias vizsh="vim ~/.zshrc && source ~/.zshrc"
 alias ls="ls --color=auto"
@@ -155,6 +158,9 @@ alias love="open -n -a love"
 
 # Not sure if this is needed
 # zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# The Fuck
+eval "$(thefuck --alias)"
 
 # ZSH Syntax Highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
