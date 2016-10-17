@@ -100,7 +100,7 @@ export CLICOLOR=1
 #export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34:su=0:sg=0:tw=0:ow=0:"
 export LSCOLORS=1
 #export TERM=xterm-256color
-export VISUAL="nvim"
+export VISUAL="vim"
 export EDITOR="$VISUAL"
 
 # FZF !
@@ -119,8 +119,8 @@ cssh() { ssh root@web$1.cream.nl -t "cd /home/$2/domains; su $2; exec \$SHELL -l
 # vim + ag + fzf = unlimited power! ⚡️
 vag() { $EDITOR $(ag -Ql "$1" | fzf); }
 
-alias v='nvim'
-alias vi='nvim'
+alias v="$EDITOR"
+alias vi="$EDITOR"
 
 alias vgs='vagrant global-status'
 alias up='vagrant up'
@@ -155,6 +155,7 @@ alias ls="ls --color=auto"
 
 alias storm="open -a PhpStorm"
 alias love="open -n -a love"
+alias mr="n98-magerun"
 
 # Not sure if this is needed
 # zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -167,3 +168,5 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Custom MOTD - The hacky way
 fortune | cowsay
+
+export PATH="$HOME/.yarn/bin:$PATH"
