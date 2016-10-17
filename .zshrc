@@ -90,7 +90,7 @@ source $ZSH/oh-my-zsh.sh
 #eval $(dinghy env)
 
 # Core utils (brew install coreutils)
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:$PATH:$HOME/.rvm/bin"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:$HOME/.yarn/bin:$PATH:$HOME/.rvm/bin"
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 
 # Z !
@@ -168,5 +168,3 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Custom MOTD - The hacky way
 fortune | cowsay
-
-export PATH="$HOME/.yarn/bin:$PATH"
