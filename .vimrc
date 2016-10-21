@@ -37,6 +37,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'isRuslan/vim-es6'
+Plug 'othree/html5.vim'
 Plug 'elzr/vim-json'
 Plug 'alvan/vim-closetag'
 "Plug 'terryma/vim-multiple-cursors'
@@ -57,6 +58,7 @@ Plug 'tpope/vim-markdown'
 Plug 'nvie/vim-flake8'
 Plug 'justinj/vim-pico8-syntax'
 Plug 'airblade/vim-gitgutter'
+"Plug 'elentok/plaintasks.vim'
 "Plug 'Shougo/vinarise.vim'
 
 if !has('nvim')
@@ -222,9 +224,9 @@ endif
 
 " Italic stuff
 highlight Comment gui=italic
-" highlight Comment cterm=italic
+"highlight Comment cterm=italic
 highlight htmlArg gui=italic
-" highlight htmlArg cterm=italic
+"highlight htmlArg cterm=italic
 
 " Custom key mappings
 xmap ga <Plug>(EasyAlign)
@@ -237,13 +239,11 @@ nn <space> <c-w>
 nn <leader>ev :vsplit $MYVIMRC<cr>
 nn <leader>sv :source $MYVIMRC<cr>
 "nm <leader>r :TagbarToggle<cr>
-nm <leader>. :CtrlPTag<cr>
-nn <CR> o<esc>
-nn <leader><CR> O<esc>
+"nm <leader>. :CtrlPTag<cr>
 ino <leader><Tab> <c-n>
 no <F5> :Make<cr>
-ino jj <Esc>
-ino jk <Esc>
+"ino jj <Esc>
+"ino jk <Esc>
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
