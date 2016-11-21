@@ -144,11 +144,13 @@ alias ......='cd ../../../../..'
 alias vizsh="vim ~/.zshrc && source ~/.zshrc"
 alias ls="ls --color=auto"
 
-alias storm="open -a PhpStorm"
+alias storm="open -a 'PhpStorm 2016.3 EAP'"
 alias love="open -n -a love"
 
 alias mr="n98-magerun"
 alias cc="mr cache:clean && mr cache:flush"
+
+consuela () { n98-magerun cache:clean "$@" && n98-magerun cache:flush && say -v Veena "clean, i clean?"; }
 
 # Not sure if this is needed
 # zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
