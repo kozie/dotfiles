@@ -127,7 +127,9 @@ alias pull='git pull'
 alias fetch='git fetch'
 alias merge='git merge --no-ff'
 alias qmerge='git merge --no-edit --no-ff'
+alias qm='git merge --no-edit --no-ff' # Same as previous
 alias status='git status'
+alias st='git status' # Same as previous
 alias lol='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias lola='git log --graph --decorate --pretty=oneline --abbrev-commit --all'
 
