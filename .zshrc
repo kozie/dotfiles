@@ -104,11 +104,13 @@ cdl () { cd "$@" && ls -al --color=auto; }
 # optionally add -gaussian-blur 0.05
 imgcomp() { convert -strip -interlace Plane -quality 85% $1 $2; }
 
-# cssh
-cssh() { ssh root@web$1.cream.nl -t "cd /home/$2/domains; su $2; exec \$SHELL -l"; }
-
 # vim + ag + fzf = unlimited power! ⚡️
 vag() { $EDITOR $(ag -Ql "$1" | fzf); }
+
+# Load up external .priv.sh stuff
+if [ -f ~/.priv.sh ]; then
+    source ~/.priv.sh
+fi
 
 alias v="$EDITOR"
 alias vi="$EDITOR"
@@ -146,10 +148,11 @@ alias ......='cd ../../../../..'
 alias vizsh="vim ~/.zshrc && source ~/.zshrc"
 alias ls="ls --color=auto"
 
-alias storm="open -a 'PhpStorm 2016.3 EAP'"
+alias storm="open -a 'PhpStorm 2017.1 EAP'"
 alias love="open -n -a love"
 
 alias mr="n98-magerun"
+alias mr2="n98-magerun2"
 alias cc="mr cache:clean && mr cache:flush"
 
 consuela () { n98-magerun cache:clean "$@" && n98-magerun cache:flush && say -v Veena "clean, i clean?"; }
