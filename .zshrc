@@ -85,7 +85,7 @@ export GOPATH=$HOME/gohome
 export GOROOT=/usr/local/opt/go/libexec
 
 # Core utils (brew install coreutils)
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:$PATH:$GOPATH/bin:$GOROOT:bin:$HOME/.rvm/bin"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:$PATH:$GOPATH/bin:$GOROOT/bin:$HOME/.rvm/bin"
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 
 # Z !
