@@ -80,8 +80,12 @@ source $ZSH/oh-my-zsh.sh
 # Required for Dingy and Docker
 #eval $(dinghy env)
 
+# Golang paths
+export GOPATH=$HOME/gohome
+export GOROOT=/usr/local/opt/go/libexec
+
 # Core utils (brew install coreutils)
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:$PATH:$HOME/.rvm/bin"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:$PATH:$GOPATH/bin:$GOROOT:bin:$HOME/.rvm/bin"
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 
 # Z !
@@ -108,9 +112,7 @@ imgcomp() { convert -strip -interlace Plane -quality 85% $1 $2; }
 vag() { $EDITOR $(ag -Ql "$1" | fzf); }
 
 # Load up external .priv.sh stuff
-if [ -f ~/.priv.sh ]; then
-    source ~/.priv.sh
-fi
+[ -f ~/.priv.sh ] && source ~/.priv.sh
 
 alias v="$EDITOR"
 alias vi="$EDITOR"
@@ -154,8 +156,6 @@ alias love="open -n -a love"
 alias mr="n98-magerun"
 alias mr2="n98-magerun2"
 alias cc="mr cache:clean && mr cache:flush"
-
-consuela () { n98-magerun cache:clean "$@" && n98-magerun cache:flush && say -v Veena "clean, i clean?"; }
 
 # Not sure if this is needed
 # zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
