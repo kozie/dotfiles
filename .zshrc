@@ -155,7 +155,8 @@ alias love="open -n -a love"
 
 alias mr="n98-magerun"
 alias mr2="n98-magerun2"
-alias cc="mr cache:clean && mr cache:flush"
+alias cc="mr cache:clean && mr cache:flush && date"
+alias cc2="mr2 cache:clean && mr2 cache:flush && date"
 
 # Not sure if this is needed
 # zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
