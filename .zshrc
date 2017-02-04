@@ -104,6 +104,9 @@ export EDITOR="$VISUAL"
 # Shortcut for cd PATH && ls -al
 cdl () { cd "$@" && ls -al --color=auto; }
 
+# Shortcut for mkdir && cd
+mkcd () { mkdir "$@" && cd "$@"; }
+
 # Compress image using convert (imagemagick)
 # optionally add -gaussian-blur 0.05
 imgcomp() { convert -strip -interlace Plane -quality 85% $1 $2; }
