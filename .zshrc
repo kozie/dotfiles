@@ -148,7 +148,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
 
 alias vizsh="vim ~/.zshrc && source ~/.zshrc"
 alias ls="ls --color=auto"
