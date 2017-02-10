@@ -33,7 +33,7 @@ Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'flazz/vim-colorschemes'
+"Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'isRuslan/vim-es6'
@@ -194,7 +194,7 @@ if has("gui_running")
     set guifont=Fira\ Code:h9
   else " Probably MacVim ;)
     set macligatures
-    set guifont=Fira\ Code:h12
+    set guifont=Iosevka:h13
   endif
   
   " set term=xterm-256color

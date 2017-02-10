@@ -114,6 +114,9 @@ imgcomp() { convert -strip -interlace Plane -quality 85% $1 $2; }
 # vim + ag + fzf = unlimited power! ⚡️
 vag() { $EDITOR $(ag -Ql "$1" | fzf); }
 
+# Bower install and bower-installer
+bii() { bower install "$1" --save && bower-installer -r; }
+
 # Load up external .priv.sh stuff
 [ -f ~/.priv.sh ] && source ~/.priv.sh
 
@@ -151,6 +154,7 @@ alias .....='cd ../../../..'
 
 alias vizsh="vim ~/.zshrc && source ~/.zshrc"
 alias ls="ls --color=auto"
+alias ll="ls --color=auto -laF"
 
 alias storm="open -a 'PhpStorm 2017.1 EAP'"
 alias love="open -n -a love"
@@ -159,6 +163,10 @@ alias mr="n98-magerun"
 alias mr2="n98-magerun2"
 alias cc="mr cache:clean && mr cache:flush && date"
 alias cc2="mr2 cache:clean && mr2 cache:flush && date"
+alias phpm="php -d memory_limit=-1"
+
+alias bi="bower install"
+alias bs="bower search"
 
 # Not sure if this is needed
 # zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -168,3 +176,5 @@ alias cc2="mr2 cache:clean && mr2 cache:flush && date"
 
 # ZSH Syntax Highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+archey
