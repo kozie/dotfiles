@@ -3,6 +3,7 @@ set smartcase
 set number
 "set relativenumber
 
+nmap Y y$
 nn <space> <c-w>
 ino jj <Esc>
 ino jk <Esc>

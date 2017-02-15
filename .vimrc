@@ -231,6 +231,7 @@ highlight htmlArg gui=italic
 " Custom key mappings
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+nmap Y y$
 no <leader>n :NERDTreeFocus<cr>
 no <leader>\ :NERDTreeToggle<cr>
 nn <leader>r :call NumberToggle()<cr>
