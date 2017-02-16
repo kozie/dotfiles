@@ -248,6 +248,12 @@ no <F5> :Make<cr>
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
+" Insert mode movement
+ino <C-k> <Up>
+ino <C-j> <Down>
+ino <C-h> <Left>
+ino <C-l> <Right>
+
 " Relative mode switching
 autocmd InsertEnter * :call DisableRelNo()
 autocmd InsertLeave * :call EnableRelNo()
