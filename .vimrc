@@ -8,7 +8,8 @@ if has("win32")
 	"set rtp+=~/vimfiles/bundle/Vundle.vim
 	"let path='~/vimfiles/bundle'
 	"call vundle#begin(path)
-"else
+else
+    set directory=~/.vim/tmp//,$TEMP
 	"set rtp+=~/.vim/bundle/Vundle.vim
 	"call vundle#begin()
 endif
@@ -33,6 +34,7 @@ Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'edkolev/tmuxline.vim'
 "Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
 Plug 'pangloss/vim-javascript'
@@ -69,7 +71,7 @@ endif
 " Disabled plugins but interesting ones
 " Plug 'tpope/vim-dispatch'
 " Plug 'nanotech/jellybeans.vim'
-" Plug 'morhetz/gruvbox'
+ Plug 'morhetz/gruvbox'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'Raimondi/delimitMate'
 " Plug 'kchmck/vim-coffee-script'
@@ -96,7 +98,7 @@ filetype plugin indent on    " required
 
 if !exists("g:colors_name")
 	syntax on
-	colorscheme base16-default-dark " gruvbox, solarized
+	colorscheme gruvbox " gruvbox, solarized
 
 	if has("gui_running")
 		set background=dark
@@ -120,7 +122,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " let g:ack_autoclose = 1
 let g:PHP_outdentphpescape = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'base16' " 'badwolf' (gruvbox), 'solarized'
+let g:airline_theme = 'gruvbox' " 'badwolf' (gruvbox), 'solarized'
 
 " Autocomplete settings
 if !has('nvim')
