@@ -117,6 +117,9 @@ vag() { $EDITOR $(ag -Ql "$1" | fzf); }
 # Bower install and bower-installer
 bii() { bower install "$1" --save && bower-installer -r; }
 
+# Git mergin made a bit easier
+_git_qm() { __gitcomp_nl "$(__git_refs)"; }
+
 # Load up external .priv.sh stuff
 [ -f ~/.priv.sh ] && source ~/.priv.sh
 

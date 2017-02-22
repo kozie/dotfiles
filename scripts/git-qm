@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ git checkout "$2"
+ git pull
+
+ git checkout "$1"
+ git pull
+
+ git merge --no-edit --no-ff "$2"
+ git push
