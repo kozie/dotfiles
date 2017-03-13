@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/koos/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 fpath=( "$HOME/.oh-my-zsh/functions" $fpath )
 
@@ -11,7 +11,7 @@ prompt pure
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="pure"
+ZSH_THEME=""
 #ZSH_THEME="kagnoster"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -76,17 +76,7 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Required for Dingy and Docker
-#eval $(dinghy env)
-
-# Golang paths
-export GOPATH=$HOME/gohome
-export GOROOT=/usr/local/opt/go/libexec
-
-# Core utils (brew install coreutils)
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:$PATH:$GOPATH/bin:$GOROOT/bin:$HOME/.rvm/bin"
-export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
+export PATH=~/.npm-global/bin:$PATH
 
 # Z !
 source ~/code/z/z.sh
@@ -126,11 +116,6 @@ _git_qm() { __gitcomp_nl "$(__git_refs)"; }
 alias v="$EDITOR"
 alias vi="$EDITOR"
 
-alias vgs='vagrant global-status'
-alias up='vagrant up'
-alias down='vagrant halt'
-alias vssh='vagrant ssh'
-
 alias g='git'
 alias co='git checkout'
 alias cm='git commit'
@@ -159,9 +144,6 @@ alias vizsh="vim ~/.zshrc && source ~/.zshrc"
 alias ls="ls --color=auto"
 alias ll="ls --color=auto -laF"
 
-alias storm="open -a 'PhpStorm 2017.1 EAP'"
-alias love="open -n -a love"
-
 alias mr="n98-magerun"
 alias mr2="n98-magerun2"
 alias cc="mr cache:clean && mr cache:flush && date"
@@ -178,6 +160,4 @@ alias bs="bower search"
 #eval "$(thefuck --alias)"
 
 # ZSH Syntax Highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-archey
+#source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
