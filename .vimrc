@@ -92,7 +92,9 @@ filetype plugin indent on    " required
 
 if !exists("g:colors_name")
 	syntax on
-	colorscheme seoul256 " jellybeans, gruvbox, solarized
+
+    let g:seoul256_background = 234
+	colo seoul256 " jellybeans, gruvbox, solarized
 
 	if has("gui_running")
 		set background=dark
@@ -117,7 +119,6 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:PHP_outdentphpescape = 0
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'base16' " gruvbox, badwolf (gruvbox), solarized
-let g:seoul256_background = 234
 
 " Autocomplete settings
 if !has('nvim')
