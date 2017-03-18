@@ -25,9 +25,11 @@ Plug 'L9'
 "Plug 'Shougo/unite.vim'
 
 " Custom plugins
-"Plug 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align' " ga<obj><target>
+Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] } " ga<obj><target>
+Plug 'junegunn/vim-emoji'
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion' " <leader><leader><motion>
