@@ -26,42 +26,33 @@ Plug 'L9'
 
 " Custom plugins
 "Plug 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf', 'do': './install --all' }
-Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align' " ga<obj><target>
+Plug 'tpope/vim-fugitive'
+Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion' " <leader><leader><motion>
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mileszs/ack.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'edkolev/tmuxline.vim'
-"Plug 'flazz/vim-colorschemes'
-Plug 'chriskempson/base16-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'isRuslan/vim-es6'
 Plug 'othree/html5.vim'
 Plug 'elzr/vim-json'
 Plug 'alvan/vim-closetag'
-"Plug 'terryma/vim-multiple-cursors'
-"Plug 'Yggdroot/indentLine'
 Plug 'ervandew/supertab'
 Plug 'mattn/emmet-vim' " <c-y>,
 Plug 'tpope/vim-surround' " {c|d|y}s<obj><char>
 Plug 'tpope/vim-abolish'
 Plug 'scrooloose/syntastic'
-Plug 'neomake/neomake'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'groenewege/vim-less'
 Plug 'tpope/vim-markdown'
-Plug 'nvie/vim-flake8'
-Plug 'justinj/vim-pico8-syntax'
 Plug 'airblade/vim-gitgutter'
-"Plug 'elentok/plaintasks.vim'
-"Plug 'Shougo/vinarise.vim'
 
 if !has('nvim')
 	" Requires LUA
@@ -69,17 +60,22 @@ if !has('nvim')
 endif
 
 " Disabled plugins but interesting ones
-" Plug 'tpope/vim-dispatch'
-" Plug 'nanotech/jellybeans.vim'
- Plug 'morhetz/gruvbox'
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'Raimondi/delimitMate'
-" Plug 'kchmck/vim-coffee-script'
-" Plug 'leafgarland/typescript-vim'
-" Plug 'itchyny/lightline.vim'
-" Plug 'majutsushi/tagbar'
-" Plug 'mustache/vim-mustache-handlebars'
-" Plug 'jdonaldson/vaxe'
+"Plug 'nvie/vim-flake8'
+"Plug 'chriskempson/base16-vim'
+"Plug 'flazz/vim-colorschemes'
+"Plug 'Yggdroot/indentLine'
+"Plug 'neomake/neomake'
+"Plug 'elentok/plaintasks.vim'
+"Plug 'Shougo/vinarise.vim'
+"Plug 'tpope/vim-dispatch'
+"Plug 'nanotech/jellybeans.vim'
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'Raimondi/delimitMate'
+"Plug 'kchmck/vim-coffee-script'
+"Plug 'leafgarland/typescript-vim'
+"Plug 'itchyny/lightline.vim'
+"Plug 'majutsushi/tagbar'
+"Plug 'mustache/vim-mustache-handlebars'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
@@ -237,7 +233,7 @@ nmap Y y$
 no <leader>n :NERDTreeFocus<cr>
 no <leader>\ :NERDTreeToggle<cr>
 nn <leader>r :call NumberToggle()<cr>
-nn <tab> :b<space>
+nn <tab> :Buffers<cr>
 nn <space> <c-w>
 nn <leader>ev :vsplit $MYVIMRC<cr>
 nn <leader>sv :source $MYVIMRC<cr>
