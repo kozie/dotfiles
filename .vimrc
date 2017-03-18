@@ -25,43 +25,38 @@ Plug 'L9'
 "Plug 'Shougo/unite.vim'
 
 " Custom plugins
-"Plug 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf', 'do': './install --all' }
-Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align' " ga<obj><target>
+Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] } " ga<obj><target>
+Plug 'junegunn/vim-emoji'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion' " <leader><leader><motion>
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mileszs/ack.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'edkolev/tmuxline.vim'
-"Plug 'flazz/vim-colorschemes'
-Plug 'chriskempson/base16-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'isRuslan/vim-es6'
 Plug 'othree/html5.vim'
 Plug 'elzr/vim-json'
 Plug 'alvan/vim-closetag'
-"Plug 'terryma/vim-multiple-cursors'
-"Plug 'Yggdroot/indentLine'
 Plug 'ervandew/supertab'
 Plug 'mattn/emmet-vim' " <c-y>,
 Plug 'tpope/vim-surround' " {c|d|y}s<obj><char>
 Plug 'tpope/vim-abolish'
 Plug 'scrooloose/syntastic'
-Plug 'neomake/neomake'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'groenewege/vim-less'
 Plug 'tpope/vim-markdown'
-Plug 'nvie/vim-flake8'
-Plug 'justinj/vim-pico8-syntax'
 Plug 'airblade/vim-gitgutter'
-"Plug 'elentok/plaintasks.vim'
-"Plug 'Shougo/vinarise.vim'
 
 if !has('nvim')
 	" Requires LUA
@@ -69,17 +64,23 @@ if !has('nvim')
 endif
 
 " Disabled plugins but interesting ones
-" Plug 'tpope/vim-dispatch'
-" Plug 'nanotech/jellybeans.vim'
- Plug 'morhetz/gruvbox'
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'Raimondi/delimitMate'
-" Plug 'kchmck/vim-coffee-script'
-" Plug 'leafgarland/typescript-vim'
-" Plug 'itchyny/lightline.vim'
-" Plug 'majutsushi/tagbar'
-" Plug 'mustache/vim-mustache-handlebars'
-" Plug 'jdonaldson/vaxe'
+"Plug 'morhetz/gruvbox'
+"Plug 'nvie/vim-flake8'
+"Plug 'chriskempson/base16-vim'
+"Plug 'flazz/vim-colorschemes'
+"Plug 'Yggdroot/indentLine'
+"Plug 'neomake/neomake'
+"Plug 'elentok/plaintasks.vim'
+"Plug 'Shougo/vinarise.vim'
+"Plug 'tpope/vim-dispatch'
+"Plug 'nanotech/jellybeans.vim'
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'Raimondi/delimitMate'
+"Plug 'kchmck/vim-coffee-script'
+"Plug 'leafgarland/typescript-vim'
+"Plug 'itchyny/lightline.vim'
+"Plug 'majutsushi/tagbar'
+"Plug 'mustache/vim-mustache-handlebars'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
@@ -87,23 +88,16 @@ filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-" :h Vundle
-
 " Put your non-Plugin stuff after this line
 
 if !exists("g:colors_name")
 	syntax on
-	colorscheme gruvbox " gruvbox, solarized
+	colorscheme seoul256 " jellybeans, gruvbox, solarized
 
 	if has("gui_running")
 		set background=dark
 	else
-		set background=dark "light for jellybeans
+		set background=dark " light for jellybeans
 	endif
 endif
 
@@ -122,7 +116,8 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " let g:ack_autoclose = 1
 let g:PHP_outdentphpescape = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'gruvbox' " 'badwolf' (gruvbox), 'solarized'
+let g:airline_theme = 'base16' " gruvbox, badwolf (gruvbox), solarized
+let g:seoul256_background = 234
 
 " Autocomplete settings
 if !has('nvim')
@@ -180,7 +175,7 @@ set undolevels=200
 "set list!
 
 " ctags files
-set tags+="./tags;,tags"
+"set tags+="./tags;,tags"
 
 set wildmenu
 set wildmode=list:longest,full
@@ -236,15 +231,14 @@ nmap ga <Plug>(EasyAlign)
 nmap Y y$
 no <leader>n :NERDTreeFocus<cr>
 no <leader>\ :NERDTreeToggle<cr>
-nn <leader>r :call NumberToggle()<cr>
-nn <tab> :b<space>
+nn <tab> :Buffers<cr>
 nn <space> <c-w>
 nn <leader>ev :vsplit $MYVIMRC<cr>
 nn <leader>sv :source $MYVIMRC<cr>
 "nm <leader>r :TagbarToggle<cr>
 "nm <leader>. :CtrlPTag<cr>
 ino <leader><Tab> <c-n>
-no <F5> :Make<cr>
+"no <F5> :Make<cr>
 "ino jj <Esc>
 "ino jk <Esc>
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
