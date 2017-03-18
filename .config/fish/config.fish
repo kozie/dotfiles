@@ -7,11 +7,11 @@ set -U FZF_LEGACY_KEYBINDINGS 0
 set -U FZF_TMUX 1
 
 # set PATH
-set -x PATH /usr/local/sbin $PATH
-set -x PATH (brew --prefix coreutils)/libexec/gnubin $PATH
+#set -x PATH /usr/local/sbin $PATH
+#set -x PATH (brew --prefix coreutils)/libexec/gnubin $PATH
 
 # set MANPATH
-set -x MANPATH (brew --prefix coreutils)/libexec/gnuman $MANPATH
+#set -x MANPATH (brew --prefix coreutils)/libexec/gnuman $MANPATH
 
 # Z
 set -g Z_SCRIPT_PATH $HOME/code/z/z.sh
