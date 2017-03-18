@@ -83,13 +83,6 @@ filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-" :h Vundle
-
 " Put your non-Plugin stuff after this line
 
 if !exists("g:colors_name")
@@ -99,7 +92,7 @@ if !exists("g:colors_name")
 	if has("gui_running")
 		set background=dark
 	else
-		set background=dark "light for jellybeans
+		set background=dark " light for jellybeans
 	endif
 endif
 
@@ -176,7 +169,7 @@ set undolevels=200
 "set list!
 
 " ctags files
-set tags+="./tags;,tags"
+"set tags+="./tags;,tags"
 
 set wildmenu
 set wildmode=list:longest,full
@@ -232,7 +225,6 @@ nmap ga <Plug>(EasyAlign)
 nmap Y y$
 no <leader>n :NERDTreeFocus<cr>
 no <leader>\ :NERDTreeToggle<cr>
-nn <leader>r :call NumberToggle()<cr>
 nn <tab> :Buffers<cr>
 nn <space> <c-w>
 nn <leader>ev :vsplit $MYVIMRC<cr>
@@ -240,7 +232,7 @@ nn <leader>sv :source $MYVIMRC<cr>
 "nm <leader>r :TagbarToggle<cr>
 "nm <leader>. :CtrlPTag<cr>
 ino <leader><Tab> <c-n>
-no <F5> :Make<cr>
+"no <F5> :Make<cr>
 "ino jj <Esc>
 "ino jk <Esc>
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
