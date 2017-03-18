@@ -30,8 +30,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] } " ga<obj><target>
 Plug 'junegunn/vim-emoji'
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion' " <leader><leader><motion>
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
@@ -62,6 +64,7 @@ if !has('nvim')
 endif
 
 " Disabled plugins but interesting ones
+"Plug 'morhetz/gruvbox'
 "Plug 'nvie/vim-flake8'
 "Plug 'chriskempson/base16-vim'
 "Plug 'flazz/vim-colorschemes'
@@ -89,7 +92,7 @@ filetype plugin indent on    " required
 
 if !exists("g:colors_name")
 	syntax on
-	colorscheme gruvbox " gruvbox, solarized
+	colorscheme seoul256 " jellybeans, gruvbox, solarized
 
 	if has("gui_running")
 		set background=dark
@@ -113,7 +116,8 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " let g:ack_autoclose = 1
 let g:PHP_outdentphpescape = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'gruvbox' " 'badwolf' (gruvbox), 'solarized'
+let g:airline_theme = 'base16' " gruvbox, badwolf (gruvbox), solarized
+let g:seoul256_background = 234
 
 " Autocomplete settings
 if !has('nvim')
