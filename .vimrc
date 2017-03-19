@@ -233,12 +233,13 @@ nmap Y y$
 no <leader>n :NERDTreeFocus<cr>
 no <leader>\ :NERDTreeToggle<cr>
 nn <tab> :Buffers<cr>
+nn <C-p> :Files<cr>
 nn <space> <c-w>
 nn <leader>ev :vsplit $MYVIMRC<cr>
 nn <leader>sv :source $MYVIMRC<cr>
 "nm <leader>r :TagbarToggle<cr>
 "nm <leader>. :CtrlPTag<cr>
-ino <leader><Tab> <c-n>
+"ino <leader><Tab> <c-n>
 "no <F5> :Make<cr>
 "ino jj <Esc>
 "ino jk <Esc>
