@@ -39,7 +39,7 @@ Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'edkolev/tmuxline.vim'
+"Plug 'edkolev/tmuxline.vim', { 'on': 'Tmuxline' }
 Plug 'pangloss/vim-javascript'
 Plug 'isRuslan/vim-es6'
 Plug 'othree/html5.vim'

@@ -36,6 +36,11 @@ function make_completion --argument-names alias command
 end
 
 make_completion g 'git'
+make_completion merge 'git merge'
+make_completion qmerge 'git merge'
+make_completion co 'git checkout'
+make_completion pull 'git pull'
+make_completion push 'git push'
 
 function ...   ; cd ../.. ; end
 function ....  ; cd ../../.. ; end
@@ -82,3 +87,6 @@ alias mr2 "n98-magerun2"
 alias cc "mr cache:clean; and mr cache:flush; and date"
 alias cc2 "mr2 cache:flush; and date"
 alias phpm "php -d memory_limit=-1"
+
+# load up extra (private) stuff
+if test -e ~/.config/fish/extra.fish; source ~/.config/fish/extra.fish; end;
