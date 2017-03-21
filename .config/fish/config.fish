@@ -3,7 +3,7 @@ fish_vi_key_bindings
 function fish_mode_prompt; end
 
 # fzf settings
-set -U FZF_LEGACY_KEYBINDINGS 0
+set -U FZF_LEGACY_KEYBINDINGS 1
 set -U FZF_TMUX 1
 
 # set PATH
