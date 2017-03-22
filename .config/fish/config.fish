@@ -21,7 +21,8 @@ set -x VISUAL vim
 set -x EDITOR $VISUAL
 
 # functions
-function vag; $EDITOR (ag -Ql $args | fzf); end
+function vag; ag -QUil "$argv" | fzf | read -l result; and vim $result; end
+function fim; fzf | read -l result; and vim $result; end
 
 # Completions
 function make_completion --argument-names alias command
