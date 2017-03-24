@@ -61,6 +61,8 @@ Plug 'airblade/vim-gitgutter'
 if !has('nvim')
 	" Requires LUA
 	Plug 'Shougo/neocomplete.vim'
+else 
+    Plug 'Shougo/deoplete.vim', { 'do': ':UpdateRemotePlugins' }
 endif
 
 " Disabled plugins but interesting ones

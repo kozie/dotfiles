@@ -17,12 +17,12 @@ set -x MANPATH (brew --prefix coreutils)/libexec/gnuman $MANPATH
 set -g Z_SCRIPT_PATH $HOME/code/z/z.sh
 
 # Exports
-set -x VISUAL vim
+set -x VISUAL nvim
 set -x EDITOR $VISUAL
 
 # functions
-function vag; ag -QUil "$argv" | fzf | read -l result; and vim $result; end
-function fim; fzf | read -l result; and vim $result; end
+function vag; ag -QUil "$argv" | fzf | read -l result; and eval $EDITOR $result; end
+function fim; fzf | read -l result; and eval $EDITOR $result; end
 
 # Completions
 function make_completion --argument-names alias command
@@ -76,8 +76,8 @@ alias tm "tmux new -s"
 alias ta "tmux a"
 alias tas "tmux a -t"
 
-alias vizsh "vim ~/.config/fish/config.fish; and source ~/.config/fish/config.fish"
-alias vish "vim ~/.config/fish/config.fish; and source ~/.config/fish/config.fish"
+alias vizsh "$EDITOR ~/.config/fish/config.fish; and source ~/.config/fish/config.fish"
+alias vish "$EDITOR ~/.config/fish/config.fish; and source ~/.config/fish/config.fish"
 alias ls "command ls --color=auto"
 alias ll "ls --color=auto -laF"
 
