@@ -36,10 +36,9 @@ Plug 'easymotion/vim-easymotion' " <leader><leader><motion>
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'pangloss/vim-javascript'
-Plug 'isRuslan/vim-es6'
-Plug 'othree/html5.vim'
-Plug 'elzr/vim-json'
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'othree/html5.vim', { 'for': 'html' }
+Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'alvan/vim-closetag'
 Plug 'ervandew/supertab'
 Plug 'mattn/emmet-vim' " <c-y>,
@@ -62,6 +61,8 @@ endif
 " Disabled plugins but interesting ones
 "Plug 'junegunn/vim-emoji'
 "Plug 'junegunn/rainbow_parentheses.vim'
+"Plug 'pangloss/vim-javascript' " Replaced by othree/yajs.vim
+"Plug 'isRuslan/vim-es6'
 "Plug 'edkolev/tmuxline.vim', { 'on': 'Tmuxline' }
 "Plug 'mileszs/ack.vim'
 "Plug 'morhetz/gruvbox'
