@@ -32,7 +32,11 @@ end
 set -U FZF_LEGACY_KEYBINDINGS 1
 set -U FZF_TMUX 1
 
+# Go settings
+set -x GOPATH $HOME/gohome
+
 # set PATH
+set -x PATH (brew --prefix go)/libexec/bin $PATH
 set -x PATH /usr/local/sbin $PATH
 set -x PATH (brew --prefix coreutils)/libexec/gnubin $PATH
 
