@@ -19,27 +19,23 @@ set rtp+=/usr/local/opt/fzf
 
 call plug#begin()
 
-" Some base plugins
-"Plug 'gmarik/Vundle.vim'
-Plug 'L9'
-"Plug 'Shougo/unite.vim'
+" Some base plugins (Probably not needed anymore)
+"Plug 'L9'
 
 " Custom plugins
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] } " ga<obj><target>
-Plug 'junegunn/vim-emoji'
-Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive', { 'on': 'Gblame' }
+Plug 'tpope/vim-surround' " {c|d|y}s<obj><char>
+Plug 'tpope/vim-abolish'
 Plug 'easymotion/vim-easymotion' " <leader><leader><motion>
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-"Plug 'edkolev/tmuxline.vim', { 'on': 'Tmuxline' }
 Plug 'pangloss/vim-javascript'
 Plug 'isRuslan/vim-es6'
 Plug 'othree/html5.vim'
@@ -47,8 +43,6 @@ Plug 'elzr/vim-json'
 Plug 'alvan/vim-closetag'
 Plug 'ervandew/supertab'
 Plug 'mattn/emmet-vim' " <c-y>,
-Plug 'tpope/vim-surround' " {c|d|y}s<obj><char>
-Plug 'tpope/vim-abolish'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
@@ -62,10 +56,14 @@ if !has('nvim')
 	" Requires LUA
 	Plug 'Shougo/neocomplete.vim'
 else 
-    Plug 'Shougo/deoplete.vim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
 
 " Disabled plugins but interesting ones
+"Plug 'junegunn/vim-emoji'
+"Plug 'junegunn/rainbow_parentheses.vim'
+"Plug 'edkolev/tmuxline.vim', { 'on': 'Tmuxline' }
+"Plug 'mileszs/ack.vim'
 "Plug 'morhetz/gruvbox'
 "Plug 'nvie/vim-flake8'
 "Plug 'chriskempson/base16-vim'
@@ -114,10 +112,11 @@ let python_highlight_all = 1
 let g:indentLine_color_term = 239
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
-let g:ctrlp_working_path_mode = 'w'
-let g:ctrlp_custom_ignore = '\v[\/]node_modules$'
+let g:syntastic_check_on_open = 0
+let g:syntastic_mode_map = { "mode": "passive" }
 let g:ackprg = 'ag --nogroup --nocolor --column'
-" let g:ack_autoclose = 1
+"let g:ctrlp_working_path_mode = 'w'
+"let g:ctrlp_custom_ignore = '\v[\/]node_modules$'
 let g:PHP_outdentphpescape = 0
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'base16' " gruvbox, badwolf (gruvbox), solarized
@@ -128,6 +127,10 @@ if !has('nvim')
 	let g:neocomplete#enable_at_startup = 1
 	let g:neocomplete#enable_smart_case = 1
 	let g:neocomplete#sources#syntax#min_keyword_length = 3
+else
+	let g:acp_enableAtStartup = 0
+    let g:deoplete#enable_at_startup = 1
+	let g:deoplete#enable_smart_case = 1
 endif
 
 " Enable omni completion.
@@ -174,8 +177,8 @@ set undolevels=200
 "set t_Co=256
 
 " Whitespace chars
-"set listchars=tab:▸\ 
-"set list!
+set listchars=tab:▸\ 
+set list!
 
 " ctags files
 "set tags+="./tags;,tags"
@@ -271,11 +274,6 @@ autocmd BufReadPost quickfix nnoremap <CR> <CR>
 "imap <left>  <nop>
 "map  <right> <nop>
 "imap <right> <nop>
-
-" Set nmake for windows environment
-if has("win32")
-  set makeprg=mingw32-make
-endif
 
 " Python syntactic sugar
 au BufNewFile,BufRead *.py
