@@ -31,6 +31,7 @@ end
 # fzf settings
 set -U FZF_LEGACY_KEYBINDINGS 1
 set -U FZF_TMUX 1
+set -x FZF_DEFAULT_OPTS '--height 40%'
 
 # Go settings
 set -x GOPATH $HOME/gohome
