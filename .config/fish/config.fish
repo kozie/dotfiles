@@ -54,6 +54,7 @@ set -x EDITOR $VISUAL
 # functions
 function vag; ag -QUil "$argv" | fzf | read -l result; and eval $EDITOR $result; end
 function fim; fzf | read -l result; and eval $EDITOR $result; end
+function fzr; fzf | read -l result; and eval $argv $result; end
 
 # Completions
 function make_completion --argument-names alias command
