@@ -182,7 +182,7 @@ set listchars=tab:▸\
 set list!
 
 " ctags files
-"set tags+="./tags;,tags"
+set tags=tags;
 
 set wildmenu
 set wildmode=list:longest,full

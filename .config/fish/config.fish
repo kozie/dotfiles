@@ -113,6 +113,7 @@ alias vish "$EDITOR ~/.config/fish/config.fish; and water" # source ~/.config/fi
 alias vizsh "vish"
 alias ls "command ls --color=auto"
 alias ll "ls --color=auto -laF"
+alias ag "ag --path-to-ignore ~/.agignore"
 
 alias storm "open -a 'PhpStorm 2017.1 EAP'"
 
