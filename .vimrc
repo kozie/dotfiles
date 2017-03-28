@@ -36,6 +36,7 @@ Plug 'easymotion/vim-easymotion' " <leader><leader><motion>
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'elzr/vim-json', { 'for': 'json' }
@@ -49,7 +50,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'tpope/vim-markdown'
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterEnable' }
 
 if !has('nvim')
 	" Requires LUA
