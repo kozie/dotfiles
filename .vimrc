@@ -249,11 +249,14 @@ silent! if emoji#available()
     \ 'coffee':     'coffee',
     \ 'cpp':        'chicken',
     \ 'css':        'art',
+    \ 'scss':       'purse',
     \ 'eruby':      'ring',
     \ 'gitcommit':  'soon',
     \ 'haml':       'hammer',
     \ 'help':       'angel',
     \ 'html':       'herb',
+    \ 'php':        'elephant',
+    \ 'xml':        'page_with_curl',
     \ 'java':       'older_man',
     \ 'javascript': 'monkey',
     \ 'make':       'seedling',
@@ -320,7 +323,8 @@ silent! if emoji#available()
     let pos = ' %l,%c%V '
     let pct = ' %P '
 
-    return s:cherry.' [%n] %F %<'.mod.ro.ft.fug.sep.pos.'%{Braille()}%*'.pct.s:cherry
+    "return s:cherry.' [%n] %01.40f %<'.mod.ro.ft.fug.sep.pos.'%{Braille()}%*'.pct.s:cherry
+    return s:cherry.' [%n] %{pathshorten(expand(''%:f''))} %<'.mod.ro.ft.fug.sep.pos.'%{Braille()}%*'.pct.s:cherry
   endfunction
 
   " Note that the "%!" expression is evaluated in the context of the
@@ -346,6 +350,7 @@ nn <C-p> :Files<cr>
 nn <space> <c-w>
 nn <leader>ev :vsplit $MYVIMRC<cr>
 nn <leader>sv :source $MYVIMRC<cr>
+nn <leader>f :echo @%<cr>
 "nm <leader>r :TagbarToggle<cr>
 "nm <leader>. :CtrlPTag<cr>
 "ino <leader><Tab> <c-n>
