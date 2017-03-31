@@ -30,7 +30,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-emoji'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'tpope/vim-fugitive', { 'on': 'Gblame' }
+Plug 'tpope/vim-fugitive' ", { 'on': 'Gblame' }
 Plug 'tpope/vim-surround' " {c|d|y}s<obj><char>
 Plug 'tpope/vim-abolish'
 Plug 'easymotion/vim-easymotion' " <leader><leader><motion>
@@ -44,7 +44,7 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'alvan/vim-closetag'
 Plug 'ervandew/supertab'
 Plug 'mattn/emmet-vim' " <c-y>,
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 Plug 'scrooloose/nerdcommenter'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
