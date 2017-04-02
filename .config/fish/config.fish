@@ -55,6 +55,7 @@ set -x EDITOR $VISUAL
 function vag; ag -QUil "$argv" | fzf | read -l result; and eval $EDITOR $result; end
 function fim; fzf | read -l result; and eval $EDITOR $result; end
 function fzr; fzf | read -l result; and eval $argv $result; end
+function cmp; git checkout $argv[1]; and pull; and git merge --no-ff --no-edit $argv[2]; and push; end
 
 # Completions
 function make_completion --argument-names alias command
@@ -74,6 +75,7 @@ make_completion qmerge 'git merge'
 make_completion co 'git checkout'
 make_completion pull 'git pull'
 make_completion push 'git push'
+make_completion cmp 'git checkout'
 
 function ...   ; cd ../.. ; end
 function ....  ; cd ../../.. ; end
