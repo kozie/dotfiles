@@ -117,6 +117,10 @@ alias ls "command ls --color=auto"
 alias ll "ls --color=auto -laF"
 alias ag "ag --path-to-ignore ~/.agignore"
 
+# Search (file) and find (in file) using ag
+alias s "ag --path-to-ignore ~/.agignore -Quil"
+alias f "ag --path-to-ignore ~/.agignore -Qui"
+
 alias storm "open -a 'PhpStorm 2017.1 EAP'"
 
 alias mr "n98-magerun"
