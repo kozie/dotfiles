@@ -9,11 +9,11 @@ function fish_mode_prompt --description "Display the default mode for the prompt
             case default
                 set_color --bold red 
                 #echo '[N]'
-                echo '🌸'
+                echo '⛔️'
             case insert
                 set_color --bold green
                 #echo '[I]'
-                echo '🦄'
+                echo '🌸'
             case replace-one
                 set_color --bold green
                 #echo '[R]'
