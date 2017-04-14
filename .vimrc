@@ -1,17 +1,10 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
 if has("win32")
     set directory=.,$TEMP " Set path where VIM can write ;)
-
-    "set rtp+=~/vimfiles/bundle/Vundle.vim
-    "let path='~/vimfiles/bundle'
-    "call vundle#begin(path)
 else
     set directory=~/.vim/tmp//,$TEMP
-    "set rtp+=~/.vim/bundle/Vundle.vim
-    "call vundle#begin()
 endif
 
 " fzf runtime path
@@ -46,8 +39,6 @@ Plug 'ervandew/supertab'
 Plug 'mattn/emmet-vim' " <c-y>,
 Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 Plug 'scrooloose/nerdcommenter'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'tpope/vim-markdown'
@@ -83,10 +74,12 @@ endif
 "Plug 'itchyny/lightline.vim'
 "Plug 'majutsushi/tagbar'
 "Plug 'mustache/vim-mustache-handlebars'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
-filetype plugin indent on    " required
+filetype plugin indent on  " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 
@@ -111,17 +104,20 @@ let mapleader=","
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml"
 let base16colorspace=256
 let python_highlight_all = 1
-let g:indentLine_color_term = 239
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_mode_map = { "mode": "passive" }
-let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:PHP_outdentphpescape = 0
+"let g:ackprg = 'ag --nogroup --nocolor --column'
+"let g:indentLine_color_term = 239
 "let g:ctrlp_working_path_mode = 'w'
 "let g:ctrlp_custom_ignore = '\v[\/]node_modules$'
-let g:PHP_outdentphpescape = 0
 "let g:airline_powerline_fonts = 1
 "let g:airline_theme = 'base16' " gruvbox, badwolf (gruvbox), solarized
+
+" Search Ag withouth using .gitignore
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '-U', {}, <bang>0)
 
 " Autocomplete settings
 if !has('nvim')
@@ -335,9 +331,9 @@ endif
 
 " Italic stuff
 highlight Comment gui=italic
-"highlight Comment cterm=italic
+highlight Comment cterm=italic
 highlight htmlArg gui=italic
-"highlight htmlArg cterm=italic
+highlight htmlArg cterm=italic
 
 " Custom key mappings
 xmap ga <Plug>(EasyAlign)
@@ -345,8 +341,11 @@ nmap ga <Plug>(EasyAlign)
 nmap Y y$
 no <leader>n :NERDTreeFocus<cr>
 no <leader>\ :NERDTreeToggle<cr>
+no <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+no <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 nn <tab> :Buffers<cr>
-nn <C-p> :Files<cr>
+nn <C-p> :GFiles<cr>
+nn <leader>p :Files<cr>
 nn <space> <c-w>
 nn <leader>ev :vsplit $MYVIMRC<cr>
 nn <leader>sv :source $MYVIMRC<cr>
@@ -357,8 +356,6 @@ nn <leader>f :echo @%<cr>
 "no <F5> :Make<cr>
 "ino jj <Esc>
 "ino jk <Esc>
-noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " Insert mode movement
 ino <C-k> <Up>

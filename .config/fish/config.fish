@@ -89,7 +89,7 @@ alias vi "$EDITOR"
 
 alias vgs 'vagrant global-status'
 alias up 'vagrant up'
-alias down 'vagrant halt'
+alias down 'vagrant halt -f'
 alias vssh 'vagrant ssh'
 
 alias co 'git checkout'
