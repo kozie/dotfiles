@@ -110,7 +110,7 @@ alias tm "tmux new -s"
 alias ta "tmux a"
 alias tas "tmux a -t"
 
-alias water "source ~/.config/fish/config.fish; and source ~/.config/fish/functions/fish_user_key_bindings.fish"
+alias water "source ~/.config/fish/config.fish; and fish_user_key_bindings"
 alias vish "$EDITOR ~/.config/fish/config.fish; and water" # source ~/.config/fish/config.fish"
 alias vizsh "vish"
 alias ls "command ls --color=auto"

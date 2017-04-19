@@ -331,9 +331,9 @@ endif
 
 " Italic stuff
 highlight Comment gui=italic
-highlight Comment cterm=italic
+"highlight Comment cterm=italic
 highlight htmlArg gui=italic
-highlight htmlArg cterm=italic
+"highlight htmlArg cterm=italic
 
 " Custom key mappings
 xmap ga <Plug>(EasyAlign)
