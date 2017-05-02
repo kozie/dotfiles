@@ -34,14 +34,14 @@ Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'alvan/vim-closetag'
+Plug 'alvan/vim-closetag', { 'for': ['html', 'php', 'xml']}
 Plug 'ervandew/supertab'
 Plug 'mattn/emmet-vim' " <c-y>,
 Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 Plug 'scrooloose/nerdcommenter'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'tpope/vim-markdown'
+Plug 'cakebaker/scss-syntax.vim', { 'for': ['sass', 'scss', 'less', 'css']}
+Plug 'hail2u/vim-css3-syntax', { 'for': ['sass', 'scss', 'less', 'css']}
+"Plug 'tpope/vim-markdown'
 Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterEnable' }
 
 if !has('nvim')
@@ -53,6 +53,7 @@ endif
 
 " Disabled plugins but interesting ones
 "Plug 'junegunn/rainbow_parentheses.vim'
+"Plug 'floobits/floobits-neovim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'pangloss/vim-javascript' " Replaced by othree/yajs.vim
 "Plug 'isRuslan/vim-es6'
 "Plug 'edkolev/tmuxline.vim', { 'on': 'Tmuxline' }
@@ -152,6 +153,7 @@ set backspace=indent,eol,start
 set colorcolumn=80,120
 set pastetoggle=<F12>
 set autowrite
+set lazyredraw
 
 set number
 set relativenumber
