@@ -43,12 +43,15 @@ Plug 'cakebaker/scss-syntax.vim', { 'for': ['sass', 'scss', 'less', 'css']}
 Plug 'hail2u/vim-css3-syntax', { 'for': ['sass', 'scss', 'less', 'css']}
 "Plug 'tpope/vim-markdown'
 Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterEnable' }
+"Plug 'joonty/vdebug'
 
 if !has('nvim')
     " Requires LUA
     Plug 'Shougo/neocomplete.vim'
 else 
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    
+    set termguicolors
 endif
 
 " Disabled plugins but interesting ones
@@ -116,6 +119,15 @@ let g:PHP_outdentphpescape = 0
 "let g:ctrlp_custom_ignore = '\v[\/]node_modules$'
 "let g:airline_powerline_fonts = 1
 "let g:airline_theme = 'base16' " gruvbox, badwolf (gruvbox), solarized
+
+" Xdebug settings
+let g:vdebug_options = {}
+let g:vdebug_options["path_maps"] = {"/data/web/public": "/Users/koos/Development/vandyck"}
+let g:vdebug_options["break_on_open"] = 0
+let g:vdebug_options["watch_window_style"] = "compact"
+let g:vdebug_options["server"] = "172.28.128.3"
+let g:vdebug_options["port"] = 9001
+let g:vdebug_options["ide_key"] = "VIM"
 
 " Search Ag withouth using .gitignore
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '-U', {}, <bang>0)
