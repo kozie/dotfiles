@@ -41,7 +41,6 @@ Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'cakebaker/scss-syntax.vim', { 'for': ['sass', 'scss', 'less', 'css']}
 Plug 'hail2u/vim-css3-syntax', { 'for': ['sass', 'scss', 'less', 'css']}
-"Plug 'tpope/vim-markdown'
 Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterEnable' }
 "Plug 'joonty/vdebug'
 
@@ -55,6 +54,7 @@ else
 endif
 
 " Disabled plugins but interesting ones
+"Plug 'tpope/vim-markdown'
 "Plug 'junegunn/rainbow_parentheses.vim'
 "Plug 'floobits/floobits-neovim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'pangloss/vim-javascript' " Replaced by othree/yajs.vim
@@ -169,6 +169,7 @@ set lazyredraw
 
 set number
 set relativenumber
+set numberwidth=2
 set hidden
 set linebreak
 set ruler
@@ -201,6 +202,10 @@ set wildignore+=*/node_modules/*
 
 set foldmethod=indent
 set foldlevel=99
+
+set nowrap
+autocmd FileType markdown setlocal wrap
+autocmd FileType html setlocal wrap
 
 " Set gui stuff
 if has("gui_running")
