@@ -29,7 +29,6 @@ Plug 'tpope/vim-abolish'
 Plug 'easymotion/vim-easymotion' " <leader><leader><motion>
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/html5.vim', { 'for': 'html' }
@@ -54,6 +53,7 @@ else
 endif
 
 " Disabled plugins but interesting ones
+"Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "Plug 'tpope/vim-markdown'
 "Plug 'junegunn/rainbow_parentheses.vim'
 "Plug 'floobits/floobits-neovim', { 'do': ':UpdateRemotePlugins' }
@@ -128,6 +128,13 @@ let g:vdebug_options["watch_window_style"] = "compact"
 let g:vdebug_options["server"] = "172.28.128.3"
 let g:vdebug_options["port"] = 9001
 let g:vdebug_options["ide_key"] = "VIM"
+
+" Netrw settings
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
 
 " Search Ag withouth using .gitignore
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '-U', {}, <bang>0)
@@ -358,8 +365,6 @@ highlight htmlArg gui=italic
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 nmap Y y$
-no <leader>n :NERDTreeFocus<cr>
-no <leader>\ :NERDTreeToggle<cr>
 no <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 no <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 nn <tab> :Buffers<cr>
@@ -369,6 +374,8 @@ nn <space> <c-w>
 nn <leader>ev :vsplit $MYVIMRC<cr>
 nn <leader>sv :source $MYVIMRC<cr>
 nn <leader>f :echo @%<cr>
+"no <leader>n :NERDTreeFocus<cr>
+"no <leader>\ :NERDTreeToggle<cr>
 "nm <leader>r :TagbarToggle<cr>
 "nm <leader>. :CtrlPTag<cr>
 "ino <leader><Tab> <c-n>
