@@ -1,5 +1,6 @@
 # vi mode
 fish_vi_key_bindings
+
 #function fish_mode_prompt; end
 function fish_mode_prompt --description "Display the default mode for the prompt"
     # Do nothing if not in vi mode
@@ -29,23 +30,23 @@ function fish_mode_prompt --description "Display the default mode for the prompt
 end
 
 # fzf settings
-set -U FZF_LEGACY_KEYBINDINGS 1
-set -U FZF_TMUX 1
+set -x FZF_LEGACY_KEYBINDINGS 1
+set -x FZF_TMUX 1
 set -x FZF_DEFAULT_OPTS '--height 40%'
 
 # Go settings
 set -x GOPATH $HOME/gohome
 
 # set PATH
-set -x PATH (brew --prefix go)/libexec/bin $PATH
+set -x PATH /usr/local/opt/go/libexec/bin $PATH
 set -x PATH /usr/local/sbin $PATH
-set -x PATH (brew --prefix coreutils)/libexec/gnubin $PATH
+set -x PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
 
 # set MANPATH
-set -x MANPATH (brew --prefix coreutils)/libexec/gnuman $MANPATH
+set -x MANPATH /usr/local/opt/coreutils/libexec/gnuman $MANPATH
 
 # Z
-set -g Z_SCRIPT_PATH $HOME/code/z/z.sh
+#set -g Z_SCRIPT_PATH $HOME/code/z/z.sh
 
 # Exports
 set -x VISUAL nvim
