@@ -116,7 +116,7 @@ function vish   ; eval $EDITOR ~/.config/fish/config.fish; and water; end # sour
 function vizsh  ; vish; end
 function ls     ; command ls --color=auto $argv; end
 function ll     ; ls --color=auto -laF $argv; end
-function ag     ; ag --path-to-ignore ~/.agignore $argv; end
+function ag     ; command ag --path-to-ignore ~/.agignore $argv; end
 
 # Search (file) and find (in file) using ag
 function s      ; ag --path-to-ignore ~/.agignore -Quil $argv; end
