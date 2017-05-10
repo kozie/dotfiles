@@ -86,49 +86,49 @@ function g     ; git $argv ; end
 
 # aliases
 # TODO change to functions to win a bunch of ms startup time!
-alias v "$EDITOR"
-alias vi "$EDITOR"
+function v      ; eval $EDITOR; end
+function vi     ; eval $EDITOR; end
 
-alias vgs 'vagrant global-status'
-alias up 'vagrant up'
-alias down 'vagrant halt -f'
-alias vssh 'vagrant ssh'
+function vgs    ; vagrant global-status; end
+function up     ; vagrant up; end
+function down   ; vagrant halt -f; end
+function vssh   ; vagrant ssh; end
 
-alias co 'git checkout'
-alias cm 'git commit'
-alias add 'git add'
-alias push 'git push'
-alias pull 'git pull'
-alias fetch 'git fetch'
-alias merge 'git merge --no-ff'
-alias qmerge 'git merge --no-edit --no-ff'
-alias qm 'git merge --no-edit --no-ff' # Same as previous
-alias st 'git status' # Same as previous
-alias lol 'git log --graph --decorate --pretty=oneline --abbrev-commit'
-alias lola 'git log --graph --decorate --pretty=oneline --abbrev-commit --all'
+function co     ; git checkout; end
+function cm     ; git commit; end
+function add    ; git add; end
+function push   ; git push; end
+function pull   ; git pull; end
+function fetch  ; git fetch; end
+function merge  ; git merge --no-ff; end
+function qmerge ; git merge --no-edit --no-ff; end
+function qm     ; git merge --no-edit --no-ff; end # Same as previous
+function st     ; git status; end # Same as previous
+function lol    ; git log --graph --decorate --pretty=oneline --abbrev-commit; end
+function lola   ; git log --graph --decorate --pretty=oneline --abbrev-commit --all; end
 
-alias tm "tmux new -s"
-alias ta "tmux a"
-alias tas "tmux a -t"
+function tm     ; tmux new -s; end
+function ta     ; tmux a; end
+function tas    ; tmux a -t; end
 
-alias water "source ~/.config/fish/config.fish; and fish_user_key_bindings"
-alias vish "$EDITOR ~/.config/fish/config.fish; and water" # source ~/.config/fish/config.fish"
-alias vizsh "vish"
-alias ls "command ls --color=auto"
-alias ll "ls --color=auto -laF"
-alias ag "ag --path-to-ignore ~/.agignore"
+function water  ; source ~/.config/fish/config.fish; and fish_user_key_bindings; end
+function vish   ; eval $EDITOR ~/.config/fish/config.fish; and water; end # source ~/.config/fish/config.fish"
+function vizsh  ; vish; end
+function ls     ; command ls --color=auto; end
+function ll     ; ls --color=auto -laF; end
+function ag     ; ag --path-to-ignore ~/.agignore; end
 
 # Search (file) and find (in file) using ag
-alias s "ag --path-to-ignore ~/.agignore -Quil"
-alias f "ag --path-to-ignore ~/.agignore -Qui"
+function s      ; ag --path-to-ignore ~/.agignore -Quil; end
+function f      ; ag --path-to-ignore ~/.agignore -Qui; end
 
-alias storm "open -a 'PhpStorm 2017.1 EAP'"
+function storm  ; open -a 'PhpStorm 2017.1 EAP'; end
 
-alias mr "n98-magerun"
-alias mr2 "n98-magerun2"
-alias cc "mr cache:clean; and mr cache:flush; and date"
-alias cc2 "mr2 cache:flush; and date"
-alias phpm "php -d memory_limit=-1"
+function mr     ; n98-magerun; end
+function mr2    ; n98-magerun2; end
+function cc     ; mr cache:clean; and mr cache:flush; and date; end
+function cc2    ; mr2 cache:flush; and date; end
+function phpm   ; php -d memory_limit=-1; end
 
 # load up extra (private) stuff
 if test -e ~/.config/fish/extra.fish; source ~/.config/fish/extra.fish; end;
