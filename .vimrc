@@ -41,7 +41,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'cakebaker/scss-syntax.vim', { 'for': ['sass', 'scss', 'less', 'css']}
 Plug 'hail2u/vim-css3-syntax', { 'for': ['sass', 'scss', 'less', 'css']}
 Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterEnable' }
-"Plug 'joonty/vdebug'
+Plug 'kchmck/vim-coffee-script'
 
 if !has('nvim')
     " Requires LUA
@@ -53,6 +53,7 @@ else
 endif
 
 " Disabled plugins but interesting ones
+"Plug 'joonty/vdebug'
 "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "Plug 'tpope/vim-markdown'
 "Plug 'junegunn/rainbow_parentheses.vim'
@@ -73,7 +74,6 @@ endif
 "Plug 'nanotech/jellybeans.vim'
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'Raimondi/delimitMate'
-"Plug 'kchmck/vim-coffee-script'
 "Plug 'leafgarland/typescript-vim'
 "Plug 'itchyny/lightline.vim'
 "Plug 'majutsushi/tagbar'
