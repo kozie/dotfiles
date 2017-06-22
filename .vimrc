@@ -221,7 +221,7 @@ if has("gui_running")
         set guifont=Fira\ Code:h9
     else " Probably MacVim ;)
         set macligatures
-        set guifont=Fira\ Code:h12
+        set guifont=SF\ Mono\ Medium:h12
     endif
 
     " set term=xterm-256color
