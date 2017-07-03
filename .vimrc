@@ -42,6 +42,7 @@ Plug 'cakebaker/scss-syntax.vim', { 'for': ['sass', 'scss', 'less', 'css']}
 Plug 'hail2u/vim-css3-syntax', { 'for': ['sass', 'scss', 'less', 'css']}
 Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterEnable' }
 Plug 'kchmck/vim-coffee-script'
+Plug 'dag/vim-fish'
 
 if !has('nvim')
     " Requires LUA
@@ -293,7 +294,8 @@ let s:ft_emoji = map({
             \ 'vim':        'poop',
             \ 'vim-plug':   'electric_plug',
             \ 'yaml':       'yum',
-            \ 'yaml.jinja': 'yum'
+            \ 'yaml.jinja': 'yum',
+            \ 'fish':       'fish'
             \ }, 'emoji#for(v:val)')
 
 function! S_filetype()

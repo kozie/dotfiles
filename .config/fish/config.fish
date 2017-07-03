@@ -56,7 +56,21 @@ set -x EDITOR $VISUAL
 function vag; ag -QUil "$argv" | fzf | read -l result; and eval $EDITOR $result; end
 function fim; fzf | read -l result; and eval $EDITOR $result; end
 function fzr; fzf | read -l result; and eval $argv $result; end
-function cmp; git checkout $argv[1]; and pull; and git merge --no-ff --no-edit $argv[2]; and push; end
+function cmp --description '(C)heckout, (M)erge and (P)ush'
+    echo -n "Merging "
+    set_color green
+    echo -n $argv[2]
+    set_color normal
+    echo -n " into "
+    set_color red
+    echo $argv[1]
+    set_color normal
+
+    git checkout $argv[1]
+    and pull
+    and git merge --no-ff --no-edit $argv[2]
+    and push
+end
 
 # Completions
 function make_completion --argument-names alias command
