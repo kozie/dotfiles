@@ -1,4 +1,5 @@
 # vi mode
+function fish_vi_cursor; end
 fish_vi_key_bindings
 
 #function fish_mode_prompt; end
@@ -38,6 +39,7 @@ set -x FZF_DEFAULT_OPTS '--height 40%'
 set -x GOPATH $HOME/gohome
 
 # set PATH
+set -x PATH $HOME/.composer/vendor/bin $PATH
 set -x PATH /usr/local/opt/go/libexec/bin $PATH
 set -x PATH /usr/local/sbin $PATH
 set -x PATH /usr/local/opt/coreutils/libexec/gnubin $PATH

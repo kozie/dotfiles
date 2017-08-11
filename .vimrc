@@ -208,6 +208,9 @@ set wildmenu
 set wildmode=list:longest,full
 set wildignore+=*/node_modules/*
 
+set undofile
+set undodir=~/.vim/undodir
+
 set foldmethod=indent
 set foldlevel=99
 
