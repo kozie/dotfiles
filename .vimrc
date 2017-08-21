@@ -43,6 +43,7 @@ Plug 'hail2u/vim-css3-syntax', { 'for': ['sass', 'scss', 'less', 'css']}
 Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterEnable' }
 Plug 'kchmck/vim-coffee-script'
 Plug 'dag/vim-fish'
+Plug 'joonty/vdebug'
 
 if !has('nvim')
     " Requires LUA
@@ -54,7 +55,6 @@ else
 endif
 
 " Disabled plugins but interesting ones
-"Plug 'joonty/vdebug'
 "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "Plug 'tpope/vim-markdown'
 "Plug 'junegunn/rainbow_parentheses.vim'
@@ -123,11 +123,11 @@ let g:PHP_outdentphpescape = 0
 
 " Xdebug settings
 let g:vdebug_options = {}
-let g:vdebug_options["path_maps"] = {"/data/web/public": "/Users/koos/Development/vandyck"}
+"let g:vdebug_options["path_maps"] = {"/data/web/public": "/Users/koos/Development/vandyck"}
 let g:vdebug_options["break_on_open"] = 0
 let g:vdebug_options["watch_window_style"] = "compact"
-let g:vdebug_options["server"] = "172.28.128.3"
-let g:vdebug_options["port"] = 9001
+"let g:vdebug_options["server"] = "172.28.128.3"
+let g:vdebug_options["port"] = 9000
 let g:vdebug_options["ide_key"] = "VIM"
 
 " Netrw settings
@@ -172,8 +172,15 @@ set backspace=indent,eol,start
 "set textwidth=80
 set colorcolumn=80,120
 set pastetoggle=<F12>
-set autowrite
+set autowrite autoread
 set lazyredraw
+set virtualedit=block
+set nowrap
+set foldmethod=indent
+set foldlevel=99
+set completeopt=menuone,preview
+set nrformats=hex
+set nostartofline
 
 set number
 set relativenumber
@@ -182,20 +189,18 @@ set hidden
 set linebreak
 set ruler
 set autoindent
-"set smartindent
+set smartindent " Possibly disable?
 set expandtab
 set smarttab
-set cursorline
+set nocursorline " Let's try without this
+set scrolloff=5
+set history=10000
+set undolevels=200
 
 set nohlsearch
 set incsearch
 set ignorecase
 set smartcase
-
-set history=10000
-set undolevels=200
-"set ttyfast
-"set t_Co=256
 
 " Whitespace chars
 set listchars=tab:▸\ 
@@ -211,10 +216,6 @@ set wildignore+=*/node_modules/*
 set undofile
 set undodir=~/.vim/undodir
 
-set foldmethod=indent
-set foldlevel=99
-
-set nowrap
 autocmd FileType markdown setlocal wrap
 autocmd FileType html setlocal wrap
 
