@@ -172,10 +172,8 @@ set backspace=indent,eol,start
 "set textwidth=80
 set colorcolumn=80,120
 set pastetoggle=<F12>
-set autowrite autoread
 set lazyredraw
 set virtualedit=block
-set nowrap
 set foldmethod=indent
 set foldlevel=99
 set completeopt=menuone,preview
@@ -216,8 +214,13 @@ set wildignore+=*/node_modules/*
 set undofile
 set undodir=~/.vim/undodir
 
-autocmd FileType markdown setlocal wrap
-autocmd FileType html setlocal wrap
+set autoread autowrite
+au FocusGained * :checktime
+
+" Set wrap options
+set nowrap
+au FileType markdown setlocal wrap
+au FileType html setlocal wrap
 
 " Set gui stuff
 if has("gui_running")
