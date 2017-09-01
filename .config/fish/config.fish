@@ -138,7 +138,7 @@ function ag     ; command ag --path-to-ignore ~/.agignore $argv; end
 function s      ; ag --path-to-ignore ~/.agignore -Quil $argv; end
 function f      ; ag --path-to-ignore ~/.agignore -Qui $argv; end
 
-function storm  ; open -a 'PhpStorm 2017.1 EAP'; end
+function storm  ; open -a 'PhpStorm'; end
 
 function mr     ; n98-magerun $argv; end
 function mr2    ; n98-magerun2 $argv; end

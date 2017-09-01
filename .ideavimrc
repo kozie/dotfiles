@@ -2,12 +2,14 @@ set ignorecase
 set smartcase
 set number
 set relativenumber
+set surround " IdeaVIM specific setting
 
 let mapleader=","
 
 nmap Y y$
 nn <space> <c-w>
 nn <tab> :action RecentFiles<CR>
+nn <C-p> :action SearchEverywhere<CR>
 nn <leader>sv :source ~/.ideavimrc<CR>
 ino jj <Esc>
 ino jk <Esc>
