@@ -122,6 +122,7 @@ function qm     ; git merge --no-edit --no-ff $argv; end # Same as previous
 function st     ; git status $argv; end # Same as previous
 function lol    ; git log --graph --decorate --pretty=oneline --abbrev-commit $argv; end
 function lola   ; git log --graph --decorate --pretty=oneline --abbrev-commit --all $argv; end
+function dif    ; git diff -w $argv; end
 
 function tm     ; tmux new -s $argv; end
 function ta     ; tmux a $argv; end
@@ -138,7 +139,7 @@ function ag     ; command ag --path-to-ignore ~/.agignore $argv; end
 function s      ; ag --path-to-ignore ~/.agignore -Quil $argv; end
 function f      ; ag --path-to-ignore ~/.agignore -Qui $argv; end
 
-function storm  ; open -a 'PhpStorm'; end
+function storm  ; open -a 'PhpStorm' $argv; end
 
 function mr     ; n98-magerun $argv; end
 function mr2    ; n98-magerun2 $argv; end

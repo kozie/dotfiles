@@ -3,6 +3,8 @@ set smartcase
 set number
 set relativenumber
 set surround " IdeaVIM specific setting
+set scrolloff=6
+set clipboard=unnamedplus,unnamed
 
 let mapleader=","
 
@@ -15,6 +17,11 @@ ino jj <Esc>
 ino jk <Esc>
 no j gj
 no k gk
+
+nmap <leader>g :action GotoDeclaration<cr>
+nmap <leader>b :action Back<cr>
+nmap <leader>f :action Forward<cr>
+nmap <leader>c<space> :action CommentByLineComment<CR>
 
 " Insert mode movement
 ino <C-k> <Up>

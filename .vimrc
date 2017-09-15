@@ -12,17 +12,14 @@ set rtp+=/usr/local/opt/fzf
 
 call plug#begin()
 
-" Some base plugins (Probably not needed anymore)
-"Plug 'L9'
-
 " Custom plugins
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] } " ga<obj><target>
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-emoji'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
 Plug 'tpope/vim-fugitive' ", { 'on': 'Gblame' }
 Plug 'tpope/vim-surround' " {c|d|y}s<obj><char>
 Plug 'tpope/vim-abolish'
@@ -35,13 +32,14 @@ Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'alvan/vim-closetag', { 'for': ['html', 'php', 'xml']}
 Plug 'ervandew/supertab'
-Plug 'mattn/emmet-vim' " <c-y>,
+Plug 'mattn/emmet-vim', { 'for': ['html', 'xml', 'php'] } " <c-y>,
 Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'cakebaker/scss-syntax.vim', { 'for': ['sass', 'scss', 'less', 'css']}
 Plug 'hail2u/vim-css3-syntax', { 'for': ['sass', 'scss', 'less', 'css']}
 Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterEnable' }
-Plug 'kchmck/vim-coffee-script'
+Plug 'kchmck/vim-coffee-script', { 'for': ['coffee'] }
+Plug 'tpope/vim-markdown', { 'for': ['markdown'] }
 Plug 'dag/vim-fish'
 Plug 'joonty/vdebug'
 
@@ -56,7 +54,6 @@ endif
 
 " Disabled plugins but interesting ones
 "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-"Plug 'tpope/vim-markdown'
 "Plug 'junegunn/rainbow_parentheses.vim'
 "Plug 'floobits/floobits-neovim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'pangloss/vim-javascript' " Replaced by othree/yajs.vim
@@ -82,18 +79,15 @@ endif
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 
-" All of your Plugins must be added before the following line
 call plug#end()            " required
 filetype plugin indent on  " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 
-" Put your non-Plugin stuff after this line
-
 if !exists("g:colors_name")
     syntax on
 
-    let g:seoul256_background = 234
+    let g:seoul256_background = 236
     colo seoul256 " jellybeans, gruvbox, solarized
 
     if has("gui_running")
