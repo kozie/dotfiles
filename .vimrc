@@ -41,11 +41,10 @@ Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterEnable' }
 Plug 'kchmck/vim-coffee-script', { 'for': ['coffee'] }
 Plug 'tpope/vim-markdown', { 'for': ['markdown'] }
 Plug 'dag/vim-fish'
-Plug 'joonty/vdebug'
+Plug 'mileszs/ack.vim'
 
 if !has('nvim')
-    " Requires LUA
-    Plug 'Shougo/neocomplete.vim'
+    Plug 'Shougo/deoplete.nvim'
 else 
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     
@@ -53,13 +52,14 @@ else
 endif
 
 " Disabled plugins but interesting ones
+"Plug 'joonty/vdebug'
+"Plug 'itchyny/calendar.vim'
 "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "Plug 'junegunn/rainbow_parentheses.vim'
 "Plug 'floobits/floobits-neovim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'pangloss/vim-javascript' " Replaced by othree/yajs.vim
 "Plug 'isRuslan/vim-es6'
 "Plug 'edkolev/tmuxline.vim', { 'on': 'Tmuxline' }
-"Plug 'mileszs/ack.vim'
 "Plug 'morhetz/gruvbox'
 "Plug 'nvie/vim-flake8'
 "Plug 'chriskempson/base16-vim'
@@ -108,7 +108,9 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_mode_map = { "mode": "passive" }
 let g:PHP_outdentphpescape = 0
-"let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:acp_enableAtStartup = 0
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
 "let g:indentLine_color_term = 239
 "let g:ctrlp_working_path_mode = 'w'
 "let g:ctrlp_custom_ignore = '\v[\/]node_modules$'
@@ -134,16 +136,9 @@ let g:netrw_winsize = 25
 " Search Ag withouth using .gitignore
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '-U', {}, <bang>0)
 
-" Autocomplete settings
-if !has('nvim')
-    let g:acp_enableAtStartup = 0
-    let g:neocomplete#enable_at_startup = 1
-    let g:neocomplete#enable_smart_case = 1
-    let g:neocomplete#sources#syntax#min_keyword_length = 3
-else
-    let g:acp_enableAtStartup = 0
-    let g:deoplete#enable_at_startup = 1
-    let g:deoplete#enable_smart_case = 1
+if executable('ag')
+    " let g:ackprg = 'ag --nogroup --nocolor --column'
+    let g:ackprg = 'ag --vimgrep'
 endif
 
 " Enable omni completion.
@@ -368,6 +363,7 @@ highlight htmlArg gui=italic
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 nmap Y y$
+imap jj <Esc>
 no <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 no <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 nn <tab> :Buffers<cr>
@@ -377,14 +373,10 @@ nn <space> <c-w>
 nn <leader>ev :vsplit $MYVIMRC<cr>
 nn <leader>sv :source $MYVIMRC<cr>
 nn <leader>f :echo @%<cr>
-"no <leader>n :NERDTreeFocus<cr>
-"no <leader>\ :NERDTreeToggle<cr>
 "nm <leader>r :TagbarToggle<cr>
 "nm <leader>. :CtrlPTag<cr>
 "ino <leader><Tab> <c-n>
 "no <F5> :Make<cr>
-"ino jj <Esc>
-"ino jk <Esc>
 
 " Insert mode movement
 ino <C-k> <Up>
