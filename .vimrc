@@ -13,8 +13,10 @@ set rtp+=/usr/local/opt/fzf
 call plug#begin()
 
 " Custom plugins
-Plug 'junegunn/fzf', { 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+if !has("win32")
+    Plug 'junegunn/fzf', { 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+endif
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] } " ga<obj><target>
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-emoji'
@@ -215,7 +217,7 @@ au FileType html setlocal wrap
 if has("gui_running")
     " Set correct fonts. See https://github.com/powerline/fonts
     if has("win32")
-        set guifont=Fira\ Code:h9
+        set guifont=Hack:h8
     else " Probably MacVim ;)
         set macligatures
         set guifont=SF\ Mono\ Medium:h12
