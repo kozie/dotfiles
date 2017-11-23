@@ -124,6 +124,7 @@ function lol    ; git log --graph --decorate --pretty=oneline --abbrev-commit $a
 function lola   ; git log --graph --decorate --pretty=oneline --abbrev-commit --all $argv; end
 function dif    ; git diff -w $argv; end
 
+function tmux   ; env TERM=xterm-256color tmux -2 $argv; end
 function tm     ; tmux new -s $argv; end
 function ta     ; tmux a $argv; end
 function tas    ; tmux a -t $argv; end
