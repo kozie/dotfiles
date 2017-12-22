@@ -375,6 +375,8 @@ nn <space> <c-w>
 nn <leader>ev :vsplit $MYVIMRC<cr>
 nn <leader>sv :source $MYVIMRC<cr>
 nn <leader>f :echo @%<cr>
+nn <leader>ms :mks! .project<cr>
+nn <leader>ss :source .project<cr>
 "nm <leader>r :TagbarToggle<cr>
 "nm <leader>. :CtrlPTag<cr>
 "ino <leader><Tab> <c-n>
