@@ -113,6 +113,7 @@ let g:PHP_outdentphpescape = 0
 let g:acp_enableAtStartup = 0
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
+let g:notes_path = "~/Documents/notes.txt"
 "let g:indentLine_color_term = 239
 "let g:ctrlp_working_path_mode = 'w'
 "let g:ctrlp_custom_ignore = '\v[\/]node_modules$'
@@ -431,3 +432,8 @@ function! DisableRelNo()
     set number
     set norelativenumber
 endfunc
+
+command! Notes call Notes()
+function! Notes()
+    execute 'e' g:notes_path
+endfun
