@@ -34,6 +34,7 @@ end
 set -x FZF_LEGACY_KEYBINDINGS 1
 set -x FZF_TMUX 1
 set -x FZF_DEFAULT_OPTS '--height 40%'
+set -x FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 # Go settings
 set -x GOPATH $HOME/gohome
@@ -55,7 +56,7 @@ set -x VISUAL nvim
 set -x EDITOR $VISUAL
 
 # functions
-function vag; ag -QUil "$argv" | fzf | read -l result; and eval $EDITOR $result; end
+function vag; rg --files-with-matches --hidden --no-ignore --ignore-case --fixed-strings "$argv" | fzf | read -l result; and eval $EDITOR $result; end
 function fim; fzf | read -l result; and eval $EDITOR $result; end
 function fzr; fzf | read -l result; and eval $argv $result; end
 function cmp --description '(C)heckout, (M)erge and (P)ush'
@@ -105,11 +106,6 @@ function g     ; git $argv ; end
 function v      ; eval $EDITOR $argv; end
 function vi     ; eval $EDITOR $argv; end
 
-function vgs    ; vagrant global-status $argv; end
-function up     ; vagrant up $argv; end
-function down   ; vagrant halt -f $argv; end
-function vssh   ; vagrant ssh $argv; end
-
 function co     ; git checkout $argv; end
 function cm     ; git commit $argv; end
 function add    ; git add $argv; end
@@ -137,8 +133,8 @@ function ll     ; ls --color=auto -laF $argv; end
 function ag     ; command ag --path-to-ignore ~/.agignore $argv; end
 
 # Search (file) and find (in file) using ag
-function s      ; ag --path-to-ignore ~/.agignore -Quil $argv; end
-function f      ; ag --path-to-ignore ~/.agignore -Qui $argv; end
+function s      ; rg --hidden --no-ignore --files-with-matches --fixed-strings --ignore-case $argv; end
+function f      ; rg --hidden --no-ignore --fixed-strings --ignore-case $argv; end
 
 function storm  ; open -a 'PhpStorm' $argv; end
 

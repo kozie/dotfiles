@@ -138,6 +138,7 @@ let g:netrw_winsize = 25
 
 " Search Ag withouth using .gitignore
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '-U', {}, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 if executable('ag')
     " let g:ackprg = 'ag --nogroup --nocolor --column'
