@@ -56,9 +56,7 @@ set -x VISUAL nvim
 set -x EDITOR $VISUAL
 
 # functions
-function vag; rg --files-with-matches --hidden --no-ignore --ignore-case --fixed-strings "$argv" | fzf | read -l result; and eval $EDITOR $result; end
-function fim; fzf | read -l result; and eval $EDITOR $result; end
-function fzr; fzf | read -l result; and eval $argv $result; end
+function vrg; eval $EDITOR (rg --files-with-matches --hidden --no-ignore --ignore-case --fixed-strings "$argv" | fzf ); end
 function cmp --description '(C)heckout, (M)erge and (P)ush'
     echo -n "Merging "
     set_color green
