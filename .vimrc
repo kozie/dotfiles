@@ -381,6 +381,7 @@ nn <leader>f :echo @%<cr>
 nn <leader>ms :mks! .project<cr>
 nn <leader>ss :source .project<cr>
 nn <leader>/ /function.*
+no <leader>o <c-i>
 "nn <leader>r :TagbarToggle<cr>
 "nm <leader>. :CtrlPTag<cr>
 "ino <leader><Tab> <c-n>
