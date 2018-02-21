@@ -119,6 +119,7 @@ function lola   ; git log --graph --decorate --pretty=oneline --abbrev-commit --
 function curbr  ; git branch | grep \* | cut -d ' ' -f2-; end
 function tomas  ; set currentbranch (curbr); cmp master "$currentbranch"; end
 function torel  ; set currentbranch (curbr); cmp release "$currentbranch"; end
+function toboth ; set currentbranch (curbr); cmp release "$currentbranch"; cmp master "$currentbranch"; end
 function dif    ; git diff -w $argv; end
 
 function tmux   ; env TERM=xterm-256color tmux -2 $argv; end
