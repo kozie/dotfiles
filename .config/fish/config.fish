@@ -116,6 +116,9 @@ function qm     ; git merge --no-edit --no-ff $argv; end # Same as previous
 function st     ; git status $argv; end # Same as previous
 function lol    ; git log --graph --decorate --pretty=oneline --abbrev-commit $argv; end
 function lola   ; git log --graph --decorate --pretty=oneline --abbrev-commit --all $argv; end
+function curbr  ; git branch | grep \* | cut -d ' ' -f2-; end
+function tomas  ; set currentbranch (curbr); cmp master "$currentbranch"; end
+function torel  ; set currentbranch (curbr); cmp release "$currentbranch"; end
 function dif    ; git diff -w $argv; end
 
 function tmux   ; env TERM=xterm-256color tmux -2 $argv; end
