@@ -135,8 +135,8 @@ function ll     ; ls --color=auto -laF $argv; end
 function ag     ; command ag --path-to-ignore ~/.agignore $argv; end
 
 # Search (file) and find (in file) using ag
-function s      ; rg --hidden --no-ignore --files-with-matches --fixed-strings --ignore-case $argv; end
-function f      ; rg --hidden --no-ignore --fixed-strings --ignore-case $argv; end
+function s      ; rg --hidden --files-with-matches --fixed-strings --ignore-case $argv; end
+function f      ; rg --hidden --fixed-strings --ignore-case $argv; end
 
 function storm  ; open -a 'PhpStorm' $argv; end
 
