@@ -117,9 +117,9 @@ function st     ; git status $argv; end # Same as previous
 function lol    ; git log --graph --decorate --pretty=oneline --abbrev-commit $argv; end
 function lola   ; git log --graph --decorate --pretty=oneline --abbrev-commit --all $argv; end
 function curbr  ; git branch | grep \* | cut -d ' ' -f2-; end
-function tomas  ; set currentbranch (curbr); cmp master "$currentbranch"; end
-function torel  ; set currentbranch (curbr); cmp release "$currentbranch"; end
-function toboth ; set currentbranch (curbr); cmp release "$currentbranch"; cmp master "$currentbranch"; end
+function tomas  ; set currentbranch (curbr); cmp master "$currentbranch"; git checkout "$currentbranch"; end
+function torel  ; set currentbranch (curbr); cmp release "$currentbranch"; git checkout "$currentbranch"; end
+function toboth ; set currentbranch (curbr); cmp release "$currentbranch"; cmp master "$currentbranch"; git checkout "$currentbranch"; end
 function dif    ; git diff -w $argv; end
 
 function tmux   ; env TERM=xterm-256color tmux -2 $argv; end
@@ -139,6 +139,7 @@ function s      ; rg --hidden --files-with-matches --fixed-strings --ignore-case
 function f      ; rg --hidden --fixed-strings --ignore-case $argv; end
 
 function storm  ; open -a 'PhpStorm' $argv; end
+function chroma ; open -na 'Google Chrome' --args "--app=$argv"; end
 
 function mr     ; n98-magerun $argv; end
 function mr2    ; n98-magerun2 $argv; end
