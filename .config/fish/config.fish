@@ -121,6 +121,8 @@ function tomas  ; set currentbranch (curbr); cmp master "$currentbranch"; git ch
 function torel  ; set currentbranch (curbr); cmp release "$currentbranch"; git checkout "$currentbranch"; end
 function toboth ; set currentbranch (curbr); cmp release "$currentbranch"; cmp master "$currentbranch"; git checkout "$currentbranch"; end
 function dif    ; git diff -w $argv; end
+function mas    ; git checkout master; end
+function rel    ; git checkout release; end
 
 function tmux   ; env TERM=xterm-256color tmux -2 $argv; end
 function tm     ; tmux new -s $argv; end
