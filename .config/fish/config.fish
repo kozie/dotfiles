@@ -141,7 +141,9 @@ function s      ; rg --hidden --files-with-matches --fixed-strings --ignore-case
 function f      ; rg --hidden --fixed-strings --ignore-case $argv; end
 
 function storm  ; open -a 'PhpStorm' $argv; end
+function chrome ; open -a 'Google Chrome' "$argv"; end
 function chroma ; open -na 'Google Chrome' --args "--app=$argv"; end
+function deploy ; chrome "https://cream.deploybot.com"; end
 
 function mr     ; n98-magerun $argv; end
 function mr2    ; n98-magerun2 $argv; end
