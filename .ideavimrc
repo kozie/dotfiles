@@ -5,6 +5,8 @@ set relativenumber
 set surround " IdeaVIM specific setting
 set scrolloff=6
 set clipboard=unnamedplus,unnamed
+set showmode
+set surround
 
 let mapleader=","
 
@@ -14,7 +16,6 @@ nn <tab> :action RecentFiles<CR>
 nn <C-p> :action SearchEverywhere<CR>
 nn <leader>sv :source ~/.ideavimrc<CR>
 ino jj <Esc>
-ino jk <Esc>
 no j gj
 no k gk
 
