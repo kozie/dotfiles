@@ -47,6 +47,8 @@ Plug 'mileszs/ack.vim'
 
 if !has('nvim')
     Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
 else 
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     
