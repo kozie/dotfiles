@@ -54,6 +54,7 @@ set -x MANPATH /usr/local/opt/coreutils/libexec/gnuman $MANPATH
 # Exports
 set -x VISUAL nvim
 set -x EDITOR $VISUAL
+set -x LESS '-R' # Use colors with less
 
 # functions
 function vrg; eval $EDITOR (rg --files-with-matches --hidden --no-ignore --ignore-case --fixed-strings "$argv" | fzf ); end

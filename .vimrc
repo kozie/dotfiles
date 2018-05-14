@@ -45,15 +45,15 @@ Plug 'tpope/vim-markdown', { 'for': ['markdown'] }
 Plug 'dag/vim-fish'
 Plug 'mileszs/ack.vim'
 
-if !has('nvim')
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-else 
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"if !has('nvim') && !has("gui_running")
+    "Plug 'Shougo/deoplete.nvim'
+    "Plug 'roxma/nvim-yarp'
+    "Plug 'roxma/vim-hug-neovim-rpc'
+"elseif has("nvim")
+    "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     
-    set termguicolors
-endif
+    "set termguicolors
+"endif
 
 " Disabled plugins but interesting ones
 "Plug 'joonty/vdebug'
