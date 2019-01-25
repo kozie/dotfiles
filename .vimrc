@@ -4,7 +4,7 @@ filetype off                  " required
 if has("win32")
     set directory=.,$TEMP " Set path where VIM can write ;)
 else
-    set directory=~/.vim/tmp//,$TEMP
+    set directory=~/.vim/tmp//
 endif
 
 " fzf runtime path

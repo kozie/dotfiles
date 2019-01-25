@@ -15,6 +15,8 @@ shopt -s checkwinsize
 ### Disable CTRL-S and CTRL-Q
 [[ $- =~ i ]] && stty -ixoff -ixon
 
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/usr/local/opt/php@7.1/bin:$PATH"
 export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
@@ -35,6 +37,9 @@ export EDITOR="$VISUAL"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# FZF Settings
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
 # Aliases
 alias v="$EDITOR"
 alias g='git'
@@ -44,6 +49,7 @@ alias add='git add'
 alias push='git push'
 alias pull='git pull'
 alias st='git status'
+alias dif='git diff -w'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -52,10 +58,22 @@ alias ....='cd ../../..'
 alias ls="ls"
 alias ll="ls -laF"
 
+alias s="rg --hidden --files-with-matches --fixed-strings --ignore-case"
+alias f="rg --hidden --fixed-strings --ignore-case"
+
 alias mr='magerun2'
 alias mr1='magerun'
 alias cc='magerun2 cache:flush; date'
 alias mag='bin/magento'
+
+# Git bash completions
+complete -o default -o nospace -F _git_checkout co
+complete -o default -o nospace -F _git_commit cm
+complete -o default -o nospace -F _git_add add
+complete -o default -o nospace -F _git_push push
+complete -o default -o nospace -F _git_pull pull
+complete -o default -o nospace -F _git_status st
+complete -o default -o nospace -F _git_diff dif
 
 ### Colored ls
 if [ -x /usr/bin/dircolors ]; then
@@ -82,4 +100,8 @@ else
   PS1='\[\e[34m\]\w\[\e[1;30m\]$(__git_ps1)\[\e[1;31m\] > \[\e[0m\]'
 fi
 
+# FZF
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Bash completion
+[ -r "/usr/local/etc/profile.d/bash_completion.sh" ] && . "/usr/local/etc/profile.d/bash_completion.sh"
