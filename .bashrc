@@ -6,11 +6,27 @@ shopt -s histappend
 ### Check the window size after each command ($LINES, $COLUMNS)
 shopt -s checkwinsize
 
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob;
+
 ### Better-looking less for binary files
 [ -x /usr/bin/lesspipe    ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 ### Bash completion
-[ -f /etc/bash_completion ] && . /etc/bash_completion
+#[ -f /etc/bash_completion ] && . /etc/bash_completion
+
+# Sorry, very MacOS centric here. :/
+if  which brew > /dev/null; then
+    # bash completion.
+    if [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+        source "$(brew --prefix)/share/bash-completion/bash_completion";
+    elif [ -f /etc/bash_completion ]; then
+        source /etc/bash_completion;
+    fi
+
+    # homebrew completion
+    source "$(brew --prefix)/etc/bash_completion.d/brew"
+fi;
 
 ### Disable CTRL-S and CTRL-Q
 [[ $- =~ i ]] && stty -ixoff -ixon
@@ -74,6 +90,15 @@ complete -o default -o nospace -F _git_push push
 complete -o default -o nospace -F _git_pull pull
 complete -o default -o nospace -F _git_status st
 complete -o default -o nospace -F _git_diff dif
+
+# Enable tab completion for `g` by marking it as an alias for `git`
+if type __git_complete &> /dev/null; then
+    __git_complete g __git_main
+fi;
+
+# Add tab completion for `defaults read|write NSGlobalDomain`
+# You could just use `-g` instead, but I like being explicit
+complete -W "NSGlobalDomain" defaults
 
 ### Colored ls
 if [ -x /usr/bin/dircolors ]; then
