@@ -12,14 +12,16 @@ shopt -s nocaseglob;
 ### Better-looking less for binary files
 [ -x /usr/bin/lesspipe    ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-### Bash completion
-#[ -f /etc/bash_completion ] && . /etc/bash_completion
+# FZF
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Sorry, very MacOS centric here. :/
 if  which brew > /dev/null; then
     # bash completion.
     if [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
         source "$(brew --prefix)/share/bash-completion/bash_completion";
+    elif [ -f /usr/local/etc/profile.d/bash_completion.sh ]; then
+        source /usr/local/etc/profile.d/bash_completion.sh;
     elif [ -f /etc/bash_completion ]; then
         source /etc/bash_completion;
     fi
@@ -58,6 +60,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 
 # Aliases
 alias v="$EDITOR"
+alias vi="$EDITOR"
 alias g='git'
 alias co='git checkout'
 alias cm='git commit'
@@ -124,9 +127,3 @@ else
   #PS1='\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[35m\]:\[\e[m\]\w\[\e[1;30m\]$(__git_ps1)\[\e[1;31m\]> \[\e[0m\]'
   PS1='\[\e[34m\]\w\[\e[1;30m\]$(__git_ps1)\[\e[1;31m\] > \[\e[0m\]'
 fi
-
-# FZF
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# Bash completion
-[ -r "/usr/local/etc/profile.d/bash_completion.sh" ] && . "/usr/local/etc/profile.d/bash_completion.sh"
