@@ -83,6 +83,11 @@ alias ll="ls -laF"
 alias s="rg --hidden --files-with-matches --fixed-strings --ignore-case"
 alias f="rg --hidden --fixed-strings --ignore-case"
 
+alias tmux="TERM=xterm-256color tmux -2"
+alias tm="tmux new -s"
+alias ta="tmux a"
+alias tas="tmux a -t"
+
 alias mr='magerun2'
 alias mr1='magerun'
 alias cc='magerun2 cache:flush; date'
