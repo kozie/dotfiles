@@ -9,6 +9,9 @@ shopt -s checkwinsize
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
 
+# Enable Vi mode
+set -o vi
+
 ### Better-looking less for binary files
 [ -x /usr/bin/lesspipe    ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -84,6 +87,9 @@ alias mr='magerun2'
 alias mr1='magerun'
 alias cc='magerun2 cache:flush; date'
 alias mag='bin/magento'
+
+alias vb="$EDITOR ~/.bashrc"
+alias sb="source ~/.bash_profile"
 
 # Git bash completions
 complete -o default -o nospace -F _git_checkout co
