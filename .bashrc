@@ -84,7 +84,7 @@ alias s="rg --hidden --files-with-matches --fixed-strings --ignore-case"
 alias f="rg --hidden --fixed-strings --ignore-case"
 
 alias tmux="TERM=xterm-256color tmux -2"
-alias tm="tmux new -s"
+alias tm="TERM=xterm-256-color tmux -2 new -s"
 alias ta="tmux a"
 alias tas="tmux a -t"
 
