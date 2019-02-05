@@ -97,13 +97,13 @@ alias vb="$EDITOR ~/.bashrc"
 alias sb="source ~/.bash_profile"
 
 # Git bash completions
-complete -o default -o nospace -F _git_checkout co
-complete -o default -o nospace -F _git_commit cm
-complete -o default -o nospace -F _git_add add
-complete -o default -o nospace -F _git_push push
-complete -o default -o nospace -F _git_pull pull
-complete -o default -o nospace -F _git_status st
-complete -o default -o nospace -F _git_diff dif
+__git_complete _git_checkout co
+__git_complete _git_commit cm
+__git_complete _git_add add
+__git_complete _git_push push
+__git_complete _git_pull pull
+__git_complete _git_status st
+__git_complete _git_diff dif
 
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type __git_complete &> /dev/null; then
