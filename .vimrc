@@ -209,6 +209,7 @@ set wildignore+=*/node_modules/*
 
 set undofile
 set undodir=~/.vim/undodir
+set clipboard=unnamed
 
 set autoread autowrite
 au FocusGained * :checktime
