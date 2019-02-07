@@ -13,7 +13,7 @@ shopt -s nocaseglob;
 set -o vi
 
 ### Better-looking less for binary files
-[ -x /usr/bin/lesspipe    ] && eval "$(SHELL=/bin/sh lesspipe)"
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # FZF
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -50,7 +50,7 @@ export HISTTIMEFORMAT="%Y/%m/%d %H:%M:%S:   "
 [ -z "$TMPDIR" ] && TMPDIR=/tmp
 
 # z
-. ~/z.sh
+[ -f ~/z.sh ] && . ~/z.sh
 
 # Vars
 export VISUAL="nvim"
@@ -70,6 +70,7 @@ alias cm='git commit'
 alias add='git add'
 alias push='git push'
 alias pull='git pull'
+alias fetch='git fetch'
 alias st='git status'
 alias dif='git diff -w'
 
@@ -85,8 +86,8 @@ alias f="rg --hidden --fixed-strings --ignore-case"
 
 alias tmux="TERM=xterm-256color tmux -2"
 alias tm="TERM=xterm-256-color tmux -2 new -s"
-alias ta="tmux a"
-alias tas="tmux a -t"
+alias ta="TERM=xterm-256color tmux -2 a"
+alias tas="TERM=xterm-256color tmux -2 a -t"
 
 alias mr='magerun2'
 alias mr1='magerun'
@@ -96,23 +97,24 @@ alias mag='bin/magento'
 alias vb="$EDITOR ~/.bashrc"
 alias sb="source ~/.bash_profile"
 
-# Git bash completions
-__git_complete _git_checkout co
-__git_complete _git_commit cm
-__git_complete _git_add add
-__git_complete _git_push push
-__git_complete _git_pull pull
-__git_complete _git_status st
-__git_complete _git_diff dif
+# Add tab completion for `defaults read|write NSGlobalDomain`
+# You could just use `-g` instead, but I like being explicit
+complete -W "NSGlobalDomain" defaults
 
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type __git_complete &> /dev/null; then
     __git_complete g __git_main
 fi;
 
-# Add tab completion for `defaults read|write NSGlobalDomain`
-# You could just use `-g` instead, but I like being explicit
-complete -W "NSGlobalDomain" defaults
+# Git bash completions
+__git_complete _git_commit cm
+__git_complete _git_add add
+__git_complete _git_push push
+__git_complete _git_pull pull
+__git_complete _git_fetch fetch
+__git_complete _git_status st
+__git_complete _git_diff dif
+__git_complete _git_checkout co
 
 ### Colored ls
 if [ -x /usr/bin/dircolors ]; then
