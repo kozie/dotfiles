@@ -71,12 +71,13 @@ alias add='git add'
 alias push='git push'
 alias pull='git pull'
 alias fetch='git fetch'
-alias st='git status'
+alias st='git status -u'
 alias dif='git diff -w'
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 alias ls="ls"
 alias ll="ls -laF"
