@@ -31,7 +31,10 @@ if  which brew > /dev/null; then
 
     # homebrew completion
     source "$(brew --prefix)/etc/bash_completion.d/brew"
-fi;
+else
+    [ -f /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
+    [ -f /usr/share/bash-completion/completions/git ] && . /usr/share/bash-completion/completions/git
+fi
 
 ### Disable CTRL-S and CTRL-Q
 [[ $- =~ i ]] && stty -ixoff -ixon
@@ -41,6 +44,11 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/usr/local/opt/php@7.1/bin:$PATH"
 export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
+
+if [ "$PLATFORM" != Darwin ]; then
+    export PATH="$PATH:$HOME/npm/bin"
+    export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
+fi
 
 ### man bash
 export HISTCONTROL=ignoreboth:erasedups
