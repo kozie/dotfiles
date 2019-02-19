@@ -1,8 +1,26 @@
 [alias]
     cm = commit
+    st = status
     s = status
     co = checkout
+    br = branch
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+[branch]
+    autosetuprebase = remote
+    autosetupmerge = true
+[merge]
+    log = true
+    ff = false
+[push]
+    default = current
+[core]
+    editor = vim
+    eol = lf
+    ignorecase = false
+    autocrlf = input
+    attributesfile = /Users/koosvanegmond/.gitattributes
+    excludesfile = /Users/koosvanegmond/.gitignore_global
 
 [pager]
     # insanely beautiful diffs ==> npm install -g diff-so-fancy
@@ -35,5 +53,5 @@
     changed = green
     untracked = cyan
 [user]
-	email = info@kozie.nl
-	name = kozie
+    email = info@kozie.nl
+    name = kozie
