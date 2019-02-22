@@ -107,13 +107,16 @@ alias vb="$EDITOR ~/.bashrc"
 alias sb="source ~/.bash_profile"
 
 if [ "$PLATFORM" = Linux ]; then
+    # apt-get install -y xclip
     alias pbcopy='xclip -selection clipboard'
     alias pbpaste='xclip -selection clipboard -o'
 fi
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
-complete -W "NSGlobalDomain" defaults
+if [ "$PLATFORM" = Darwin ]; then
+    complete -W "NSGlobalDomain" defaults
+fi
 
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type __git_complete &> /dev/null; then
