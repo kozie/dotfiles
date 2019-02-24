@@ -1,18 +1,3 @@
-# dotfiles
+# Dotfiles
 
-These are my dotfiles. Use them if you like :)
-
-### Sublime Packages
-- 1337 color schemes
-- AdvancedNewFile
-- All Autocomplete
-- Babel
-- BracketHighlighter
-- DevDocs
-- DocBlockr
-- Emmet
-- HexViewer
-- Seti UI (Seti UX)
-- SidebarEnhancements
-- Vintageous
-- Wrap Plus
+These are my dotfiles i use on mac and linux environments. Please don't hesitate to use them if you would like to 👌
