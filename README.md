@@ -1,18 +1,5 @@
-# dotfiles
-
-These are my dotfiles. Use them if you like :)
-
-### Sublime Packages
-- 1337 color schemes
-- AdvancedNewFile
-- All Autocomplete
-- Babel
-- BracketHighlighter
-- DevDocs
-- DocBlockr
-- Emmet
-- HexViewer
-- Seti UI (Seti UX)
-- SidebarEnhancements
-- Vintageous
-- Wrap Plus
+# Simple Dotfiles
+Install using the following command
+```shell
+$ sh -c "$(curl -fsSL https://kozie.github.io/dotfiles/setupvim-simple.sh)"
+```
