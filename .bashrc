@@ -92,6 +92,7 @@ alias ll="ls -laF"
 
 alias s="rg --hidden --files-with-matches --fixed-strings --ignore-case"
 alias f="rg --hidden --fixed-strings --ignore-case"
+alias gr="grep -v grep | grep -i"
 
 alias tmux="TERM=xterm-256color tmux -2"
 alias tm="TERM=xterm-256-color tmux -2 new -s"
@@ -102,7 +103,7 @@ alias mr='magerun2'
 alias mr1='magerun'
 alias cc='magerun2 cache:flush; date'
 alias mag='bin/magento'
-alias rmall='rm -rfv pub/static/frontend; rm -rfv var/view_preprocessed; rm -rfv generated/code; magerun2 cache:flush; cowsay cache is cleaned on $(date)'
+alias rmall='rm -rf pub/static/frontend; rm -rf var/view_preprocessed; rm -rf generated/code; echo Removed folders; magerun2 cache:flush; cowsay cache is cleaned on $(date)'
 
 alias vb="$EDITOR ~/.bashrc"
 alias sb="source ~/.bash_profile"
