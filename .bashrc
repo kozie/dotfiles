@@ -102,6 +102,7 @@ alias mr='magerun2'
 alias mr1='magerun'
 alias cc='magerun2 cache:flush; date'
 alias mag='bin/magento'
+alias rmall='rm -rfv pub/static/frontend; rm -rfv var/view_preprocessed; rm -rfv generated/code; magerun2 cache:flush; cowsay cache is cleaned on $(date)'
 
 alias vb="$EDITOR ~/.bashrc"
 alias sb="source ~/.bash_profile"
