@@ -107,9 +107,17 @@ alias rmall='rm -rfv pub/static/frontend; rm -rfv var/view_preprocessed; rm -rfv
 alias vb="$EDITOR ~/.bashrc"
 alias sb="source ~/.bash_profile"
 
+if [ "$PLATFORM" = Linux ]; then
+    # apt-get install -y xclip
+    alias pbcopy='xclip -selection clipboard'
+    alias pbpaste='xclip -selection clipboard -o'
+fi
+
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
-complete -W "NSGlobalDomain" defaults
+if [ "$PLATFORM" = Darwin ]; then
+    complete -W "NSGlobalDomain" defaults
+fi
 
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type __git_complete &> /dev/null; then
@@ -138,10 +146,10 @@ fi
 # Prompt
 # --------------------------------------------------------------------
 
-if [ "$PLATFORM" = Linux ]; then
-  PS1="\[\e[1;38m\]\u\[\e[1;34m\]@\[\e[1;31m\]\h\[\e[1;30m\]:"
-  PS1="$PS1\[\e[0;38m\]\w\[\e[1;35m\]> \[\e[0m\]"
-else
+#if [ "$PLATFORM" = Linux ]; then
+  #PS1="\[\e[1;38m\]\u\[\e[1;34m\]@\[\e[1;31m\]\h\[\e[1;30m\]:"
+  #PS1="$PS1\[\e[0;38m\]\w\[\e[1;35m\]> \[\e[0m\]"
+#else
   ### git-prompt
   __git_ps1() { :;}
   if [ -e ~/.git-prompt.sh ]; then
@@ -149,4 +157,4 @@ else
   fi
   #PS1='\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[35m\]:\[\e[m\]\w\[\e[1;30m\]$(__git_ps1)\[\e[1;31m\]> \[\e[0m\]'
   PS1='\[\e[34m\]\w\[\e[1;30m\]$(__git_ps1)\[\e[1;31m\] > \[\e[0m\]'
-fi
+#fi
