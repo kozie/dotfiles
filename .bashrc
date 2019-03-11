@@ -88,7 +88,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 alias ls="ls"
-alias ll="ls -laF"
+alias ll="ls -lhaF"
 
 alias s="rg --hidden --files-with-matches --fixed-strings --ignore-case"
 alias f="rg --hidden --fixed-strings --ignore-case"
@@ -104,6 +104,7 @@ alias mr1='magerun'
 alias cc='magerun2 cache:flush; date'
 alias mag='bin/magento'
 alias rmall='rm -rf pub/static/frontend; rm -rf var/view_preprocessed; rm -rf generated/code; echo Removed folders; magerun2 cache:flush; cowsay cache is cleaned on $(date)'
+alias rmst='rm -rf pub/static/frontend; rm -rf var/view_preprocessed;  echo Removed static folders; magerun2 cache:clean layout block_html full_page; cowsay cache is cleaned on $(date)'
 
 alias vb="$EDITOR ~/.bashrc"
 alias sb="source ~/.bash_profile"
