@@ -37,8 +37,9 @@ Plug 'ervandew/supertab'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'xml', 'php'] } " <c-y>,
 Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 Plug 'scrooloose/nerdcommenter'
-Plug 'cakebaker/scss-syntax.vim', { 'for': ['sass', 'scss', 'less', 'css']}
-Plug 'hail2u/vim-css3-syntax', { 'for': ['sass', 'scss', 'less', 'css']}
+Plug 'cakebaker/scss-syntax.vim', { 'for': ['sass', 'scss', 'less', 'css'] }
+Plug 'hail2u/vim-css3-syntax', { 'for': ['sass', 'scss', 'less', 'css'] }
+Plug 'groenewege/vim-less', { 'for': ['less'] } 
 Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterEnable' }
 Plug 'kchmck/vim-coffee-script', { 'for': ['coffee'] }
 Plug 'tpope/vim-markdown', { 'for': ['markdown'] }
@@ -91,7 +92,7 @@ filetype plugin indent on  " required
 if !exists("g:colors_name")
     syntax on
 
-    let g:seoul256_background = 236
+    let g:seoul256_background = 235
     colo seoul256 " jellybeans, gruvbox, solarized
 
     if has("gui_running")
@@ -164,6 +165,7 @@ set fenc=utf-8
 set laststatus=2
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 set backspace=indent,eol,start
 "set textwidth=80
 set colorcolumn=80,120
