@@ -42,8 +42,10 @@ fi
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-export PATH="/usr/local/opt/php@7.1/bin:$PATH"
-export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
+#export PATH="/usr/local/opt/php@7.1/bin:$PATH"
+#export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
+export PATH="/usr/local/opt/valet-php@7.1/bin:$PATH"
+export PATH="/usr/local/opt/valet-php@7.1/sbin:$PATH"
 
 if [ "$PLATFORM" != Darwin ]; then
     export PATH="$PATH:$HOME/npm/bin"
