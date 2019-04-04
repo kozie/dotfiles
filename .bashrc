@@ -83,6 +83,7 @@ alias pull='git pull'
 alias fetch='git fetch'
 alias st='git status -u'
 alias dif='git diff -w'
+alias gh="open `git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git://)#http://#' -e 's@com:@com/@'`| head -n1"
 
 alias ..='cd ..'
 alias ...='cd ../..'
