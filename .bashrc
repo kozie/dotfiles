@@ -101,6 +101,7 @@ alias tm="TERM=xterm-256-color tmux -2 new -s"
 alias ta="TERM=xterm-256color tmux -2 a"
 alias tas="TERM=xterm-256color tmux -2 a -t"
 alias com="composer"
+alias storm="pstorm ."
 
 alias mr='magerun2'
 alias mr1='magerun'
