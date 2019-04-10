@@ -42,8 +42,10 @@ fi
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-export PATH="/usr/local/opt/php@7.1/bin:$PATH"
-export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
+#export PATH="/usr/local/opt/php@7.1/bin:$PATH"
+#export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
+export PATH="/usr/local/opt/valet-php@7.1/bin:$PATH"
+export PATH="/usr/local/opt/valet-php@7.1/sbin:$PATH"
 
 if [ "$PLATFORM" != Darwin ]; then
     export PATH="$PATH:$HOME/npm/bin"
@@ -99,6 +101,8 @@ alias tmux="TERM=xterm-256color tmux -2"
 alias tm="TERM=xterm-256-color tmux -2 new -s"
 alias ta="TERM=xterm-256color tmux -2 a"
 alias tas="TERM=xterm-256color tmux -2 a -t"
+alias com="composer"
+alias storm="pstorm ."
 
 alias mr='magerun2'
 alias mr1='magerun'
