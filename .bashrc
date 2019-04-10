@@ -59,6 +59,7 @@ export HISTTIMEFORMAT="%Y/%m/%d %H:%M:%S:   "
 
 # z
 [ -f ~/z.sh ] && . ~/z.sh
+[ -f /usr/local/etc/profile.d/z.sh ] && . /usr/local/etc/profile.d/z.sh
 
 # Vars
 export VISUAL="nvim"
