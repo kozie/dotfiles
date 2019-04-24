@@ -109,7 +109,7 @@ alias mr='magerun2'
 alias mr1='magerun'
 alias cc='magerun2 cache:flush; date'
 alias mag='bin/magento'
-alias rmall='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed; rm -rf generated/code; echo Removed folders; magerun2 cache:flush; cowsay cache is cleaned on $(date)'
+alias rmall='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed; rm -rf generated; echo Removed folders; magerun2 cache:flush; cowsay cache is cleaned on $(date)'
 alias rmst='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed;  echo Removed static folders; magerun2 cache:clean layout block_html full_page; cowsay cache is cleaned on $(date)'
 
 alias vb="$EDITOR ~/.bashrc"
