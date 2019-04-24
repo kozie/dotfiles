@@ -4,6 +4,9 @@
     s = status
     co = checkout
     br = branch
+    df = diff
+    mr = merge --no-edit --no-ff
+    o = open # https://github.com/paulirish/git-open
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 
 [branch]
@@ -11,7 +14,7 @@
     autosetupmerge = true
 [merge]
     log = true
-    ff = false
+    
 [push]
     default = current
 [core]
