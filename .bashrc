@@ -46,6 +46,7 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 #export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
 export PATH="/usr/local/opt/valet-php@7.1/bin:$PATH"
 export PATH="/usr/local/opt/valet-php@7.1/sbin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 if [ "$PLATFORM" != Darwin ]; then
     export PATH="$PATH:$HOME/npm/bin"
@@ -141,6 +142,11 @@ __git_complete _git_fetch fetch
 __git_complete _git_status st
 __git_complete _git_diff dif
 __git_complete _git_checkout co
+
+# FZF alias completion (**<tab>)
+complete -o bashdefault -o default -o nospace -F _fzf_path_completion g
+complete -o bashdefault -o default -F _fzf_path_completion v
+complete -o default -F _fzf_path_completion ll
 
 ### Colored ls
 if [ -x /usr/bin/dircolors ]; then
