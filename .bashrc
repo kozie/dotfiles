@@ -128,6 +128,11 @@ if [ "$PLATFORM" = Darwin ]; then
     complete -W "NSGlobalDomain" defaults
 fi
 
+# FZF alias completion (**<tab>)
+complete -o bashdefault -o default -o nospace -F _fzf_path_completion g
+complete -o bashdefault -o default -F _fzf_path_completion v
+complete -o default -F _fzf_path_completion ll
+
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type __git_complete &> /dev/null; then
     __git_complete g __git_main
@@ -142,11 +147,6 @@ __git_complete _git_fetch fetch
 __git_complete _git_status st
 __git_complete _git_diff dif
 __git_complete _git_checkout co
-
-# FZF alias completion (**<tab>)
-complete -o bashdefault -o default -o nospace -F _fzf_path_completion g
-complete -o bashdefault -o default -F _fzf_path_completion v
-complete -o default -F _fzf_path_completion ll
 
 ### Colored ls
 if [ -x /usr/bin/dircolors ]; then
