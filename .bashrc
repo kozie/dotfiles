@@ -44,8 +44,8 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 #export PATH="/usr/local/opt/php@7.1/bin:$PATH"
 #export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
-export PATH="/usr/local/opt/valet-php@7.1/bin:$PATH"
-export PATH="/usr/local/opt/valet-php@7.1/sbin:$PATH"
+#export PATH="/usr/local/opt/valet-php@7.1/bin:$PATH"
+#export PATH="/usr/local/opt/valet-php@7.1/sbin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 if [ "$PLATFORM" != Darwin ]; then
@@ -110,7 +110,7 @@ alias mr='magerun2'
 alias mr1='magerun'
 alias cc='magerun2 cache:flush; date'
 alias mag='bin/magento'
-alias rmall='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed; rm -rf generated; echo Removed folders; magerun2 cache:flush; cowsay cache is cleaned on $(date)'
+alias rmall='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed; rm -rf generated/code; echo Removed folders; magerun2 cache:flush; cowsay cache is cleaned on $(date)'
 alias rmst='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed;  echo Removed static folders; magerun2 cache:clean layout block_html full_page; cowsay cache is cleaned on $(date)'
 
 alias vb="$EDITOR ~/.bashrc"
@@ -148,6 +148,10 @@ __git_complete _git_status st
 __git_complete _git_diff dif
 __git_complete _git_checkout co
 
+# History completion (close to fish)
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
 ### Colored ls
 if [ -x /usr/bin/dircolors ]; then
   eval "`dircolors -b`"
@@ -156,6 +160,15 @@ if [ -x /usr/bin/dircolors ]; then
 elif [ "$PLATFORM" = Darwin ]; then
   alias ls='ls -G'
 fi
+
+# highlighting inside manpages and elsewhere
+export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
+export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
+export LESS_TERMCAP_me=$'\E[0m'           # end mode
+export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
+export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
+export LESS_TERMCAP_ue=$'\E[0m'           # end underline
+export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 # Prompt
 # --------------------------------------------------------------------
