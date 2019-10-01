@@ -103,11 +103,12 @@ alias tmux="TERM=xterm-256color tmux -2"
 alias tm="TERM=xterm-256-color tmux -2 new -s"
 alias ta="TERM=xterm-256color tmux -2 a"
 alias tas="TERM=xterm-256color tmux -2 a -t"
-alias com="composer"
+alias com="COMPOSER_MEMORY_LIMIT=-1 composer"
 alias storm="open -a PhpStorm ." # Seems to work better than pstorm somehow
 
 alias mr='magerun2'
 alias mr1='magerun'
+alias mc='magento-cloud'
 alias cc='magerun2 cache:flush; date'
 alias mag='bin/magento'
 alias rmall='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed; rm -rf generated/code; echo Removed folders; magerun2 cache:flush; cowsay cache is cleaned on $(date)'
@@ -147,6 +148,9 @@ __git_complete _git_fetch fetch
 __git_complete _git_status st
 __git_complete _git_diff dif
 __git_complete _git_checkout co
+
+# Syntax for specific files
+autocmd BufNewFile,BufRead *.lock set syntax=json
 
 # History completion (close to fish)
 bind '"\e[A": history-search-backward'
