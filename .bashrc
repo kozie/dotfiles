@@ -104,7 +104,9 @@ alias tm="TERM=xterm-256-color tmux -2 new -s"
 alias ta="TERM=xterm-256color tmux -2 a"
 alias tas="TERM=xterm-256color tmux -2 a -t"
 alias com="COMPOSER_MEMORY_LIMIT=-1 composer"
-alias storm="open -a PhpStorm ." # Seems to work better than pstorm somehow
+alias storm="open -a PhpStorm" # Seems to work better than pstorm somehow
+alias chrome='open -a Google\ Chrome'
+alias xd='valet xdebug';
 
 alias mr='magerun2'
 alias mr1='magerun'
@@ -148,9 +150,6 @@ __git_complete _git_fetch fetch
 __git_complete _git_status st
 __git_complete _git_diff dif
 __git_complete _git_checkout co
-
-# Syntax for specific files
-autocmd BufNewFile,BufRead *.lock set syntax=json
 
 # History completion (close to fish)
 bind '"\e[A": history-search-backward'
