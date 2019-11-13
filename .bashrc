@@ -107,6 +107,7 @@ alias com="COMPOSER_MEMORY_LIMIT=-1 composer"
 alias storm="open -a PhpStorm" # Seems to work better than pstorm somehow
 alias chrome='open -a Google\ Chrome'
 alias xd='valet xdebug';
+alias caf='echo "Keeping system active. Press Ctrl + c to cancel."; caffeinate -i'
 
 alias mr='magerun2'
 alias mr1='magerun'
