@@ -106,6 +106,7 @@ alias tas="TERM=xterm-256color tmux -2 a -t"
 alias com="COMPOSER_MEMORY_LIMIT=-1 composer"
 alias storm="open -a PhpStorm" # Seems to work better than pstorm somehow
 alias chrome='open -a Google\ Chrome'
+alias oo='open -a OpenOffice'
 alias xd='valet xdebug';
 alias caf='echo "Keeping system active. Press Ctrl + c to cancel."; caffeinate -i'
 
@@ -116,7 +117,6 @@ alias cc='magerun2 cache:flush; date'
 alias mag='bin/magento'
 alias rmall='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed; rm -rf generated/code; echo Removed folders; magerun2 cache:flush; cowsay cache is cleaned on $(date)'
 alias rmst='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed;  echo Removed static folders; magerun2 cache:clean layout block_html full_page; cowsay cache is cleaned on $(date)'
-#alias crf="mr sys:cr:li | grep '*' | awk '{print \$2}' | fzf | xargs magerun2 sys:cr:run"
 alias crl='magerun2 sys:cron:list'
 alias cr='magerun2 sys:cron:run'
 
@@ -130,7 +130,14 @@ if [ "$PLATFORM" = Linux ]; then
 fi
 
 fix () { v $1 && add $1; }
-crf () { mr sys:cr:li | grep '*' | awk '{print $2}' | fzf --query=$1 | xargs magerun2 sys:cr:run; }
+crf () { 
+    CHRON=$(mr sys:cr:li | grep -E '\*|-' | grep -v '+' | awk '{print $2}' | fzf --query=$1);
+
+    for item in $CHRON ; do
+        history -s "magerun2 sys:cr:r $item"
+        magerun2 sys:cr:r $item
+    done
+}
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
