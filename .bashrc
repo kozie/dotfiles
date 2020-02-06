@@ -123,6 +123,8 @@ alias cr='magerun2 sys:cron:run'
 alias vb="$EDITOR ~/.bashrc"
 alias sb="source ~/.bash_profile"
 
+alias setesc='hidutil property --set '"'"'{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000064,"HIDKeyboardModifierMappingDst":0x700000029}]}'"'"''
+
 if [ "$PLATFORM" = Linux ]; then
     # apt-get install -y xclip
     alias pbcopy='xclip -selection clipboard'
