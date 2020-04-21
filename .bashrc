@@ -42,16 +42,19 @@ fi
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-#export PATH="/usr/local/opt/php@7.1/bin:$PATH"
-#export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
-#export PATH="/usr/local/opt/valet-php@7.1/bin:$PATH"
-#export PATH="/usr/local/opt/valet-php@7.1/sbin:$PATH"
+export PATH="/usr/local/opt/valet-php@7.2/bin:$PATH"
+export PATH="/usr/local/opt/valet-php@7.2/sbin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 if [ "$PLATFORM" != Darwin ]; then
     export PATH="$PATH:$HOME/npm/bin"
     export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
 fi
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 ### man bash
 export HISTCONTROL=ignoreboth:erasedups
@@ -110,15 +113,19 @@ alias oo='open -a OpenOffice'
 alias xd='valet xdebug';
 alias caf='echo "Keeping system active. Press Ctrl + c to cancel."; caffeinate -i'
 
-alias mr='magerun2'
-alias mr1='magerun'
-alias mc='magento-cloud'
-alias cc='magerun2 cache:flush; date'
-alias mag='bin/magento'
-alias rmall='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed; rm -rf generated/code; echo Removed folders; magerun2 cache:flush; cowsay cache is cleaned on $(date)'
-alias rmst='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed;  echo Removed static folders; magerun2 cache:clean layout block_html full_page; cowsay cache is cleaned on $(date)'
-alias crl='magerun2 sys:cron:list'
-alias cr='magerun2 sys:cron:run'
+# Tool & Project specifics
+alias dyndb='dynamodb-local -sharedDb'
+
+# Commented out as i don't use Magento atm
+#alias mr='magerun2'
+#alias mr1='magerun'
+#alias mc='magento-cloud'
+#alias cc='magerun2 cache:flush; date'
+#alias mag='bin/magento'
+#alias rmall='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed; rm -rf generated/code; echo Removed folders; magerun2 cache:flush; cowsay cache is cleaned on $(date)'
+#alias rmst='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed;  echo Removed static folders; magerun2 cache:clean layout block_html full_page; cowsay cache is cleaned on $(date)'
+#alias crl='magerun2 sys:cron:list'
+#alias cr='magerun2 sys:cron:run'
 
 alias vb="$EDITOR ~/.bashrc"
 alias sb="source ~/.bash_profile"
@@ -131,15 +138,15 @@ if [ "$PLATFORM" = Linux ]; then
     alias pbpaste='xclip -selection clipboard -o'
 fi
 
-fix () { v $1 && add $1; }
-crf () { 
-    CHRON=$(mr sys:cr:li | grep -E '\*|-' | grep -v '+' | awk '{print $2}' | fzf --query=$1);
+#fix () { v $1 && add $1; }
+#crf () { 
+    #CHRON=$(mr sys:cr:li | grep -E '\*|-' | grep -v '+' | awk '{print $2}' | fzf --query=$1);
 
-    for item in $CHRON ; do
-        history -s "magerun2 sys:cr:r $item"
-        magerun2 sys:cr:r $item
-    done
-}
+    #for item in $CHRON ; do
+        #history -s "magerun2 sys:cr:r $item"
+        #magerun2 sys:cr:r $item
+    #done
+#}
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit

@@ -9,9 +9,9 @@
     o = open # https://github.com/paulirish/git-open
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 
-[branch]
-    autosetuprebase = remote
-    autosetupmerge = true
+#[branch]
+#    autosetuprebase = remote
+#    autosetupmerge = true
 [merge]
     log = true
     
@@ -22,8 +22,8 @@
     eol = lf
     ignorecase = false
     autocrlf = input
-    attributesfile = /Users/koosvanegmond/.gitattributes
-    excludesfile = /Users/koosvanegmond/.gitignore_global
+    attributesfile = /Users/koos/.gitattributes
+    excludesfile = /Users/koos/.gitignore_global
 
 [pager]
     # insanely beautiful diffs ==> npm install -g diff-so-fancy
