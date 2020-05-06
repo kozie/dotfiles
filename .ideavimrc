@@ -19,7 +19,7 @@ nn <leader>sv :source ~/.ideavimrc<CR>
 ino jj <Esc>
 no j gj
 no k gk
-nn zz :w<CR>
+" nn zz :w<CR>
 
 nmap <leader>b :action Back<cr>
 nmap <leader>f :action Forward<cr>

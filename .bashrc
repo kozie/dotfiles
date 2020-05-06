@@ -42,8 +42,8 @@ fi
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-export PATH="/usr/local/opt/valet-php@7.2/bin:$PATH"
-export PATH="/usr/local/opt/valet-php@7.2/sbin:$PATH"
+export PATH="/usr/local/opt/valet-php@7.1/bin:$PATH"
+export PATH="/usr/local/opt/valet-php@7.1/sbin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 if [ "$PLATFORM" != Darwin ]; then
@@ -109,7 +109,7 @@ alias tas="TERM=xterm-256color tmux -2 a -t"
 alias com="COMPOSER_MEMORY_LIMIT=-1 composer"
 alias storm="open -a PhpStorm" # Seems to work better than pstorm somehow
 alias chrome='open -a Google\ Chrome'
-alias oo='open -a OpenOffice'
+alias oo='open -a LibreOffice'
 alias xd='valet xdebug';
 alias caf='echo "Keeping system active. Press Ctrl + c to cancel."; caffeinate -i'
 
@@ -129,8 +129,10 @@ alias dyndb='dynamodb-local -sharedDb'
 
 alias vb="$EDITOR ~/.bashrc"
 alias sb="source ~/.bash_profile"
+alias vhost="sudo vim /etc/hosts"
 
 alias setesc='hidutil property --set '"'"'{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000064,"HIDKeyboardModifierMappingDst":0x700000029}]}'"'"''
+alias dismouseacc='defaults write .GlobalPreferences com.apple.mouse.scaling -1'
 
 if [ "$PLATFORM" = Linux ]; then
     # apt-get install -y xclip
