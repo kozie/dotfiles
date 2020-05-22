@@ -168,14 +168,14 @@ if type __git_complete &> /dev/null; then
 fi;
 
 # Git bash completions
-__git_complete _git_commit cm
-__git_complete _git_add add
-__git_complete _git_push push
-__git_complete _git_pull pull
-__git_complete _git_fetch fetch
-__git_complete _git_status st
-__git_complete _git_diff dif
-__git_complete _git_checkout co
+__git_complete cm _git_commit
+__git_complete add _git_add
+__git_complete push _git_push
+__git_complete pull _git_pull
+__git_complete fetch _git_fetch
+__git_complete st _git_status
+__git_complete dif _git_diff
+__git_complete co _git_checkout
 
 # History completion (close to fish)
 bind '"\e[A": history-search-backward'
