@@ -42,8 +42,8 @@ fi
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-export PATH="/usr/local/opt/valet-php@7.1/bin:$PATH"
-export PATH="/usr/local/opt/valet-php@7.1/sbin:$PATH"
+export PATH="/usr/local/opt/valet-php@7.0/bin:$PATH"
+export PATH="/usr/local/opt/valet-php@7.0/sbin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 if [ "$PLATFORM" != Darwin ]; then
@@ -80,6 +80,7 @@ export FZF_COMPLETION_TRIGGER='**'
 # Aliases
 alias v="$EDITOR"
 alias vi="$EDITOR"
+alias r='ranger'
 alias g='git'
 alias co='git checkout'
 alias cm='git commit'
