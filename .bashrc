@@ -51,11 +51,6 @@ if [ "$PLATFORM" != Darwin ]; then
     export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
 fi
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
 ### man bash
 export HISTCONTROL=ignoreboth:erasedups
 export HISTSIZE=
@@ -66,6 +61,11 @@ export HISTTIMEFORMAT="%Y/%m/%d %H:%M:%S:   "
 # z
 [ -f ~/z.sh ] && . ~/z.sh
 [ -f /usr/local/etc/profile.d/z.sh ] && . /usr/local/etc/profile.d/z.sh
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Vars
 export VISUAL="nvim"
@@ -98,6 +98,7 @@ alias .....='cd ../../../..'
 
 alias ls="ls"
 alias ll="ls -lhaF"
+alias l="ls -lhaF"
 
 alias s="rg --hidden --files-with-matches --fixed-strings --ignore-case"
 alias f="rg --hidden --fixed-strings --ignore-case"
@@ -108,8 +109,10 @@ alias tm="TERM=xterm-256-color tmux -2 new -s"
 alias ta="TERM=xterm-256color tmux -2 a"
 alias tas="TERM=xterm-256color tmux -2 a -t"
 alias com="COMPOSER_MEMORY_LIMIT=-1 composer"
+alias np="nvm exec npm"
 alias storm="open -a PhpStorm" # Seems to work better than pstorm somehow
 alias chrome='open -a Google\ Chrome'
+alias firefox='open -a Firefox'
 alias oo='open -a LibreOffice'
 alias xd='valet xdebug';
 alias caf='echo "Keeping system active. Press Ctrl + c to cancel."; caffeinate -i'
@@ -140,6 +143,10 @@ if [ "$PLATFORM" = Linux ]; then
     alias pbcopy='xclip -selection clipboard'
     alias pbpaste='xclip -selection clipboard -o'
 fi
+
+dssh () {
+    docker exec –it "$1" /bin/bash
+}
 
 #fix () { v $1 && add $1; }
 #crf () { 
