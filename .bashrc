@@ -42,9 +42,10 @@ fi
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-export PATH="/usr/local/opt/valet-php@7.0/bin:$PATH"
-export PATH="/usr/local/opt/valet-php@7.0/sbin:$PATH"
+#export PATH="/usr/local/opt/valet-php@7.0/bin:$PATH"
+#export PATH="/usr/local/opt/valet-php@7.0/sbin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
 
 if [ "$PLATFORM" != Darwin ]; then
     export PATH="$PATH:$HOME/npm/bin"
@@ -117,6 +118,9 @@ alias oo='open -a LibreOffice'
 alias xd='valet xdebug';
 alias caf='echo "Keeping system active. Press Ctrl + c to cancel."; caffeinate -i'
 
+alias p='pbpaste'
+alias c='pbcopy'
+
 # Tool & Project specifics
 alias dyndb='dynamodb-local -sharedDb'
 
@@ -146,6 +150,10 @@ fi
 
 dssh () {
     docker exec –it "$1" /bin/bash
+}
+
+gip () {
+    ping -c 1 "$1" | grep '64 bytes' | cut -d' ' -f4 | cut -d':' -f1;
 }
 
 #fix () { v $1 && add $1; }
