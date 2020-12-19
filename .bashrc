@@ -110,6 +110,7 @@ alias tm="TERM=xterm-256-color tmux -2 new -s"
 alias ta="TERM=xterm-256color tmux -2 a"
 alias tas="TERM=xterm-256color tmux -2 a -t"
 alias com="COMPOSER_MEMORY_LIMIT=-1 composer"
+alias com1="COMPOSER_MEMORY_LIMIT=-1 composer1"
 alias np="nvm exec npm"
 alias storm="open -a PhpStorm" # Seems to work better than pstorm somehow
 alias chrome='open -a Google\ Chrome'
@@ -125,15 +126,15 @@ alias c='pbcopy'
 alias dyndb='dynamodb-local -sharedDb'
 
 # Commented out as i don't use Magento atm
-#alias mr='magerun2'
+alias mr='magerun2'
 #alias mr1='magerun'
 #alias mc='magento-cloud'
-#alias cc='magerun2 cache:flush; date'
-#alias mag='bin/magento'
-#alias rmall='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed; rm -rf generated/code; echo Removed folders; magerun2 cache:flush; cowsay cache is cleaned on $(date)'
-#alias rmst='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed;  echo Removed static folders; magerun2 cache:clean layout block_html full_page; cowsay cache is cleaned on $(date)'
-#alias crl='magerun2 sys:cron:list'
-#alias cr='magerun2 sys:cron:run'
+alias cc='magerun2 cache:flush; date'
+alias mag='bin/magento'
+alias rmall='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed; rm -rf generated/code; echo Removed folders; magerun2 cache:flush; cowsay cache is cleaned on $(date)'
+alias rmst='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed;  echo Removed static folders; magerun2 cache:clean layout block_html full_page; cowsay cache is cleaned on $(date)'
+alias crl='magerun2 sys:cron:list'
+alias cr='magerun2 sys:cron:run'
 
 alias vb="$EDITOR ~/.bashrc"
 alias sb="source ~/.bash_profile"
