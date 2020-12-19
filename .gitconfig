@@ -18,7 +18,7 @@
 [push]
     default = current
 [core]
-    editor = vim
+    editor = nvim
     eol = lf
     ignorecase = false
     autocrlf = input
