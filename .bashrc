@@ -137,7 +137,7 @@ alias dyndb='dynamodb-local -sharedDb'
 
 alias vb="$EDITOR ~/.bashrc"
 alias sb="source ~/.bash_profile"
-alias vhost="sudo vim /etc/hosts"
+alias vhost="sudo nvim /etc/hosts"
 
 alias setesc='hidutil property --set '"'"'{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000064,"HIDKeyboardModifierMappingDst":0x700000029}]}'"'"''
 alias dismouseacc='defaults write .GlobalPreferences com.apple.mouse.scaling -1'

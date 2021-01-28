@@ -21,7 +21,7 @@ Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] } " g
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-emoji'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
+" Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
 Plug 'tpope/vim-fugitive' ", { 'on': 'Gblame' }
 Plug 'tpope/vim-surround' " {c|d|y}s<obj><char>
 Plug 'tpope/vim-abolish'
@@ -33,7 +33,7 @@ Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'alvan/vim-closetag', { 'for': ['html', 'php', 'xml']}
-Plug 'ervandew/supertab'
+"Plug 'ervandew/supertab'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'xml', 'php'] } " <c-y>,
 Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 Plug 'scrooloose/nerdcommenter'
@@ -41,20 +41,32 @@ Plug 'cakebaker/scss-syntax.vim', { 'for': ['sass', 'scss', 'less', 'css'] }
 Plug 'hail2u/vim-css3-syntax', { 'for': ['sass', 'scss', 'less', 'css'] }
 Plug 'groenewege/vim-less', { 'for': ['less'] } 
 Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterEnable' }
-Plug 'kchmck/vim-coffee-script', { 'for': ['coffee'] }
+" Plug 'kchmck/vim-coffee-script', { 'for': ['coffee'] }
 Plug 'tpope/vim-markdown', { 'for': ['markdown'] }
-Plug 'dag/vim-fish'
+" Plug 'dag/vim-fish'
 Plug 'mileszs/ack.vim'
+Plug 'ludovicchabant/vim-gutentags'
 
-if !has('nvim') && !has("gui_running")
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-elseif has("nvim")
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Autocompletion (https://thevaluable.dev/vim-php-ide/)
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+Plug 'phpactor/ncm2-phpactor'
+
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+"if !has('nvim') && !has("gui_running")
+    "Plug 'Shougo/deoplete.nvim'
+    "Plug 'roxma/nvim-yarp'
+    "Plug 'roxma/vim-hug-neovim-rpc'
+"elseif has("nvim")
+    "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     
-    set termguicolors
-endif
+    "set termguicolors
+"endif
 
 " Disabled plugins but interesting ones
 "Plug 'joonty/vdebug'
@@ -113,9 +125,9 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_mode_map = { "mode": "passive" }
 let g:PHP_outdentphpescape = 0
-let g:acp_enableAtStartup = 0
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
+"let g:acp_enableAtStartup = 0
+"let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_smart_case = 1
 let g:notes_path = "~/Documents/notes.txt"
 "let g:indentLine_color_term = 239
 "let g:ctrlp_working_path_mode = 'w'
@@ -150,11 +162,11 @@ if executable('ag')
 endif
 
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd BufNewFile,BufRead *.lock set syntax=json
 
 if !has('nvim')
@@ -175,7 +187,7 @@ set lazyredraw
 set virtualedit=block
 set foldmethod=indent
 set foldlevel=99
-set completeopt=menuone,preview
+set completeopt=noinsert,menuone,noselect " menuone,preview
 set nrformats=hex
 set nostartofline
 

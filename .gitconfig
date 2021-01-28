@@ -9,16 +9,16 @@
     o = open # https://github.com/paulirish/git-open
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 
-#[branch]
+[branch]
 #    autosetuprebase = remote
-#    autosetupmerge = true
+    autosetupmerge = true
 [merge]
     log = true
     
 [push]
     default = current
 [core]
-    editor = vim
+    editor = nvim
     eol = lf
     ignorecase = false
     autocrlf = input
