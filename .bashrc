@@ -161,7 +161,7 @@ gip () {
 w () {
     if [ -z "$2" ]; then
         # echo "Wat doin?"
-        echo -n "s, d, a? "
+        echo -n "s, d, v, a? "
         read c
     else
         c=$2;
@@ -174,6 +174,10 @@ w () {
             ;;
         d)
             dif "$1"
+            w $1;
+            ;;
+        v)
+            v "$1"
             w $1;
             ;;
         a)
