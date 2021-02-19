@@ -45,7 +45,7 @@ Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterEnable' }
 Plug 'tpope/vim-markdown', { 'for': ['markdown'] }
 " Plug 'dag/vim-fish'
 Plug 'mileszs/ack.vim'
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 
 " Autocompletion (https://thevaluable.dev/vim-php-ide/)
 Plug 'ncm2/ncm2'

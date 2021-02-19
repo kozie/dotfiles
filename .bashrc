@@ -157,6 +157,34 @@ gip () {
     ping -c 1 "$1" | grep '64 bytes' | cut -d' ' -f4 | cut -d':' -f1;
 }
 
+# "Wat doin" function. Either status, diff or add a file?
+w () {
+    if [ -z "$2" ]; then
+        # echo "Wat doin?"
+        echo -n "s, d, a? "
+        read c
+    else
+        c=$2;
+    fi
+
+    case $c in
+        s)
+            st "$1"
+            w $1;
+            ;;
+        d)
+            dif "$1"
+            w $1;
+            ;;
+        a)
+            add "$1"
+            # w $1;
+            ;;
+        *)
+            ;;
+    esac
+}
+
 #fix () { v $1 && add $1; }
 #crf () { 
     #CHRON=$(mr sys:cr:li | grep -E '\*|-' | grep -v '+' | awk '{print $2}' | fzf --query=$1);
