@@ -209,6 +209,7 @@ fi
 complete -o bashdefault -o default -o nospace -F _fzf_path_completion g
 complete -o bashdefault -o default -F _fzf_path_completion v
 complete -o default -F _fzf_path_completion ll
+complete -o default w
 
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type __git_complete &> /dev/null; then
