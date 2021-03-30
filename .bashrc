@@ -189,6 +189,17 @@ w () {
     esac
 }
 
+csr () {
+    if [[ $# -eq 0 ]]; then
+        echo "Usage: csr example.com";
+        return;
+    fi
+
+    mkdir -p ~/Certificates
+
+    openssl req -new -newkey rsa:2048 -nodes -keyout ~/Certificates/${1}.key -out ~/Certificates/${1}.csr
+}
+
 #fix () { v $1 && add $1; }
 #crf () { 
     #CHRON=$(mr sys:cr:li | grep -E '\*|-' | grep -v '+' | awk '{print $2}' | fzf --query=$1);
