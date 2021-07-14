@@ -141,6 +141,11 @@ alias vb="$EDITOR ~/.bashrc"
 alias sb="source ~/.bash_profile"
 alias vhost="sudo nvim /etc/hosts"
 
+alias gd='git co env/development'
+alias gt='git co env/test'
+alias ga='git co env/acceptance'
+alias gp='git co env/production'
+
 alias setesc='hidutil property --set '"'"'{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000064,"HIDKeyboardModifierMappingDst":0x700000029}]}'"'"''
 alias dismouseacc='defaults write .GlobalPreferences com.apple.mouse.scaling -1'
 
