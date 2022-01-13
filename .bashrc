@@ -42,10 +42,11 @@ fi
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-#export PATH="/usr/local/opt/valet-php@7.0/bin:$PATH"
-#export PATH="/usr/local/opt/valet-php@7.0/sbin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
+
+# Composer vendor/bin in local project root
+export PATH="vendor/bin:${PATH}"
 
 if [ "$PLATFORM" != Darwin ]; then
     export PATH="$PATH:$HOME/npm/bin"
@@ -283,3 +284,6 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 # Automatically trim long paths in the prompt (requires Bash 4.x)
 PROMPT_DIRTRIM=3
+
+# Load custom stuff
+[ -f ~/.private.sh ] && . ~/.private.sh
