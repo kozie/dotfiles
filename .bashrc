@@ -60,6 +60,9 @@ export HISTFILESIZE=
 export HISTTIMEFORMAT="%Y/%m/%d %H:%M:%S:   "
 [ -z "$TMPDIR" ] && TMPDIR=/tmp
 
+# Sync history on each session
+export PROMPT_COMMAND="history -a; history -n"
+
 # z
 [ -f ~/z.sh ] && . ~/z.sh
 [ -f /usr/local/etc/profile.d/z.sh ] && . /usr/local/etc/profile.d/z.sh
@@ -206,6 +209,20 @@ csr () {
 
     openssl req -new -newkey rsa:2048 -nodes -keyout ~/Certificates/${1}.key -out ~/Certificates/${1}.csr
 }
+
+# Open bitbucket page
+bb () {
+    xtmpremote=$(git remote -v | head -1 | sed "s/.*:\(.*\)\.git.*/\1/");
+
+    if [[ -n ${xtmpremote} ]]; then
+        open https://bitbucket.org/$xtmpremote/$1 > /dev/null;
+    else
+        echo Not found remote;
+    fi
+}
+
+alias bpl="bb addon/pipelines/home"
+alias bpr="bb pull-requests/new"
 
 #fix () { v $1 && add $1; }
 #crf () { 
