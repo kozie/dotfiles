@@ -215,14 +215,14 @@ bb () {
     xtmpremote=$(git remote -v | head -1 | sed "s/.*:\(.*\)\.git.*/\1/");
 
     if [[ -n ${xtmpremote} ]]; then
-        open https://bitbucket.org/$xtmpremote/$1 > /dev/null;
-    else
-        echo Not found remote;
+        open "https://bitbucket.org/$xtmpremote/$1" > /dev/null;
+    else
+        echo "Not found remote";
     fi
 }
 
 alias bpl="bb addon/pipelines/home"
-alias bpr="bb pull-requests/new"
+alias bpr="bb pull-requests/new?dest=env/test"
 
 #fix () { v $1 && add $1; }
 #crf () { 
