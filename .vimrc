@@ -31,6 +31,7 @@ Plug 'honza/vim-snippets'
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/html5.vim', { 'for': 'html' }
+Plug 'nelsyeung/twig.vim', { 'for': 'twig' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'alvan/vim-closetag', { 'for': ['html', 'php', 'xml']}
 "Plug 'ervandew/supertab'
@@ -339,7 +340,7 @@ function! S_fugitive()
     if !exists('g:loaded_fugitive')
         return ''
     endif
-    let head = fugitive#head()
+    let head = FugitiveHead()
     if empty(head)
         return ''
     else

@@ -123,6 +123,7 @@ alias oo='open -a LibreOffice'
 alias xd='valet xdebug';
 alias caf='echo "Keeping system active. Press Ctrl + c to cancel."; caffeinate -i'
 alias randhash="head -n 4096 /dev/urandom | openssl sha1 | tr -d '\n'"
+alias randpass="openssl rand -base64 32"
 
 alias p='pbpaste'
 alias c='pbcopy'
@@ -171,7 +172,7 @@ gip () {
 w () {
     if [ -z "$2" ]; then
         # echo "Wat doin?"
-        echo -n "s, d, v, a? "
+        echo -n "[s]tatus, [d]iff, [v]im, [a]dd or empty for cancel? "
         read c
     else
         c=$2;
