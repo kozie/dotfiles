@@ -153,6 +153,7 @@ alias gp='git co env/production'
 
 alias setesc='hidutil property --set '"'"'{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000064,"HIDKeyboardModifierMappingDst":0x700000029}]}'"'"''
 alias dismouseacc='defaults write .GlobalPreferences com.apple.mouse.scaling -1'
+alias ip='curl -vs ifconfig.me/ip 2>&1 | tail -n1 | pbcopy'
 
 if [ "$PLATFORM" = Linux ]; then
     # apt-get install -y xclip
@@ -220,6 +221,61 @@ bb () {
     else
         echo "Not found remote";
     fi
+}
+
+accounts () {
+    if [[ $# -eq 0 ]]; then
+        echo "Please give a username";
+        return;
+    fi
+
+    username=${1};
+    pubdir=${2:-web};
+    testurl=${3:-"${username}-test.republic-m.com"};
+    accurl=${4:-"${username}-acc.republic-m.com"};
+
+    echo "Enter Bitbucket pubkey: ";
+    read pubkey;
+
+    echo "
+Generate bash:
+
+adduser --disabled-password --gecos GECOS ${username}_{test,acc};
+mkdir -p /home/${username}_{test,acc}/{$pubdir,.ssh};
+echo '$pubkey' > /home/${username}_{test,acc}/.ssh/authorized_keys;
+chown -R ${username}_test:${username}_test /home/${username}_test/{$pubdir,.ssh};
+chown -R ${username}_acc:${username}_acc /home/${username}_acc/{$pubdir,.ssh};
+chmod 0600 /home/${username}_{test,acc}/.ssh/authorized_keys;
+echo '<?php echo \"${username}_test\";' > /home/${username}_test/$pubdir/index.php;
+echo '<?php echo \"${username}_acc\";' > /home/${username}_acc/$pubdir/index.php;
+echo \"<VirtualHost *:80>
+    ServerName $testurl
+    ServerAdmin webmaster@localhost
+    DocumentRoot /home/${username}_test/$pubdir
+    <Directory "/home/${username}_test/$pubdir">
+       Options Indexes FollowSymLinks MultiViews
+       Allowoverride All
+       Require all granted
+    </Directory>
+
+    ErrorLog \\\${APACHE_LOG_DIR}/error.log
+    CustomLog \\\${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>\" > /etc/apache2/sites-available/$testurl.conf;
+a2ensite $testurl;
+echo \"<VirtualHost *:80>
+    ServerName $accurl
+    ServerAdmin webmaster@localhost
+    DocumentRoot /home/${username}_acc/$pubdir
+    <Directory "/home/${username}_acc/$pubdir">
+       Options Indexes FollowSymLinks MultiViews
+       Allowoverride All
+       Require all granted
+    </Directory>
+
+    ErrorLog \\\${APACHE_LOG_DIR}/error.log
+    CustomLog \\\${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>\" > /etc/apache2/sites-available/$accurl.conf;
+a2ensite $accurl;";
 }
 
 alias bpl="bb addon/pipelines/home"
