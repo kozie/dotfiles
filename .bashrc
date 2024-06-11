@@ -53,6 +53,11 @@ if [ "$PLATFORM" != Darwin ]; then
     export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
 fi
 
+# Pyenv (Python) init.
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 ### man bash
 export HISTCONTROL=ignoreboth:erasedups
 export HISTSIZE=
@@ -110,7 +115,7 @@ alias f="rg --hidden --fixed-strings --ignore-case"
 alias gr="grep -v grep | grep -i"
 
 alias tmux="TERM=xterm-256color tmux -2"
-alias tm="TERM=xterm-256-color tmux -2 new -s"
+alias tm="TERM=xterm-256color tmux -2 new -s"
 alias ta="TERM=xterm-256color tmux -2 a"
 alias tas="TERM=xterm-256color tmux -2 a -t"
 alias com="COMPOSER_MEMORY_LIMIT=-1 composer"
@@ -232,7 +237,7 @@ accounts () {
     username=${1};
     pubdir=${2:-web};
     testurl=${3:-"${username}-test.republic-m.com"};
-    accurl=${4:-"${username}-acc.republic-m.com"};
+    accurl=${4:-"${username}-acceptance.republic-m.com"};
 
     echo "Enter Bitbucket pubkey: ";
     read pubkey;
@@ -240,7 +245,8 @@ accounts () {
     echo "
 Generate bash:
 
-adduser --disabled-password --gecos GECOS ${username}_{test,acc};
+adduser --quiet --shell /bin/bash --disabled-password --gecos "user" ${username}_test;
+adduser --quiet --shell /bin/bash --disabled-password --gecos "user" ${username}_acc;
 mkdir -p /home/${username}_{test,acc}/{$pubdir,.ssh};
 echo '$pubkey' > /home/${username}_{test,acc}/.ssh/authorized_keys;
 chown -R ${username}_test:${username}_test /home/${username}_test/{$pubdir,.ssh};

@@ -28,13 +28,13 @@ Plug 'tpope/vim-abolish'
 Plug 'easymotion/vim-easymotion' " <leader><leader><motion>
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+" Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'nelsyeung/twig.vim', { 'for': 'twig' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'alvan/vim-closetag', { 'for': ['html', 'php', 'xml']}
-"Plug 'ervandew/supertab'
+Plug 'ervandew/supertab'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'xml', 'php'] } " <c-y>,
 Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 Plug 'scrooloose/nerdcommenter'
@@ -102,10 +102,12 @@ filetype plugin indent on  " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 
-if !exists("g:colors_name")
+" if !exists("g:colors_name")
     syntax on
 
     let g:seoul256_background = 235
+    let g:seoul256_srgb = 1
+
     colo seoul256 " jellybeans, gruvbox, solarized
 
     if has("gui_running")
@@ -113,7 +115,7 @@ if !exists("g:colors_name")
     else
         set background=dark " light for jellybeans
     endif
-endif
+" endif
 
 let mapleader=","
 
@@ -135,6 +137,7 @@ let g:notes_path = "~/Documents/notes.txt"
 "let g:ctrlp_custom_ignore = '\v[\/]node_modules$'
 "let g:airline_powerline_fonts = 1
 "let g:airline_theme = 'base16' " gruvbox, badwolf (gruvbox), solarized
+set mmp=5000
 
 " Xdebug settings
 let g:vdebug_options = {}
