@@ -391,6 +391,8 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 nmap Y y$
 imap jj <Esc>
+nmap oo o<Esc>k
+nmap OO O<Esc>j
 no <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 no <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 nn <tab> :Buffers<cr>

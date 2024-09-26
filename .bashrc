@@ -100,6 +100,7 @@ alias pull='git pull'
 alias fetch='git fetch'
 alias st='git status -u'
 alias dif='git diff -w'
+alias va='valet-plus'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -125,7 +126,7 @@ alias storm="open -a PhpStorm" # Seems to work better than pstorm somehow
 alias chrome='open -a Google\ Chrome'
 alias firefox='open -a Firefox'
 alias oo='open -a LibreOffice'
-alias xd='valet xdebug';
+alias xd='valet-plus xdebug';
 alias caf='echo "Keeping system active. Press Ctrl + c to cancel."; caffeinate -i'
 alias randhash="head -n 4096 /dev/urandom | openssl sha1 | tr -d '\n'"
 alias randpass="openssl rand -base64 32"
@@ -156,7 +157,7 @@ alias gt='git co env/test'
 alias ga='git co env/acceptance'
 alias gp='git co env/production'
 
-alias setesc='hidutil property --set '"'"'{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000064,"HIDKeyboardModifierMappingDst":0x700000029}]}'"'"''
+alias setesc='sudo hidutil property --set '"'"'{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000064,"HIDKeyboardModifierMappingDst":0x700000029}]}'"'"''
 alias dismouseacc='defaults write .GlobalPreferences com.apple.mouse.scaling -1'
 alias ip='curl -vs ifconfig.me/ip 2>&1 | tail -n1 | pbcopy'
 
