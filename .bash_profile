@@ -7,6 +7,10 @@ if [ -f /etc/profile ]; then
     source /etc/profile
 fi
 
+# Execute brew paths and exports
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+
 . ~/.bashrc
 
 export GPG_TTY=$(tty)

@@ -16,7 +16,8 @@ set -o vi
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # FZF
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+#[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+eval "$(fzf --bash)"
 
 # Sorry, very MacOS centric here. :/
 if  which brew > /dev/null; then
@@ -54,9 +55,9 @@ if [ "$PLATFORM" != Darwin ]; then
 fi
 
 # Pyenv (Python) init.
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+#export PYENV_ROOT="$HOME/.pyenv"
+#[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
 
 ### man bash
 export HISTCONTROL=ignoreboth:erasedups
@@ -70,12 +71,13 @@ export PROMPT_COMMAND="history -a; history -n"
 
 # z
 [ -f ~/z.sh ] && . ~/z.sh
+[ -f /opt/homebrew/etc/profile.d/z.sh ] && . /opt/homebrew/etc/profile.d/z.sh
 [ -f /usr/local/etc/profile.d/z.sh ] && . /usr/local/etc/profile.d/z.sh
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
 # Vars
 export VISUAL="nvim"
@@ -101,6 +103,13 @@ alias fetch='git fetch'
 alias st='git status -u'
 alias dif='git diff -w'
 alias va='valet-plus'
+
+alias b='brew'
+alias bu='brew update'
+alias bi='brew install'
+alias bs='brew search'
+alias ci='brew install --cask'
+alias cs='brew search --cask'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -309,6 +318,14 @@ complete -o bashdefault -o default -o nospace -F _fzf_path_completion g
 complete -o bashdefault -o default -F _fzf_path_completion v
 complete -o default -F _fzf_path_completion ll
 complete -o default w
+
+# Brew alias completion
+complete -F _complete_alias b
+complete -F _complete_alias bu
+complete -F _complete_alias bi
+complete -F _complete_alias bs
+complete -F _complete_alias ci
+complete -F _complete_alias cs
 
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type __git_complete &> /dev/null; then

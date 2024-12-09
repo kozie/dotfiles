@@ -1,3 +1,7 @@
+" !!! DEPRECATION WARNING !!!
+" Please use the lua configurations. See .config/nvim/init.lua
+" !!! DEPRECATION WARNING !!!
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -29,6 +33,7 @@ Plug 'easymotion/vim-easymotion' " <leader><leader><motion>
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+Plug 'TysonAndre/php-vim-syntax', { 'for': 'php' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'nelsyeung/twig.vim', { 'for': 'twig' }
@@ -49,15 +54,15 @@ Plug 'mileszs/ack.vim'
 " Plug 'ludovicchabant/vim-gutentags'
 
 " Autocompletion (https://thevaluable.dev/vim-php-ide/)
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
-Plug 'phpactor/ncm2-phpactor'
+"Plug 'ncm2/ncm2'
+"Plug 'roxma/nvim-yarp'
+"Plug 'ncm2/ncm2-bufword'
+"Plug 'ncm2/ncm2-path'
+"Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+"Plug 'phpactor/ncm2-phpactor'
 
 " enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
+"autocmd BufEnter * call ncm2#enable_for_buffer()
 
 "if !has('nvim') && !has("gui_running")
     "Plug 'Shougo/deoplete.nvim'
@@ -123,6 +128,7 @@ let mapleader=","
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml"
 let base16colorspace=256
 let python_highlight_all = 1
+let g:python3_host_prog = '/Users/koos/.local/bin/python'
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:syntastic_check_on_open = 0
