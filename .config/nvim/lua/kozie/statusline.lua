@@ -85,7 +85,7 @@ function M.statusline()
     local pct = "%P"
 
     return string.format(
-        "%s [%d] %s %s%s %s %%= %s %s%s %s",
+        "%s [%d] %s %s%s %s %%= %s %s%s %s %s",
         cherry,
         vim.fn.bufnr("%"),
         vim.fn.pathshorten(vim.fn.expand("%:f")),
