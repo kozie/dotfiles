@@ -15,9 +15,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	spec = { import = "kozie.plugins" },
+	spec = {
+        { import = "kozie.plugins" },
+        { import = "kozie.plugins.lsp" },
+    },
 	checker = {
 		enabled = true, -- check for plugin updates periodically
 		notify = false, -- notify on update
 	},
+    change_detection = {
+        notify = false,
+    },
 })
