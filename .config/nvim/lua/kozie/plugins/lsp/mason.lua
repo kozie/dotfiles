@@ -15,7 +15,7 @@ return {
                 "html",
                 "cssls",
                 "eslint",
-                "phpactor",
+                -- "phpactor",
                 "emmet_ls",
             },
         })

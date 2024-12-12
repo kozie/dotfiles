@@ -77,6 +77,7 @@ local cherry = "🌸"
 
 -- Statusline function
 function M.statusline()
+    local cwd = vim.api.nvim_call_function("fnamemodify", { vim.loop.cwd(), ':t'})
     local mod = modified()
     local ro = vim.bo.readonly and "🔒 " or ""
     local ft = filetype()
@@ -85,9 +86,10 @@ function M.statusline()
     local pct = "%P"
 
     return string.format(
-        "%s [%d] %s %s%s %s %%= %s %s%s %s %s",
+        "%s %s> %s %s%s %s %%= %s %s%s %s %s",
         cherry,
-        vim.fn.bufnr("%"),
+        -- vim.fn.bufnr("%"),
+        cwd,
         vim.fn.pathshorten(vim.fn.expand("%:f")),
         mod,
         ro,
