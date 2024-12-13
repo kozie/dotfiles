@@ -51,6 +51,9 @@ return {
                     require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
                 end,
             },
+            experimental = {
+                ghost_text = true,
+            },
         })
     end
 }
