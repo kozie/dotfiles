@@ -383,5 +383,8 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 # Automatically trim long paths in the prompt (requires Bash 4.x)
 PROMPT_DIRTRIM=3
 
+# Init Starship prompt!
+eval "$(starship init bash)"
+
 # Load custom stuff
 [ -f ~/.private.sh ] && . ~/.private.sh
