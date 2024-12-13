@@ -8,7 +8,7 @@ return {
                 terminal = true,
             },
             styles = {
-                italic = true,
+                italic = false,
                 transparency = true,
             }
         })
