@@ -1,0 +1,9 @@
+font-family = "FantasqueSansM Nerd Font Mono"
+font-size = 13
+
+theme = "rose-pine-moon"
+
+background-opacity = 0.9
+background-blur-radius = 10
+
+macos-titlebar-style = "hidden"

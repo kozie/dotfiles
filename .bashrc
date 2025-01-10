@@ -326,6 +326,7 @@ complete -F _complete_alias bi
 complete -F _complete_alias bs
 complete -F _complete_alias ci
 complete -F _complete_alias cs
+complete -F _complete_alias com
 
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type __git_complete &> /dev/null; then
@@ -388,3 +389,4 @@ eval "$(starship init bash)"
 
 # Load custom stuff
 [ -f ~/.private.sh ] && . ~/.private.sh
+[ -f ~/fzf-git.sh ] && . ~/fzf-git.sh
