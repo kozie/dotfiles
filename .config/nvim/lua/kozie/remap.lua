@@ -55,3 +55,7 @@ vim.keymap.set("i", "<C-l>", "<Right>")
 -- End line with delimiter (;)
 vim.keymap.set("i", "<C-d>", "<Esc>ea;", { noremap = true, silent = true})
 vim.keymap.set("i", "<C-;>", "<Esc>g;a;<Esc>", { noremap = true, silent = true})
+vim.keymap.set("i", "<C-,>", "<Esc>A,<Esc>o", { noremap = true, silent = true})
+
+vim.keymap.set("n", "<C-;>", "<Esc>A;<Esc>o", { noremap = true, silent = true})
+vim.keymap.set("n", "<C-,>", "<Esc>A,<Esc>o", { noremap = true, silent = true})
