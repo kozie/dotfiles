@@ -51,3 +51,7 @@ vim.keymap.set("i", "<C-h>", "<Left>")
 vim.keymap.set("i", "<C-j>", "<Down>")
 vim.keymap.set("i", "<C-k>", "<Up>")
 vim.keymap.set("i", "<C-l>", "<Right>")
+
+-- End line with delimiter (;)
+vim.keymap.set("i", "<C-d>", "<Esc>ea;", { noremap = true, silent = true})
+vim.keymap.set("i", "<C-;>", "<Esc>g;a;<Esc>", { noremap = true, silent = true})
