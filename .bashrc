@@ -88,6 +88,7 @@ export LC_ALL=en_US.UTF-8
 # FZF Settings
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export FZF_COMPLETION_TRIGGER='**'
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 
 # Aliases
 alias v="$EDITOR"
@@ -102,7 +103,7 @@ alias pull='git pull'
 alias fetch='git fetch'
 alias st='git status -u'
 alias dif='git diff -w'
-alias va='valet-plus'
+alias va='PATH="$(brew --prefix php@8.2)/bin:$PATH" valet-plus'
 
 alias b='brew'
 alias bu='brew update'
