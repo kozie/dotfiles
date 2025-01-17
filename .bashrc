@@ -42,9 +42,8 @@ fi
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export PATH=$HOME/.local/bin:$PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
 
 # Composer vendor/bin in local project root
 export PATH="vendor/bin:${PATH}"
@@ -53,11 +52,6 @@ if [ "$PLATFORM" != Darwin ]; then
     export PATH="$PATH:$HOME/npm/bin"
     export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
 fi
-
-# Pyenv (Python) init.
-#export PYENV_ROOT="$HOME/.pyenv"
-#[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
 
 ### man bash
 export HISTCONTROL=ignoreboth:erasedups
@@ -68,6 +62,8 @@ export HISTTIMEFORMAT="%Y/%m/%d %H:%M:%S:   "
 
 # Sync history on each session
 export PROMPT_COMMAND="history -a; history -n"
+
+export BAT_THEME="base16"
 
 # z
 [ -f ~/z.sh ] && . ~/z.sh
@@ -105,35 +101,35 @@ alias st='git status -u'
 alias dif='git diff -w'
 alias va='PATH="$(brew --prefix php@8.2)/bin:$PATH" valet-plus'
 
-alias b='brew'
-alias bu='brew update'
-alias bi='brew install'
-alias bs='brew search'
-alias ci='brew install --cask'
-alias cs='brew search --cask'
-
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias ls="ls"
-alias ll="ls -lhaF"
-alias l="ls -lhaF"
+#alias ls="ls"
+#alias ll="ls -lhaF"
+#alias l="ls -lhaF"
+alias ls="eza --icons=always"
+alias l="eza --icons=always -la"
+alias ll="eza --icons=always -lag"
+alias lt="eza --icons=always -lag --tree --level=3"
 
 alias s="rg --hidden --files-with-matches --fixed-strings --ignore-case"
 alias f="rg --hidden --fixed-strings --ignore-case"
 alias gr="grep -v grep | grep -i"
 
-alias tmux="TERM=xterm-256color tmux -2"
-alias tm="TERM=xterm-256color tmux -2 new -s"
-alias ta="TERM=xterm-256color tmux -2 a"
-alias tas="TERM=xterm-256color tmux -2 a -t"
+alias tmux="xTERM=xterm-256color tmux -2"
+alias tm="xTERM=xterm-256color tmux -2 new -s"
+alias ta="xTERM=xterm-256color tmux -2 a"
+alias tas="xTERM=xterm-256color tmux -2 a -t"
 alias com="COMPOSER_MEMORY_LIMIT=-1 composer"
-alias com1="COMPOSER_MEMORY_LIMIT=-1 composer1"
+alias vcom="COMPOSER_MEMORY_LIMIT=-1 valet composer"
+alias vphp="valet php"
+alias dr="valet php vendor/bin/drush"
 alias np="nvm exec npm"
 alias storm="open -a PhpStorm" # Seems to work better than pstorm somehow
 alias chrome='open -a Google\ Chrome'
+alias arc="open -a Arc"
 alias firefox='open -a Firefox'
 alias oo='open -a LibreOffice'
 alias xd='valet-plus xdebug';
@@ -147,17 +143,6 @@ alias c='pbcopy'
 # Tool & Project specifics
 alias dyndb='dynamodb-local -sharedDb'
 
-# Commented out as i don't use Magento atm
-alias mr='magerun2'
-#alias mr1='magerun'
-#alias mc='magento-cloud'
-alias cc='magerun2 cache:flush; date'
-alias mag='bin/magento'
-alias rmall='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed; rm -rf generated/code; echo Removed folders; magerun2 cache:flush; cowsay cache is cleaned on $(date)'
-alias rmst='rm -rf pub/static/_cache; rm -rf pub/static/frontend; rm -rf var/view_preprocessed;  echo Removed static folders; magerun2 cache:clean layout block_html full_page; cowsay cache is cleaned on $(date)'
-alias crl='magerun2 sys:cron:list'
-alias cr='magerun2 sys:cron:run'
-
 alias vb="$EDITOR ~/.bashrc"
 alias sb="source ~/.bash_profile"
 alias vhost="sudo nvim /etc/hosts"
@@ -169,7 +154,7 @@ alias gp='git co env/production'
 
 alias setesc='sudo hidutil property --set '"'"'{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000064,"HIDKeyboardModifierMappingDst":0x700000029}]}'"'"''
 alias dismouseacc='defaults write .GlobalPreferences com.apple.mouse.scaling -1'
-alias ip='curl -vs ifconfig.me/ip 2>&1 | tail -n1 | pbcopy'
+alias ip='curl -vs -4 ifcfg.me/ip 2>&1 | tail -n1 | pbcopy'
 
 if [ "$PLATFORM" = Linux ]; then
     # apt-get install -y xclip
@@ -183,38 +168,6 @@ dssh () {
 
 gip () {
     ping -c 1 "$1" | grep '64 bytes' | cut -d' ' -f4 | cut -d':' -f1;
-}
-
-# "Wat doin" function. Either status, diff or add a file?
-w () {
-    if [ -z "$2" ]; then
-        # echo "Wat doin?"
-        echo -n "[s]tatus, [d]iff, [v]im, [a]dd or empty for cancel? "
-        read c
-    else
-        c=$2;
-    fi
-
-    case $c in
-        s)
-            st "$1"
-            w $1;
-            ;;
-        d)
-            dif "$1"
-            w $1;
-            ;;
-        v)
-            v "$1"
-            w $1;
-            ;;
-        a)
-            add "$1"
-            # w $1;
-            ;;
-        *)
-            ;;
-    esac
 }
 
 csr () {
@@ -238,6 +191,10 @@ bb () {
         echo "Not found remote";
     fi
 }
+
+alias bpl="bb addon/pipelines/home"
+alias bpr="bb pull-requests/new?dest=env/test"
+
 
 accounts () {
     if [[ $# -eq 0 ]]; then
@@ -295,19 +252,6 @@ echo \"<VirtualHost *:80>
 a2ensite $accurl;";
 }
 
-alias bpl="bb addon/pipelines/home"
-alias bpr="bb pull-requests/new?dest=env/test"
-
-#fix () { v $1 && add $1; }
-#crf () { 
-    #CHRON=$(mr sys:cr:li | grep -E '\*|-' | grep -v '+' | awk '{print $2}' | fzf --query=$1);
-
-    #for item in $CHRON ; do
-        #history -s "magerun2 sys:cr:r $item"
-        #magerun2 sys:cr:r $item
-    #done
-#}
-
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 if [ "$PLATFORM" = Darwin ]; then
@@ -320,14 +264,10 @@ complete -o bashdefault -o default -F _fzf_path_completion v
 complete -o default -F _fzf_path_completion ll
 complete -o default w
 
-# Brew alias completion
-complete -F _complete_alias b
-complete -F _complete_alias bu
-complete -F _complete_alias bi
-complete -F _complete_alias bs
-complete -F _complete_alias ci
-complete -F _complete_alias cs
+# Composer and php completions (also valet)
 complete -F _complete_alias com
+complete -F _complete_alias vcom
+complete -F _complete_alias vphp
 
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type __git_complete &> /dev/null; then
@@ -349,13 +289,14 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
 ### Colored ls
-if [ -x /usr/bin/dircolors ]; then
-  eval "`dircolors -b`"
-  alias ls='ls --color=auto'
-  alias grep='grep --color=auto'
-elif [ "$PLATFORM" = Darwin ]; then
-  alias ls='ls -G'
-fi
+### jan 2025: Replace in favour of eza.
+#if [ -x /usr/bin/dircolors ]; then
+#  eval "`dircolors -b`"
+#  alias ls='ls --color=auto'
+#  alias grep='grep --color=auto'
+#elif [ "$PLATFORM" = Darwin ]; then
+#  alias ls='ls -G'
+#fi
 
 # highlighting inside manpages and elsewhere
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking

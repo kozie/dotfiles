@@ -54,6 +54,10 @@ if.window-title-regex-substring = 'Zoom Meeting'
 run = 'layout floating'
 
 [[on-window-detected]]
+if.window-title-regex-substring = 'Video preview'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-id = 'com.apple.finder'
 run = 'layout floating'
 
