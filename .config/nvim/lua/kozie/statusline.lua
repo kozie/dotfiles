@@ -24,6 +24,7 @@ local ft_emoji = {
     perl = "🐪",
     python = "🐍",
     ruby = "💎",
+    rust = "🦀",
     scala = "💈",
     sh = "🐚",
     slim = "💃",
