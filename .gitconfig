@@ -69,6 +69,8 @@
 #     added = yellow
 #     changed = green
 #     untracked = cyan
-# [user]
-#     email = koos.vanegmond@republic-m.com
-#     name = Koos
+[user]
+    email = koos.vanegmond@republic-m.com
+    name = Koos
+[pull]
+	rebase = true
