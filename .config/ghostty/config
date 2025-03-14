@@ -7,3 +7,5 @@ background-opacity = 0.9
 background-blur-radius = 10
 
 macos-titlebar-style = "hidden"
+
+keybind = global:ctrl+grave_accent=toggle_quick_terminal

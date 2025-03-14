@@ -14,6 +14,8 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities())
 
+        capabilities.textDocument.completion.completionItem.snippetSupport = true
+
         require("mason-lspconfig").setup_handlers({
             function(server_name) -- default handler (optional)
                 lspconfig[server_name].setup {
@@ -38,6 +40,13 @@ return {
                     capabilities = capabilities,
                     filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
                 })
+            end,
+            ["phpactor"] = function()
+                lspconfig["phpactor"].setup{
+                    capabilities = capabilities,
+                    -- cmd = { '/opt/homebrew/opt/php@8.2/bin/php', 'phpactor', 'language-server' },
+                    filetypes = { 'php', 'cucumber' },
+                }
             end,
         })
 

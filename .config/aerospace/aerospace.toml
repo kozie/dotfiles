@@ -187,6 +187,8 @@ alt-m = 'exec-and-forget open -a Microsoft\ Outlook'
 alt-d = 'exec-and-forget open -a Discord'
 alt-s = 'exec-and-forget open -a Sequel\ Ace'
 alt-a = 'exec-and-forget open -a Arc'
+alt-v = 'exec-and-forget open -a Spotify'
+alt-t = 'exec-and-forget open -a TextEdit'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes

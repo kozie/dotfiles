@@ -113,6 +113,7 @@ alias ls="eza --icons=always"
 alias l="eza --icons=always -la"
 alias ll="eza --icons=always -lag"
 alias lt="eza --icons=always -lag --tree --level=3"
+alias ltr="eza --icons=always -la --sort=modified"
 
 alias s="rg --hidden --files-with-matches --fixed-strings --ignore-case"
 alias f="rg --hidden --fixed-strings --ignore-case"
