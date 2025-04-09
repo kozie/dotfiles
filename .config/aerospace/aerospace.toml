@@ -54,7 +54,7 @@ if.window-title-regex-substring = 'Zoom Meeting'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.window-title-regex-substring = 'Video preview'
+if.window-title-regex-substring = 'Personal Meeting Room'
 run = 'layout floating'
 
 [[on-window-detected]]

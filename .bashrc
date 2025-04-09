@@ -126,6 +126,7 @@ alias tas="xTERM=xterm-256color tmux -2 a -t"
 alias com="COMPOSER_MEMORY_LIMIT=-1 composer"
 alias vcom="COMPOSER_MEMORY_LIMIT=-1 valet composer"
 alias vphp="valet php"
+alias cake="valet php bin/cake.php"
 alias dr="valet php vendor/bin/drush"
 alias np="nvm exec npm"
 alias storm="open -a PhpStorm" # Seems to work better than pstorm somehow
