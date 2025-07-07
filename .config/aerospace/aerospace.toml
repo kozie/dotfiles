@@ -189,6 +189,7 @@ alt-s = 'exec-and-forget open -a Sequel\ Ace'
 alt-a = 'exec-and-forget open -a Arc'
 alt-v = 'exec-and-forget open -a Spotify'
 alt-t = 'exec-and-forget open -a TextEdit'
+alt-y = 'exec-and-forget open -a Microsoft\ Teams'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
