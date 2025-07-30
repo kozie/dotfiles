@@ -16,38 +16,38 @@ return {
 
         capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-        require("mason-lspconfig").setup_handlers({
-            function(server_name) -- default handler (optional)
-                lspconfig[server_name].setup {
-                    capabilities = capabilities
-                }
-            end,
-            ["lua_ls"] = function()
-                lspconfig.lua_ls.setup {
-                    capabilities = capabilities,
-                    settings = {
-                        Lua = {
-                            runtime = { version = "Lua 5.4.7" },
-                            diagnostics = {
-                                globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
-                            }
-                        }
-                    }
-                }
-            end,
-            ["emmet_ls"] = function()
-                lspconfig["emmet_ls"].setup({
-                    capabilities = capabilities,
-                    filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-                })
-            end,
-            ["phpactor"] = function()
-                lspconfig["phpactor"].setup{
-                    capabilities = capabilities,
-                    -- cmd = { '/opt/homebrew/opt/php@8.2/bin/php', 'phpactor', 'language-server' },
-                    filetypes = { 'php', 'cucumber' },
-                }
-            end,
+        -- Core setup
+        require("mason").setup()
+        require("mason-lspconfig").setup({
+            ensure_installed = { "lua_ls", "emmet_ls", "phpactor" },
+            -- automatic_enable = false, -- optionally disable automatic setup
+        })
+
+        -- Lua
+        vim.lsp.config("lua_ls", {
+            capabilities = capabilities,
+            settings = {
+                Lua = {
+                    runtime = { version = "Lua 5.4.7" },
+                    diagnostics = {
+                        globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
+                    },
+                },
+            },
+        })
+
+        -- Emmet
+        vim.lsp.config("emmet_ls", {
+            capabilities = capabilities,
+            filetypes = { "html", "typescriptreact", "javascriptreact", "css",
+                "sass", "scss", "less", "svelte" },
+        })
+
+        -- PHP
+        vim.lsp.config("phpactor", {
+            capabilities = capabilities,
+            filetypes = { "php", "cucumber" },
+            -- cmd = { "/opt/homebrew/opt/php@8.2/bin/php", "phpactor", "language-server" },
         })
 
         -- This is where you enable features that only work
