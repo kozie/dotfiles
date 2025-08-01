@@ -1,136 +1,85 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/koos/.oh-my-zsh
+PLATFORM=$(uname -s)
+if [[ -f "/opt/homebrew/bin/brew" ]] then
+  # If you're using macOS, you'll want this enabled
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
-fpath=( "$HOME/.oh-my-zsh/functions" $fpath )
+# Zinit plugin manager
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
 
-# Load up pure
-autoload -U promptinit; promptinit
-prompt pure
+# Theme
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/zen.toml)"
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="pure"
-#ZSH_THEME="kagnoster"
+# Plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
 
-# Uncomment the following line to use case-sensitive completion.
-#CASE_SENSITIVE="false"
+# Snippets
+zinit snippet OMZL::git.zsh
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# Load completions
+autoload -Uz compinit && compinit
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+# Suggested by whatever..
+zinit cdreplay -q
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# Set Vi mode
+bindkey -v
+bindkey '^f' autosuggest-accept
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+# History
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# Completion styling
+setopt NO_CASE_GLOB
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors '${(s.:.)LS_COLORS}'
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Uncomment the following line to enable command auto-correction.
- #ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
-# User configuration
-source $ZSH/oh-my-zsh.sh
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Required for Dingy and Docker
-#eval $(dinghy env)
-
-# Golang paths
-export GOPATH=$HOME/gohome
-export GOROOT=/usr/local/opt/go/libexec
-
-# Core utils (brew install coreutils)
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:$PATH:$GOPATH/bin:$GOROOT/bin:$HOME/.rvm/bin"
-export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
-
-# Z !
-source ~/code/z/z.sh
-
-export CLICOLOR=1
-#export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34:su=0:sg=0:tw=0:ow=0:"
-export LSCOLORS=1
-#export TERM=xterm-256color
-export VISUAL="vim"
+# Exports
+export BAT_THEME="base16"
+export VISUAL="nvim"
 export EDITOR="$VISUAL"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
-# FZF !
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# FZF Settings
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_COMPLETION_TRIGGER='**'
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 
-# Shortcut for cd PATH && ls -al
-cdl () { cd "$@" && ls -al --color=auto; }
+# Highlighting inside manpages and elsewhere
+export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
+export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
+export LESS_TERMCAP_me=$'\E[0m'           # end mode
+export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
+export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
+export LESS_TERMCAP_ue=$'\E[0m'           # end underline
+export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
-# Shortcut for mkdir -p && cd
-mkcd () { mkdir -p "$@" && cd "$@"; }
-
-# Compress image using convert (imagemagick)
-# optionally add -gaussian-blur 0.05
-imgcomp() { convert -strip -interlace Plane -quality 85% $1 $2; }
-
-# vim + ag + fzf = unlimited power! ⚡️
-vag() { $EDITOR $(ag -Ql "$1" | fzf); }
-
-# Bower install and bower-installer
-bii() { bower install "$1" --save && bower-installer -r; }
-
-# Git mergin made a bit easier
-_git_qm() { __gitcomp_nl "$(__git_refs)"; }
-
-# Load up external .priv.sh stuff
-[ -f ~/.priv.sh ] && source ~/.priv.sh
-
+# Aliases
+alias ls='ls --color'
 alias v="$EDITOR"
 alias vi="$EDITOR"
-
-alias vgs='vagrant global-status'
-alias up='vagrant up'
-alias down='vagrant halt'
-alias vssh='vagrant ssh'
-
 alias g='git'
 alias co='git checkout'
 alias cm='git commit'
@@ -138,44 +87,88 @@ alias add='git add'
 alias push='git push'
 alias pull='git pull'
 alias fetch='git fetch'
-alias merge='git merge --no-ff'
-alias qmerge='git merge --no-edit --no-ff'
-alias qm='git merge --no-edit --no-ff' # Same as previous
-alias status='git status'
-alias st='git status' # Same as previous
-alias lol='git log --graph --decorate --pretty=oneline --abbrev-commit'
-alias lola='git log --graph --decorate --pretty=oneline --abbrev-commit --all'
-
-alias tm="tmux new -s"
-alias ta="tmux a"
-alias tas="tmux a -t"
+alias st='git status -u'
+alias dif='git diff -w'
+alias va='PATH="$(brew --prefix php@8.2)/bin:$PATH" valet-plus'
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias vizsh="vim ~/.zshrc && source ~/.zshrc"
-alias ls="ls --color=auto"
-alias ll="ls --color=auto -laF"
+#alias ll="ls -lhaF"
+#alias l="ls -lhaF"
+#alias ls="eza --icons=always"
+alias l="eza --icons=always -la"
+alias ll="eza --icons=always -lag"
+alias lt="eza --icons=always -lag --tree --level=3"
+alias ltr="eza --icons=always -la --sort=modified"
 
-alias storm="open -a 'PhpStorm 2017.1 EAP'"
-alias love="open -n -a love"
+alias s="rg --hidden --files-with-matches --fixed-strings --ignore-case"
+alias f="rg --hidden --fixed-strings --ignore-case"
+alias gr="grep -v grep | grep -i"
 
-alias mr="n98-magerun"
-alias mr2="n98-magerun2"
-alias cc="mr cache:clean && mr cache:flush && date"
-alias cc2="mr2 cache:clean && mr2 cache:flush && date"
-alias phpm="php -d memory_limit=-1"
+alias tmux="xTERM=xterm-256color tmux -2"
+alias tm="xTERM=xterm-256color tmux -2 new -s"
+alias ta="xTERM=xterm-256color tmux -2 a"
+alias tas="xTERM=xterm-256color tmux -2 a -t"
+alias com="COMPOSER_MEMORY_LIMIT=-1 composer"
+alias vcom="COMPOSER_MEMORY_LIMIT=-1 valet composer"
+alias vphp="valet php"
+alias cake="valet php bin/cake.php"
+alias dr="valet php vendor/bin/drush"
+alias np="nvm exec npm"
+alias storm="open -a PhpStorm" # Seems to work better than pstorm somehow
+alias chrome='open -a Google\ Chrome'
+alias arc="open -a Arc"
+alias firefox='open -a Firefox'
+alias oo='open -a LibreOffice'
+alias xd='valet-plus xdebug';
+alias caf='echo "Keeping system active. Press Ctrl + c to cancel."; caffeinate -i'
+alias randhash="head -n 4096 /dev/urandom | openssl sha1 | tr -d '\n'"
+alias randpass="openssl rand -base64 32"
 
-alias bi="bower install"
-alias bs="bower search"
+alias p='pbpaste'
+alias c='pbcopy'
 
-# Not sure if this is needed
-# zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+alias vb="$EDITOR ~/.zshrc"
+alias sb="exec zsh"
+alias vhost="sudo nvim /etc/hosts"
 
-# The Fuck
-#eval "$(thefuck --alias)"
+alias gd='git co env/development'
+alias gt='git co env/test'
+alias ga='git co env/acceptance'
+alias gp='git co env/production'
 
-# ZSH Syntax Highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+alias setesc='sudo hidutil property --set '"'"'{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000064,"HIDKeyboardModifierMappingDst":0x700000029}]}'"'"''
+alias dismouseacc='defaults write .GlobalPreferences com.apple.mouse.scaling -1'
+alias ip='curl -vs -4 ifcfg.me/ip 2>&1 | tail -n1 | pbcopy'
+
+if [ "$PLATFORM" = Linux ]; then
+    # apt-get install -y xclip
+    alias pbcopy='xclip -selection clipboard'
+    alias pbpaste='xclip -selection clipboard -o'
+fi
+
+# BitBucket functions
+bb () {
+    xtmpremote=$(git remote -v | head -1 | sed "s/.*:\(.*\)\.git.*/\1/");
+
+    if [[ -n ${xtmpremote} ]]; then
+        open "https://bitbucket.org/$xtmpremote/$1" > /dev/null;
+    else
+        echo "Not found remote";
+    fi
+}
+alias bpl="bb addon/pipelines/home"
+alias bpr="bb pull-requests/new?dest=env/test"
+
+# Shell integrations
+eval "$(fzf --zsh)"
+eval "$(zoxide init zsh)"
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+
+[ -f ~/.private.sh ] && . ~/.private.sh
