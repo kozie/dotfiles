@@ -17,6 +17,7 @@ return {
                 "eslint",
                 "phpactor",
                 "emmet_ls",
+                "pyright",
             },
         })
     end

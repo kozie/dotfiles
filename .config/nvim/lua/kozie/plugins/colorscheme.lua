@@ -8,9 +8,10 @@ return {
                 terminal = true,
             },
             styles = {
-                italic = false,
+                italic = true,
                 transparency = true,
-            }
+            },
+            disable_italics = false,
         })
 
 		vim.cmd("colorscheme rose-pine-moon")

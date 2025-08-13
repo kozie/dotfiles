@@ -161,7 +161,7 @@ bb () {
     fi
 }
 alias bpl="bb addon/pipelines/home"
-alias bpr="bb pull-requests/new?dest=env/test"
+alias bpr='bb "pull-requests/new?dest=env/test"'
 
 # Shell integrations
 eval "$(fzf --zsh)"

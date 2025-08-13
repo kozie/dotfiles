@@ -5,7 +5,6 @@ return {
         "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
-        local lspconfig = require("lspconfig")
         local cmp_lsp = require("cmp_nvim_lsp")
 
         local capabilities = vim.tbl_deep_extend(
@@ -19,7 +18,7 @@ return {
         -- Core setup
         require("mason").setup()
         require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls", "emmet_ls", "phpactor" },
+            ensure_installed = { "lua_ls", "emmet_ls", "phpactor", "pyright" },
             -- automatic_enable = false, -- optionally disable automatic setup
         })
 
@@ -48,6 +47,10 @@ return {
             capabilities = capabilities,
             filetypes = { "php", "cucumber" },
             -- cmd = { "/opt/homebrew/opt/php@8.2/bin/php", "phpactor", "language-server" },
+        })
+
+        vim.lsp.config("pyright", {
+            capabilities = capabilities,
         })
 
         -- This is where you enable features that only work
