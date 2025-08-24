@@ -167,6 +167,9 @@ alias bpr='bb "pull-requests/new?dest=env/test"'
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 
+# FZF Git
+[ -f ~/fzf-git.sh ] && . ~/fzf-git.sh
+
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
