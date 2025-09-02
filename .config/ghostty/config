@@ -1,9 +1,9 @@
 # font-family = "JetBrainsMono Nerd Font Mono"
-# font-size = 12.5
 font-family = "Iosevka Nerd Font Mono"
-font-size = 14
+# font-family = "IosevkaTermSlab Nerd Font Mono"
 # font-family = "FantasqueSansM Nerd Font Mono"
-# font-size = 14
+# font-family = "BlexMono Nerd Font Light"
+font-size = 14
 
 #theme = "rose-pine-moon"
 theme = "catppuccin-macchiato"

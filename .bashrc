@@ -334,3 +334,6 @@ eval "$(starship init bash)"
 # Load custom stuff
 [ -f ~/.private.sh ] && . ~/.private.sh
 [ -f ~/fzf-git.sh ] && . ~/fzf-git.sh
+. "$HOME/.cargo/env"
+
+. "$HOME/.local/bin/env"

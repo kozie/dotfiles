@@ -3,6 +3,8 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
+        "mason-org/mason.nvim",
+        "mason-org/mason-lspconfig.nvim",
     },
     config = function()
         local cmp_lsp = require("cmp_nvim_lsp")
@@ -49,6 +51,7 @@ return {
             -- cmd = { "/opt/homebrew/opt/php@8.2/bin/php", "phpactor", "language-server" },
         })
 
+        -- Python
         vim.lsp.config("pyright", {
             capabilities = capabilities,
         })

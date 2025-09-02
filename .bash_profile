@@ -14,3 +14,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 . ~/.bashrc
 
 export GPG_TTY=$(tty)
+. "$HOME/.cargo/env"
+
+. "$HOME/.local/bin/env"

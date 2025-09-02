@@ -175,3 +175,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 
 [ -f ~/.private.sh ] && . ~/.private.sh
+
+# Rust
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
+# uv (Python)
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
