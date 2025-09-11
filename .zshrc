@@ -181,3 +181,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # uv (Python)
 [ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
+
+export PATH="$PATH:$HOME/.composer/vendor/bin"

@@ -75,5 +75,15 @@ return {
                 vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
             end,
         })
+
+        vim.diagnostic.config({
+            virtual_text = {
+                prefix = "󰀧",
+                spacing = 2,
+            },
+            underline = true,
+            signs = true,
+            update_in_insert = false,
+        })
     end
 }
