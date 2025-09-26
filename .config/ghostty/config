@@ -6,7 +6,7 @@ font-family = "Iosevka Nerd Font Mono"
 font-size = 14
 
 #theme = "rose-pine-moon"
-theme = "catppuccin-macchiato"
+theme = "catppuccin macchiato"
 
 background-opacity = 0.8
 background-blur-radius = 10
